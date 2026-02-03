@@ -44,7 +44,7 @@ body {
 
 .flow-header h1 {
     font-family: var(--font-primary);
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin: 15px 0;
 }
@@ -64,7 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
+    width: 120px;
     z-index: 2;
 }
 
@@ -111,8 +111,8 @@ body {
     height: 2px;
     background: #89AFFF;
     margin-top: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -45px;
+    margin-right: -45px;
     z-index: 1;
 }
 
@@ -127,11 +127,11 @@ body {
     background: var(--white);
     color: var(--dark);
     border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 15px;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0px;
 }
 
 .quote-header {
@@ -139,8 +139,8 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
 }
 
 .quote-header h2 {
@@ -162,21 +162,35 @@ body {
 
 .quote-data {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 5px;
 }
 
 .data-item {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: var(--font-secundary);
+    color: #333333;
+}
+
+.data-item div {
+    display: flex;
+    max-width: 21px;
+    width: 20px;
+    justify-content: center;
+}
+
+.data-item img {
+    width: auto;
+    max-height: 19px;
 }
 
 .btn-recotizar-outline {
     width: 100%;
     padding: 10px 30px;
-    margin: 15px 0;
+    margin: 5px 0;
     border: 2px solid var(--primary);
     border-radius: 100px;
     font-weight: 500;
@@ -186,6 +200,7 @@ body {
     color: var(--primary);
     background: transparent;
     transition: all 0.3s ease;
+    grid-column: 1 / -1;
 }
 
 .btn-recotizar-outline:hover {
@@ -235,16 +250,16 @@ body {
 
 .promo-badge {
     position: absolute;
-    top: -29px;
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent);
     color: var(--violet);
     padding: 6px 25px;
     border-radius: 12px 12px 0 0;
-    font-weight: 800;
+    font-weight: 900;
     font-family: var(--font-secundary);
-    font-size: 0.75rem;
+    font-size: 00.95rem;
     white-space: nowrap;
     text-transform: uppercase;
     display: flex;
@@ -307,9 +322,10 @@ body {
 
 .installments-text {
     color: var(--pink);
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 10px 0 5px;
     font-weight: 400;
+    font-family: var(--font-primary);
 }
 
 .text-white {
@@ -387,7 +403,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.btn-select, .btn-select-alt {
+.btn-select,
+.btn-select-alt {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -411,12 +428,14 @@ body {
     transform: translateY(-2px);
 }
 
-.btn-select:hover, .btn-select-alt:hover {
+.btn-select:hover,
+.btn-select-alt:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.btn-select:active, .btn-select-alt:active {
+.btn-select:active,
+.btn-select-alt:active {
     transform: translateY(0) scale(0.97);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -468,6 +487,183 @@ body {
     font-size: 0.8rem;
     text-decoration: underline;
 }
+
+/* ===========================================
+   TABLA COMPARATIVA
+   =========================================== */
+.plans-comparison {
+    background: var(--white);
+    padding: 40px 20px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.subtitle {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120%;
+    color: #0258D3;
+    margin: 0 0 30px 0;
+    text-align: left;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 0.5px solid var(--primary);
+    border-radius: 8px;
+}
+
+
+/* Header con logos */
+.plans-header {
+    display: grid;
+    grid-template-columns: 202px repeat(9, 1fr);
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.empty-cell {
+    padding: 20px;
+}
+
+.plan-logo {
+    padding: 15px;
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+}
+
+.plan-logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+/* Sección con fondo fucsia */
+.section-header {
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coverage {
+    background: #FF0099;
+}
+
+.medicine {
+    background: #CC0099;
+}
+
+.legal {
+    background: #990099;
+}
+
+.cancellations {
+    background: #6600CC;
+}
+
+.baggage {
+    background: #511DED;
+}
+
+.other-services {
+    background: #3333FF;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.section-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Filas de contenido */
+.content-row {
+    display: grid;
+    grid-template-columns: 202px repeat(9, 1fr);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content-row:hover {
+    background: #f9f9f9;
+}
+
+.row-label {
+    padding: 7px 15px;
+    font-size: 13px;
+    color: #333;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.row-cell {
+    padding: 15px 10px;
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #0284c7;
+    font-weight: 600;
+}
+
+.checkmark {
+    color: #10b981;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.crossmark {
+    color: #ef4444;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Sección desplegable */
+.collapsible-section {
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.collapsible-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.collapsible-header:hover {
+    background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+}
+
+.collapsible-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.section-icon-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 
 /* ===========================================
    TABLET: 768px+
@@ -531,6 +727,10 @@ body {
 
     .btn-select {
         font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 36px;
     }
 }
 
@@ -598,10 +798,21 @@ body {
         gap: 10px;
     }
 
+    .data-item div {
+        width: auto;
+        max-width: none;
+    }
+
+    .data-item img {
+        width: auto;
+        max-height: max-content;
+    }
+
     .btn-recotizar-outline {
         font-size: 1.25rem;
         padding: 8px 43px;
         margin: 20px 0;
+        grid-column: inherit;
     }
 
     /* Plans Grid Desktop */
@@ -612,5 +823,403 @@ body {
 
     .btn-select {
         font-size: 24px;
+    }
+
+    /* Tabla comparativa Desktop */
+    .plans-comparison {
+        padding: 60px 40px;
+    }
+
+    .subtitle {
+        font-size: 50px;
+        margin: 0 0 50px 0;
+    }
+}
+
+.plans-comparison {
+    background: var(--white);
+    padding: 20px 0;
+    width: 100%;
+}
+
+.subtitle {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    color: #0258D3;
+    margin: 0 0 20px 0;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ===========================================
+           MOBILE COMPARISON STRUCTURE
+           =========================================== */
+.mobile-comparison {
+    display: block;
+    width: 100%;
+}
+
+/* Carousel Navigation Header */
+.carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.nav-button {
+    background: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-button:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+.nav-button svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary);
+    stroke-width: 2;
+    transition: stroke 0.3s ease;
+}
+
+.nav-button:hover svg {
+    stroke: var(--white);
+}
+
+/* Disabled state (solo visual para el mockup) */
+.nav-button.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #ccc;
+}
+
+.nav-button.disabled:hover {
+    background: var(--white);
+    transform: scale(1);
+}
+
+.nav-button.disabled svg {
+    stroke: #ccc;
+}
+
+/* Plan Header with Logo */
+.plan-header {
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.plan-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    margin-bottom: 10px;
+}
+
+.plan-logo-container img {
+    max-width: 120px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+}
+
+.plan-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+/* ===========================================
+           COLLAPSIBLE SECTIONS
+           =========================================== */
+.plan-details {
+    border-top: 1px solid #e0e0e0;
+}
+
+.collapsible-section {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section-header {
+    color: white;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.section-header:active {
+    opacity: 0.9;
+}
+
+/* Section color variants */
+.section-header.coverage {
+    background: #FF0099;
+}
+
+.section-header.medicine {
+    background: #CC0099;
+}
+
+.section-header.legal {
+    background: #990099;
+}
+
+.section-header.cancellations {
+    background: #6600CC;
+}
+
+.section-header.baggage {
+    background: #511DED;
+}
+
+.section-header.other-services {
+    background: #3333FF;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+}
+
+.section-title img {
+    width: 24px;
+    height: 24px;
+}
+
+.chevron-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Open state - esto lo controlaría JS después */
+.section-header.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* Section Content */
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fafafa;
+}
+
+/* Open state - esto lo controlaría JS después */
+.section-content.open {
+    max-height: 2000px;
+}
+
+.content-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content-item:last-child {
+    border-bottom: none;
+}
+
+.item-label {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.item-value {
+    font-size: 15px;
+    color: #0284c7;
+    font-weight: 700;
+    font-family: var(--font-primary);
+}
+
+.checkmark {
+    color: #10b981;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.crossmark {
+    color: #ef4444;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ===========================================
+           DOTS INDICATOR
+           =========================================== */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background: #9ca3af;
+}
+
+.dot.active {
+    background: var(--primary);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* ===========================================
+           DESKTOP TABLE (hidden on mobile)
+           =========================================== */
+.desktop-comparison {
+    display: none;
+}
+
+/* ===========================================
+           RESPONSIVE - TABLET & DESKTOP
+           =========================================== */
+@media (min-width: 768px) {
+    .subtitle {
+        font-size: 36px;
+    }
+
+    .carousel-header {
+        padding: 0 20px 30px;
+    }
+
+    .nav-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .plan-description {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Hide mobile view, show desktop table */
+    .mobile-comparison {
+        display: none;
+    }
+
+    .desktop-comparison {
+        display: block;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .subtitle {
+        font-size: 50px;
+        text-align: left;
+        padding: 0;
+        margin: 0 0 50px 0;
+    }
+
+    .container {
+        border: 0.5px solid var(--primary);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* Desktop table styles */
+    .plans-header {
+        display: grid;
+        grid-template-columns: 202px repeat(9, 1fr);
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .empty-cell {
+        padding: 20px;
+    }
+
+    .plan-logo {
+        padding: 15px;
+        text-align: center;
+        border-left: 1px solid #e0e0e0;
+    }
+
+    .plan-logo img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .desktop-section-header {
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .content-row {
+        display: grid;
+        grid-template-columns: 202px repeat(9, 1fr);
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .content-row:hover {
+        background: #f9f9f9;
+    }
+
+    .row-label {
+        padding: 15px;
+        font-size: 13px;
+        color: #333;
+        border-right: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+    }
+
+    .row-cell {
+        padding: 15px 10px;
+        text-align: center;
+        border-left: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #0284c7;
+        font-weight: 600;
     }
 }
