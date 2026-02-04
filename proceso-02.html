@@ -4,353 +4,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador GO! - Selección de Plan</title>
+    <meta name="description" content="Selecciona tu plan de asistencia al viajero ideal con GO! - Compara coberturas, precios y beneficios">
+    <title>Cotizador GO! - Selección de Plan de Asistencia al Viajero</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
-
+    <!-- Main Container -->
     <main class="main-container">
+        
+        <!-- ===========================================
+             HEADER: STEPPER DE PROGRESO
+             =========================================== -->
         <header class="flow-header">
             <h1>Selecciona tu asistencia ideal</h1>
-            <div class="stepper">
-                <div class="step completed">
-                    <span>1</span>
+            
+            <!-- Stepper Navigation -->
+            <nav class="stepper" aria-label="Progreso de compra">
+                <div class="step completed" aria-current="false">
+                    <span aria-hidden="true">1</span>
                     <p>Cotizar</p>
                 </div>
 
-                <div class="step-line"></div>
+                <div class="step-line completed" aria-hidden="true"></div>
 
-                <div class="step active">
-                    <span>2</span>
+                <div class="step active" aria-current="step">
+                    <span aria-hidden="true">2</span>
                     <p>Seleccionar plan</p>
                 </div>
 
-                <div class="step-line"></div>
+                <div class="step-line" aria-hidden="true"></div>
 
-                <div class="step">
-                    <span>3</span>
+                <div class="step" aria-current="false">
+                    <span aria-hidden="true">3</span>
                     <p>Pagar</p>
                 </div>
-            </div>
+            </nav>
         </header>
-        <section class="quote-summary">
-            <div class="quote-header">
-                <h2>Detalles de tu cotización</h2>
-            </div>
+
+        <!-- ===========================================
+             RESUMEN DE COTIZACIÓN
+             =========================================== -->
+        <section class="quote-summary" aria-labelledby="quote-heading">
+            <header class="quote-header">
+                <h2 id="quote-heading">Detalles de tu cotización</h2>
+            </header>
 
             <div class="quote-data">
                 <div class="data-item">
-                    <div><img src="images/icono-destino-desktop.png" alt="icono destino"></div>
+                    <div><img src="images/icono-destino-desktop.png" alt="" aria-hidden="true"></div>
                     <span>América Central</span>
                 </div>
                 <div class="data-item">
-                    <div><img src="images/icono-pasajero-desktop.png" alt="icono pasajeros"></div>
+                    <div><img src="images/icono-pasajero-desktop.png" alt="" aria-hidden="true"></div>
                     <span>2 pasajeros</span>
                 </div>
                 <div class="data-item">
-                    <div><img src="images/icono-calendario-desktop.png" alt="icono calendario"></div>
-                    <span>17/11/25 - 30/12/25</span>
+                    <div><img src="images/icono-calendario-desktop.png" alt="" aria-hidden="true"></div>
+                    <span><time datetime="2025-11-17">17/11/25</time> - <time datetime="2025-12-30">30/12/25</time></span>
                 </div>
                 <div class="data-item">
-                    <div><img src="images/icono-email-desktop.png" alt="icono email"></div>
+                    <div><img src="images/icono-email-desktop.png" alt="" aria-hidden="true"></div>
                     <span>Pasajero@correo.com</span>
                 </div>
                 <div class="data-item">
-                    <div><img src="images/icono-telephone-desktop.png" alt="icono telefono"></div>
+                    <div><img src="images/icono-telephone-desktop.png" alt="" aria-hidden="true"></div>
                     <span>+54 9 11 2323 4545</span>
                 </div>
-                <button class="btn-recotizar-outline">Recotizar</button>
+                <button class="btn-recotizar-outline" type="button">Recotizar</button>
             </div>
         </section>
 
-        <section class="plans-grid">
+        <!-- ===========================================
+             GRID DE PLANES DISPONIBLES
+             =========================================== -->
+        <section class="plans-grid" aria-labelledby="plans-heading">
 
+            <!-- Plan 1: GO! ADVENTURE USA (Featured) -->
             <article class="card featured">
-                <div class="promo-badge">🏆 SORTEO GO! WORLD CUP</div>
-                <div class="card-brand">
-                    <img src="images/logo-go-adventure-usa-color-horizontal.png" alt="GO! ADVENTURE USA"
-                        class="logo-img">
-                </div>
+                <div class="promo-badge" aria-label="Promoción">🏆 SORTEO GO! WORLD CUP</div>
+                
+                <header class="card-brand">
+                    <img src="images/logo-go-adventure-usa-color-horizontal.png" 
+                         alt="GO! ADVENTURE USA" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-adventure-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 2: GO! 365 ECO -->
             <article class="card">
-                <div class="card-brand">
-                    <img src="images/logo-go-365eco-color-horizontal.png" alt="GO!" class="logo-img">
-                </div>
+                <header class="card-brand">
+                    <img src="images/logo-go-365eco-color-horizontal.png" 
+                         alt="GO! 365 ECO" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-365eco-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 3: GO! 365 -->
             <article class="card">
-                <div class="card-brand">
-                    <img src="images/logo-go-365-color-horizontal.png" alt="GO!" class="logo-img">
-                </div>
+                <header class="card-brand">
+                    <img src="images/logo-go-365-color-horizontal.png" 
+                         alt="GO! 365" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-365-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 4: GO! SMART -->
             <article class="card">
-                <div class="card-brand">
-                    <img src="images/logo-go-smart-color-horizontal.png" alt="GO!" class="logo-img">
-                </div>
+                <header class="card-brand">
+                    <img src="images/logo-go-smart-color-horizontal.png" 
+                         alt="GO! SMART" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-smart-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 5: GO! NOMADS -->
             <article class="card">
-                <div class="card-brand">
-                    <img src="images/logo-go-nomads-color-horizontal.png" alt="GO!" class="logo-img">
-                </div>
+                <header class="card-brand">
+                    <img src="images/logo-go-nomads-color-horizontal.png" 
+                         alt="GO! NOMADS" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-nomads-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 6: GO! PRIORITY -->
             <article class="card">
-                <div class="card-brand">
-                    <img src="images/logo-go-priority-color-horizontal.png" alt="GO!" class="logo-img">
-                </div>
+                <header class="card-brand">
+                    <img src="images/logo-go-priority-color-horizontal.png" 
+                         alt="GO! PRIORITY" 
+                         class="logo-img">
+                </header>
+
                 <div class="pricing">
-                    <span class="tag-discount">50% OFF</span>
+                    <span class="tag-discount" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-blue">Seleccionar</button>
+
+                <button class="btn-select btn-select-blue" type="button">Seleccionar</button>
+
                 <ul class="benefit-list">
-                    <li><img src="images/farmacia 1.png" alt="icono cruz"> <strong>USD 45.000</strong> Asistencia médica
+                    <li>
+                        <img src="images/farmacia 1.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Asistencia médica</span>
                     </li>
-                    <li><img src="images/icon-equipaje.png" alt="icono equipaje"> <strong>USD 45.000</strong> Pérdida de
-                        equipaje</li>
-                    <li><img src="images/icon-preexistencia.png" alt="icono nota medica"> <strong>USD 45.000</strong>
-                        Preexistencias</li>
+                    <li>
+                        <img src="images/icon-equipaje.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Pérdida de equipaje</span>
+                    </li>
+                    <li>
+                        <img src="images/icon-preexistencia.png" alt="" aria-hidden="true">
+                        <span><strong>USD 45.000</strong> Preexistencias</span>
+                    </li>
                 </ul>
-                <a href="#" class="plan-link">Ver detalle del plan</a>
+
+                <a href="#plan-priority-details" class="plan-link">Ver detalle del plan</a>
             </article>
 
-
+            <!-- Plan 7: GO! SMART MULTITRIP -->
             <article class="card multitrip">
-                <div class="multitrip-badge">🌎 MULTITRIP 60 DÍAS</div>
-                <div class="card-brand">
-                    <img src="images/logo-go-smart-blanco-horizontal.png" alt="GO! SMART" class="logo-img">
+                <div class="multitrip-badge" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                
+                <header class="card-brand">
+                    <img src="images/logo-go-smart-blanco-horizontal.png" 
+                         alt="GO! SMART MULTITRIP" 
+                         class="logo-img">
+                </header>
 
-                </div>
                 <div class="pricing">
-                    <span class="tag-discount tag-multitrip">50% OFF</span>
+                    <span class="tag-discount tag-multitrip" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text text-white">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-white">Seleccionar</button>
-                <a href="#" class="plan-link-white">Ver detalle del plan</a>
+
+                <button class="btn-select btn-select-white" type="button">Seleccionar</button>
+                <a href="#plan-smart-multitrip-details" class="plan-link-white">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 8: GO! NOMADS MULTITRIP -->
             <article class="card multitrip">
-                <div class="multitrip-badge">🌎 MULTITRIP 60 DÍAS</div>
-                <div class="card-brand">
-                    <img src="images/logo-go-nomads-blanco-horizontal.png" alt="GO! Nomads" class="logo-img">
+                <div class="multitrip-badge" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                
+                <header class="card-brand">
+                    <img src="images/logo-go-nomads-blanco-horizontal.png" 
+                         alt="GO! NOMADS MULTITRIP" 
+                         class="logo-img">
+                </header>
 
-                </div>
                 <div class="pricing">
-                    <span class="tag-discount tag-multitrip">50% OFF</span>
+                    <span class="tag-discount tag-multitrip" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text text-white">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-white">Seleccionar</button>
-                <a href="#" class="plan-link-white">Ver detalle del plan</a>
+
+                <button class="btn-select btn-select-white" type="button">Seleccionar</button>
+                <a href="#plan-nomads-multitrip-details" class="plan-link-white">Ver detalle del plan</a>
             </article>
 
+            <!-- Plan 9: GO! PRIORITY MULTITRIP -->
             <article class="card multitrip">
-                <div class="multitrip-badge">🌎 MULTITRIP 60 DÍAS</div>
-                <div class="card-brand">
-                    <img src="images/logo-go-priority-blanco-horizontal.png" alt="GO! Priority" class="logo-img">
+                <div class="multitrip-badge" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                
+                <header class="card-brand">
+                    <img src="images/logo-go-priority-blanco-horizontal.png" 
+                         alt="GO! PRIORITY MULTITRIP" 
+                         class="logo-img">
+                </header>
 
-                </div>
                 <div class="pricing">
-                    <span class="tag-discount tag-multitrip">50% OFF</span>
+                    <span class="tag-discount tag-multitrip" aria-label="Descuento">50% OFF</span>
                     <p class="installments-text text-white">12 cuotas sin interés de</p>
-                    <p class="main-price"><span>ARS</span> <strong>26.752</strong></p>
-                    <p class="total-detail">
+                    <p class="main-price">
+                        <span aria-label="Pesos argentinos">ARS</span> 
+                        <strong>26.752</strong>
+                    </p>
+                    <div class="total-detail">
                         <span>Precio final</span>
                         <span class="price-group">
-                            <del>ARS 642.031,2</del>
-                            <span>ARS <strong>321.015,6</strong></span>
+                            <del aria-label="Precio anterior">ARS 642.031,2</del>
+                            <span aria-label="Precio final con descuento">ARS <strong>321.015,6</strong></span>
                         </span>
-                    </p>
+                    </div>
                 </div>
-                <button class="btn-select btn-select-white">Seleccionar</button>
-                <a href="#" class="plan-link-white">Ver detalle del plan</a>
+
+                <button class="btn-select btn-select-white" type="button">Seleccionar</button>
+                <a href="#plan-priority-multitrip-details" class="plan-link-white">Ver detalle del plan</a>
             </article>
 
         </section>
     </main>
 
-    <!-- SECCIÓN DE COMPARATIVA - Version Desktop -->
-    <section class="plans-comparison hidden-mobile">
-
-        <h2 class="subtitle">Comparativa de planes</h2>
+    <!-- ===========================================
+         COMPARATIVA DE PLANES - DESKTOP
+         =========================================== -->
+    <section class="section plans-comparison hidden-mobile" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" class="subtitle">Comparativa de planes</h2>
 
         <div class="container">
             <!-- Header con logos de planes -->
             <div class="plans-header">
                 <div class="empty-cell"></div>
+                <div class="plan-logo"><img src="images/logo-GO-365Eco.png" alt="GO! 365 Eco"></div>
+                <div class="plan-logo"><img src="images/logo-GO-365.png" alt="GO! 365"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Adventure.png" alt="GO! Adventure"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Smart.png" alt="GO! Smart"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Nomads.png" alt="GO! Nomads"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Priority.png" alt="GO! Priority"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Nacional.png" alt="GO! Nacional"></div>
+                <div class="plan-logo"><img src="images/logo-GO-Sports.png" alt="GO! Sport"></div>
                 <div class="plan-logo">
-                    <img src="images/logo-GO-365Eco.png" alt="GO! 365 Eco">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-365.png" alt="GO! 365">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Adventure.png" alt="GO! Adventure">
-                </div>
-
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Smart.png" alt="GO! Smart">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Nomads.png" alt="GO! Nomads">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Priority.png" alt="GO! Priority">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Nacional.png" alt="GO! Nacional">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Sports.png" alt="GO! Sport">
-                </div>
-                <div class="plan-logo">
-                    <img src="images/logo-GO-Pets.png" alt="GO! Plus">
+                    <img src="images/logo-GO-Pets.png" alt="GO! Pets">
                     <div class="plan-name">PLUS</div>
                 </div>
             </div>
 
-            <!-- Sección: Coberturas -->
-            <section>
-                <div class="section-header coverage">
+            <!-- Coberturas -->
+            <section aria-labelledby="coverage-section">
+                <div class="section-header coverage" id="coverage-section">
                     <div class="section-title">
-                        <img src="images/GO-item-coberturas.png" alt="">
+                        <img src="images/GO-item-coberturas.png" alt="" aria-hidden="true">
                         Alcances de cobertura
                     </div>
                 </div>
@@ -408,11 +525,11 @@
                 </div>
             </section>
 
-            <!-- Sección: Medicina y medicamentos -->
-            <section>
-                <div class="section-header medicine">
+            <!-- Medicina y medicamentos -->
+            <section aria-labelledby="medicine-section">
+                <div class="section-header medicine" id="medicine-section">
                     <div class="section-title">
-                        <img src="images/GO-item-medicina.png" alt="">
+                        <img src="images/GO-item-medicina.png" alt="" aria-hidden="true">
                         Medicina y medicamentos
                     </div>
                 </div>
@@ -458,91 +575,78 @@
 
                 <div class="content-row">
                     <div class="row-label">Asistencia clínica COVID-19</div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
                 </div>
             </section>
 
-            <!-- Sección: Legales -->
-            <section>
-                <div class="section-header legal">
+            <!-- Legales -->
+            <section aria-labelledby="legal-section">
+                <div class="section-header legal" id="legal-section">
                     <div class="section-title">
-                        <img src="images/GO-item-legales.png" alt="">
+                        <img src="images/GO-item-legales.png" alt="" aria-hidden="true">
                         Legales
                     </div>
                 </div>
 
                 <div class="content-row">
-                    <div class="row-label">Asistencia médica en caso de urgencia o accidente</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 330.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 350.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
+                    <div class="row-label">Asistencia legal telefónica</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
+                    <div class="row-cell">USD 3.000</div>
                 </div>
 
                 <div class="content-row">
-                    <div class="row-label">Asistencia médica en caso de enfermedad no preexistente</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 350.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
+                    <div class="row-label">Gastos de defensa legal</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
+                    <div class="row-cell">USD 8.000</div>
                 </div>
 
                 <div class="content-row">
-                    <div class="row-label">Asistencia médica por emergencia hasta el alta o estabilización</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 350.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 500.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                    <div class="row-cell">USD 300.000</div>
-                </div>
-
-                <div class="content-row">
-                    <div class="row-label">Asistencia clínica COVID-19</div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
-                    <div class="row-cell"><span class="checkmark">✓</span></div>
+                    <div class="row-label">Fianza en el exterior</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
+                    <div class="row-cell">USD 15.000</div>
                 </div>
             </section>
 
-            <!-- Sección: Cancelaciones y demoras -->
-            <div class="collapsible-section">
-                <div class="section-header cancellations">
+            <!-- Cancelaciones y demoras (Collapsible) -->
+            <details class="collapsible-section">
+                <summary class="section-header cancellations">
                     <div class="section-title">
-                        <img src="images/GO-item.cancelaciones.png" alt="">
+                        <img src="images/GO-item.cancelaciones.png" alt="" aria-hidden="true">
                         Cancelaciones y demoras
                     </div>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                         <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
-                </div>
+                </summary>
                 <div class="section-content">
                     <div class="content-item">
                         <div class="item-label">Cancelación de viaje</div>
@@ -557,19 +661,19 @@
                         <div class="item-value">USD 500</div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <!-- Sección: Equipaje -->
-            <div class="collapsible-section">
-                <div class="section-header baggage">
+            <!-- Equipaje (Collapsible) -->
+            <details class="collapsible-section">
+                <summary class="section-header baggage">
                     <div class="section-title">
-                        <img src="images/GO-item.equipaje.png" alt="">
+                        <img src="images/GO-item.equipaje.png" alt="" aria-hidden="true">
                         Equipaje y efectos personales
                     </div>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                         <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </div>
+                </summary>
                 <div class="section-content">
                     <div class="content-item">
                         <div class="item-label">Pérdida de equipaje</div>
@@ -584,50 +688,50 @@
                         <div class="item-value">USD 150</div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <!-- Sección: Traslados y estadías -->
-            <div class="collapsible-section">
-                <div class="section-header other-services">
+            <!-- Traslados y estadías (Collapsible) -->
+            <details class="collapsible-section">
+                <summary class="section-header other-services">
                     <div class="section-title">
-                        <img src="images/GO-item-traslados.png" alt="">
+                        <img src="images/GO-item-traslados.png" alt="" aria-hidden="true">
                         Traslados y estadías
                     </div>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                         <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </div>
+                </summary>
                 <div class="section-content">
                     <div class="content-item">
-                        <div class="item-label">Pérdida de equipaje</div>
+                        <div class="item-label">Traslado sanitario</div>
+                        <div class="item-value">USD 50.000</div>
+                    </div>
+                    <div class="content-item">
+                        <div class="item-label">Estadía prolongada</div>
                         <div class="item-value">USD 1.500</div>
                     </div>
                     <div class="content-item">
-                        <div class="item-label">Demora de equipaje</div>
-                        <div class="item-value">USD 800</div>
-                    </div>
-                    <div class="content-item">
-                        <div class="item-label">Compensación por demora</div>
-                        <div class="item-value">USD 150</div>
+                        <div class="item-label">Regreso anticipado</div>
+                        <div class="item-value">USD 5.000</div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <!-- Sección: Otros Servicios -->
-            <div class="collapsible-section">
-                <div class="section-header other-services">
+            <!-- Otros Servicios (Collapsible) -->
+            <details class="collapsible-section">
+                <summary class="section-header other-services">
                     <div class="section-title">
-                        <img src="images/GO-item-servicios.png" alt="">
+                        <img src="images/GO-item-servicios.png" alt="" aria-hidden="true">
                         Otros servicios
                     </div>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                         <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </div>
+                </summary>
                 <div class="section-content">
                     <div class="content-item">
                         <div class="item-label">Asistencia de mascotas</div>
-                        <div class="item-value checkmark">✓</div>
+                        <div class="item-value checkmark" aria-label="Incluido">✓</div>
                     </div>
                     <div class="content-item">
                         <div class="item-label">Repatriación sanitaria</div>
@@ -635,34 +739,28 @@
                     </div>
                     <div class="content-item">
                         <div class="item-label">Concierge 24/7</div>
-                        <div class="item-value checkmark">✓</div>
+                        <div class="item-value checkmark" aria-label="Incluido">✓</div>
                     </div>
                 </div>
-            </div>
-
-
+            </details>
         </div>
     </section>
 
-    <!-- SECCIÓN DE COMPARATIVA - Version Mobile/Tablet -->
-    <section class="plans-comparison hidden-desktop">
-        <h2 class="subtitle">Comparativa de planes</h2>
+    <!-- ===========================================
+         COMPARATIVA DE PLANES - MOBILE/TABLET
+         =========================================== -->
+    <section class="section plans-comparison hidden-desktop" aria-labelledby="comparison-mobile-heading">
+        <h2 id="comparison-mobile-heading" class="subtitle">Comparativa de planes</h2>
 
-        <!-- ===========================================
-             MOBILE VIEW - Plan Detail Card
-             =========================================== -->
         <div class="mobile-comparison">
-
-            <!-- Navigation Header with Plan Logo -->
+            <!-- Navigation Header -->
             <div class="carousel-header">
-                <!-- Previous Button (disabled en este mockup porque es el primer plan) -->
-                <button class="nav-button disabled" aria-label="Plan anterior">
-                    <svg viewBox="0 0 24 24" fill="none">
+                <button class="nav-button disabled" aria-label="Plan anterior" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
 
-                <!-- Plan Header with Logo & Description -->
                 <div class="plan-header">
                     <div class="plan-logo-container">
                         <img src="images/logo-GO-Priority.png" alt="GO! Priority">
@@ -673,29 +771,27 @@
                     </p>
                 </div>
 
-                <!-- Next Button -->
                 <button class="nav-button" aria-label="Siguiente plan">
-                    <svg viewBox="0 0 24 24" fill="none">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
 
-            <!-- Plan Details - Collapsible Sections -->
+            <!-- Plan Details -->
             <div class="plan-details">
-
-                <!-- SECCIÓN 1: ALCANCES DE COBERTURA -->
-                <div class="collapsible-section">
-                    <div class="section-header coverage open">
+                <!-- Alcances de cobertura -->
+                <details class="collapsible-section" open>
+                    <summary class="section-header coverage">
                         <div class="section-title">
-                            <img src="images/GO-item-coberturas.png" alt="">
+                            <img src="images/GO-item-coberturas.png" alt="" aria-hidden="true">
                             Alcances de cobertura
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
-                    <div class="section-content open">
+                    </summary>
+                    <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Monto máximo global (MMG)</div>
                             <div class="item-value">USD 300.000</div>
@@ -713,19 +809,19 @@
                             <div class="item-value">75/85</div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- SECCIÓN 2: MEDICINA Y MEDICAMENTOS -->
-                <div class="collapsible-section">
-                    <div class="section-header medicine">
+                <!-- Medicina y medicamentos -->
+                <details class="collapsible-section">
+                    <summary class="section-header medicine">
                         <div class="section-title">
-                            <img src="images/GO-item-medicina.png" alt="">
+                            <img src="images/GO-item-medicina.png" alt="" aria-hidden="true">
                             Medicina y medicamentos
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </summary>
                     <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Asistencia médica en caso de urgencia o accidente</div>
@@ -736,28 +832,27 @@
                             <div class="item-value">USD 300.000</div>
                         </div>
                         <div class="content-item">
-                            <div class="item-label">Asistencia médica por emergencia hasta el alta o estabilización
-                            </div>
+                            <div class="item-label">Asistencia médica por emergencia hasta el alta o estabilización</div>
                             <div class="item-value">USD 300.000</div>
                         </div>
                         <div class="content-item">
                             <div class="item-label">Asistencia clínica COVID-19</div>
-                            <div class="item-value checkmark">✓</div>
+                            <div class="item-value checkmark" aria-label="Incluido">✓</div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- SECCIÓN 3: LEGALES -->
-                <div class="collapsible-section">
-                    <div class="section-header legal">
+                <!-- Legales -->
+                <details class="collapsible-section">
+                    <summary class="section-header legal">
                         <div class="section-title">
-                            <img src="images/GO-item-legales.png" alt="">
+                            <img src="images/GO-item-legales.png" alt="" aria-hidden="true">
                             Legales
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </summary>
                     <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Asistencia legal telefónica</div>
@@ -772,19 +867,19 @@
                             <div class="item-value">USD 15.000</div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- SECCIÓN 4: CANCELACIONES -->
-                <div class="collapsible-section">
-                    <div class="section-header cancellations">
+                <!-- Cancelaciones -->
+                <details class="collapsible-section">
+                    <summary class="section-header cancellations">
                         <div class="section-title">
-                            <img src="images/GO-item.cancelaciones.png" alt="">
+                            <img src="images/GO-item.cancelaciones.png" alt="" aria-hidden="true">
                             Cancelaciones
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </summary>
                     <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Cancelación de viaje</div>
@@ -799,19 +894,19 @@
                             <div class="item-value">USD 500</div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- SECCIÓN 5: EQUIPAJE -->
-                <div class="collapsible-section">
-                    <div class="section-header baggage">
+                <!-- Equipaje -->
+                <details class="collapsible-section">
+                    <summary class="section-header baggage">
                         <div class="section-title">
-                            <img src="images/GO-item.equipaje.png" alt="">
+                            <img src="images/GO-item.equipaje.png" alt="" aria-hidden="true">
                             Equipaje
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </summary>
                     <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Pérdida de equipaje</div>
@@ -826,23 +921,23 @@
                             <div class="item-value">USD 150</div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- SECCIÓN 6: OTROS SERVICIOS -->
-                <div class="collapsible-section">
-                    <div class="section-header other-services">
+                <!-- Otros servicios -->
+                <details class="collapsible-section">
+                    <summary class="section-header other-services">
                         <div class="section-title">
-                            <img src="images/GO-item-servicios.png" alt="">
+                            <img src="images/GO-item-servicios.png" alt="" aria-hidden="true">
                             Otros servicios
                         </div>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
                             <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </summary>
                     <div class="section-content">
                         <div class="content-item">
                             <div class="item-label">Asistencia de mascotas</div>
-                            <div class="item-value checkmark">✓</div>
+                            <div class="item-value checkmark" aria-label="Incluido">✓</div>
                         </div>
                         <div class="content-item">
                             <div class="item-label">Repatriación sanitaria</div>
@@ -850,243 +945,100 @@
                         </div>
                         <div class="content-item">
                             <div class="item-label">Concierge 24/7</div>
-                            <div class="item-value checkmark">✓</div>
+                            <div class="item-value checkmark" aria-label="Incluido">✓</div>
                         </div>
                     </div>
-                </div>
-
+                </details>
             </div>
 
             <!-- Dots Indicator -->
-            <div class="carousel-dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-
-        </div>
-
-        <!-- ===========================================
-             DESKTOP VIEW - Full Comparison Table
-             =========================================== -->
-        <div class="desktop-comparison">
-            <div class="container">
-                <!-- Header con logos de planes -->
-                <div class="plans-header">
-                    <div class="empty-cell"></div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-365Eco.png" alt="GO! 365 Eco">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-365.png" alt="GO! 365">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Adventure.png" alt="GO! Adventure">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Smart.png" alt="GO! Smart">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Nomads.png" alt="GO! Nomads">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Priority.png" alt="GO! Priority">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Nacional.png" alt="GO! Nacional">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-GO-Sports.png" alt="GO! Sport">
-                    </div>
-                    <div class="plan-logo">
-                        <img src="images/logo-go-pets-assistance.png" alt="GO! Plus">
-                    </div>
-                </div>
-
-                <!-- Sección: Coberturas -->
-                <section>
-                    <div class="desktop-section-header coverage">
-                        <img src="images/GO-item-coberturas.png" alt="" style="width: 24px; height: 24px;">
-                        Alcances de cobertura
-                    </div>
-
-                    <div class="content-row">
-                        <div class="row-label">Monto máximo global (MMG)</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 350.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                    </div>
-
-                    <div class="content-row">
-                        <div class="row-label">Cobertura Prequirúrgica / Cirugía</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section>
-        <div class="container-garantia">
-            <!-- Card 1: Mejor precio garantizado -->
-            <div class="card">
-                <div class="icon-wrapper">
-                    <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="7" />
-                        <circle cx="12" cy="12" r="4" />
-                        <path d="M12 2L12 6" />
-                        <path d="M12 18L12 22" />
-                        <path d="M22 12L18 12" />
-                        <path d="M6 12L2 12" />
-                    </svg>
-                </div>
-                <h2 class="title">Mejor precio garantizado</h2>
-                <p class="description">Te aseguramos la tarifa más competitiva del mercado.</p>
-                <a href="#" class="link">Ver medios de pago</a>
-            </div>
-
-            <!-- Card 2: Sitio 100% seguro -->
-            <div class="card">
-                <div class="icon-wrapper">
-                    <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />
-                        <rect x="9" y="10" width="6" height="7" rx="1" />
-                        <path d="M10 10V8a2 2 0 0 1 4 0v2" />
-                    </svg>
-                </div>
-                <h2 class="title">Sitio 100% seguro</h2>
-                <p class="description">Tus datos y tu compra están protegidos con nosotros.</p>
-            </div>
+            <nav class="carousel-dots" aria-label="Indicador de planes">
+                <button class="dot active" aria-label="Plan 1 de 9" aria-current="true"></button>
+                <button class="dot" aria-label="Plan 2 de 9"></button>
+                <button class="dot" aria-label="Plan 3 de 9"></button>
+                <button class="dot" aria-label="Plan 4 de 9"></button>
+                <button class="dot" aria-label="Plan 5 de 9"></button>
+                <button class="dot" aria-label="Plan 6 de 9"></button>
+                <button class="dot" aria-label="Plan 7 de 9"></button>
+                <button class="dot" aria-label="Plan 8 de 9"></button>
+                <button class="dot" aria-label="Plan 9 de 9"></button>
+            </nav>
         </div>
     </section>
-        <footer class="footer">
+
+    <!-- ===========================================
+         SECCIÓN DE GARANTÍAS
+         =========================================== -->
+    <section class="section container-garantia" aria-labelledby="guarantees-heading">
+
+        <!-- Mejor precio garantizado -->
+        <article class="card">
+            <div class="icon-wrapper" aria-hidden="true">
+                <img src="images/icono-precio-garantizado.png" alt="">
+            </div>
+            <h3 class="title">Mejor precio garantizado</h3>
+            <p class="description">Te aseguramos la tarifa más competitiva del mercado.</p>
+            <a href="#payment-methods" class="link">Ver medios de pago</a>
+        </article>
+
+        <!-- Sitio 100% seguro -->
+        <article class="card">
+            <div class="icon-wrapper" aria-hidden="true">
+                <img src="images/icono-sitio-seguro.png" alt="">
+            </div>
+            <h3 class="title">Sitio 100% seguro</h3>
+            <p class="description">Tus datos y tu compra están protegidos con nosotros.</p>
+        </article>
+    </section>
+
+    <!-- ===========================================
+         FOOTER
+         =========================================== -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-                
-                <!-- COLUMNA 1: REDES SOCIALES -->
+                <!-- Redes Sociales -->
                 <div class="footer-social">
                     <h3>Seguinos en<br>nuestra redes</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon tiktok" aria-label="TikTok">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                            </svg>
+                    <nav class="social-icons" aria-label="Redes sociales">
+                        <a href="https://tiktok.com/@goassist" class="social-icon tiktok" aria-label="TikTok" target="_blank" rel="noopener">
+                            <img src="images/icon-social-tiktok.png" alt="">
                         </a>
-                        <a href="#" class="social-icon instagram" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                        <a href="https://instagram.com/goassist" class="social-icon instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                            <img src="images/icon-social-instagram.png" alt="">
                         </a>
-                        <a href="#" class="social-icon youtube" aria-label="YouTube">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
+                        <a href="https://youtube.com/@goassist" class="social-icon youtube" aria-label="YouTube" target="_blank" rel="noopener">
+                            <img src="images/icon-social-youtube.png" alt="">
                         </a>
-                        <a href="#" class="social-icon facebook" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
+                        <a href="https://facebook.com/goassist" class="social-icon facebook" aria-label="Facebook" target="_blank" rel="noopener">
+                            <img src="images/icon-social-facebook.png" alt="">
                         </a>
-                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
+                        <a href="https://linkedin.com/company/goassist" class="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img src="images/icon-social-linkedin.png" alt="">
                         </a>
-                    </div>
+                    </nav>
                 </div>
 
-                <!-- COLUMNA 2: ENLACES LEGALES -->
-                <div class="footer-links">
-                    <a href="#">Mi voucher</a>
-                    <a href="#">Políticas de privacidad</a>
-                    <a href="#">Contratos de Adhesión - Ley N° 24.240 de Defensa del Consumidor</a>
-                    <a href="#">Botón de arrepentimiento</a>
-                    <a href="#">Dar de baja el servicio</a>
-                </div>
+                <!-- Enlaces Legales -->
+                <nav class="footer-links" aria-label="Enlaces legales">
+                    <a href="#voucher">Mi voucher</a>
+                    <a href="#privacy">Políticas de privacidad</a>
+                    <a href="#contracts">Contratos de Adhesión - Ley N° 24.240 de Defensa del Consumidor</a>
+                    <a href="#withdrawal">Botón de arrepentimiento</a>
+                    <a href="#unsubscribe">Dar de baja el servicio</a>
+                </nav>
 
-                <!-- COLUMNA 3: DATA FISCAL -->
-                <div class="footer-fiscal">
+                <!-- Data Fiscal -->
+                <aside class="footer-fiscal">
                     <div class="qr-code">
-                        <div class="qr-placeholder">
-                            <!-- QR Code SVG -->
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100" height="100" fill="white"/>
-                                <!-- QR pattern simplificado -->
-                                <g fill="black">
-                                    <rect x="10" y="10" width="15" height="15"/>
-                                    <rect x="30" y="10" width="5" height="5"/>
-                                    <rect x="40" y="10" width="5" height="5"/>
-                                    <rect x="50" y="10" width="5" height="5"/>
-                                    <rect x="75" y="10" width="15" height="15"/>
-                                    
-                                    <rect x="10" y="30" width="5" height="5"/>
-                                    <rect x="20" y="30" width="5" height="5"/>
-                                    <rect x="40" y="30" width="10" height="5"/>
-                                    <rect x="75" y="30" width="5" height="5"/>
-                                    <rect x="85" y="30" width="5" height="5"/>
-                                    
-                                    <rect x="10" y="40" width="5" height="5"/>
-                                    <rect x="20" y="40" width="5" height="5"/>
-                                    <rect x="35" y="40" width="5" height="5"/>
-                                    <rect x="55" y="40" width="10" height="5"/>
-                                    <rect x="75" y="40" width="5" height="5"/>
-                                    <rect x="85" y="40" width="5" height="5"/>
-                                    
-                                    <rect x="10" y="50" width="5" height="5"/>
-                                    <rect x="20" y="50" width="5" height="5"/>
-                                    <rect x="45" y="50" width="5" height="5"/>
-                                    <rect x="60" y="50" width="5" height="5"/>
-                                    <rect x="75" y="50" width="5" height="5"/>
-                                    <rect x="85" y="50" width="5" height="5"/>
-                                    
-                                    <rect x="30" y="60" width="15" height="5"/>
-                                    <rect x="55" y="60" width="10" height="5"/>
-                                    
-                                    <rect x="10" y="75" width="15" height="15"/>
-                                    <rect x="30" y="75" width="5" height="5"/>
-                                    <rect x="45" y="75" width="10" height="5"/>
-                                    <rect x="75" y="75" width="15" height="15"/>
-                                    
-                                    <rect x="10" y="85" width="5" height="5"/>
-                                    <rect x="20" y="85" width="5" height="5"/>
-                                    <rect x="40" y="85" width="5" height="5"/>
-                                    <rect x="60" y="85" width="5" height="5"/>
-                                    <rect x="75" y="85" width="5" height="5"/>
-                                    <rect x="85" y="85" width="5" height="5"/>
-                                </g>
-                            </svg>
+                        <div class="qr-placeholder" aria-label="Código QR de datos fiscales">
+                            <img src="images/qr-data-fiscal.png" alt="">
                         </div>
-                        <div class="logo">DATA<br>FISCAL</div>
                     </div>
-                    <div class="fiscal-dimensions">159 x 218</div>
-                </div>
-
+                </aside>
             </div>
 
-            <!-- COPYRIGHT -->
+            <!-- Copyright -->
             <div class="footer-copyright">
                 <p>© TODOS LOS DERECHOS RESERVADOS 2002 - 2025 GO ASSIST S.A, CUIT 30-71196418-1, Panamá 1248 Piso 1 Dpto 1 - Martínez - CP. 1640</p>
             </div>
