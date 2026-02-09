@@ -1,0 +1,533 @@
+/* ===========================================
+   PASO 3: PÁGINA DE PAGO - ESTILOS ADICIONALES
+   =========================================== */
+
+/* ===========================================
+   FORMULARIOS Y INPUTS (MOBILE FIRST)
+   =========================================== */
+
+/* Sección de formulario */
+.form-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-section-header {
+    color: #0066FF;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Collapsible Form Sections */
+.form-collapsible {
+    background: var(--white);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.form-collapsible summary {
+    list-style: none;
+}
+
+.form-collapsible summary::-webkit-details-marker {
+    display: none;
+}
+
+.form-collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #E8F0FF 0%, #F0F4FF 100%);
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.form-collapsible-header:hover {
+    background: linear-gradient(135deg, #D8E6FF 0%, #E0E8FF 100%);
+}
+
+.form-collapsible-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0066FF;
+}
+
+.form-collapsible-title svg,
+.form-collapsible-title img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.form-collapsible-chevron {
+    width: 20px;
+    height: 20px;
+    stroke: #0066FF;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.form-collapsible[open] .form-collapsible-chevron {
+    transform: rotate(180deg);
+}
+
+.form-collapsible-content {
+    padding: 20px;
+}
+
+/* Passenger Badge */
+.passenger-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F0F4FF;
+    color: #0066FF;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.passenger-badge svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.form-label-optional {
+    color: #999999;
+    font-weight: 400;
+}
+
+/* Inputs */
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.9375rem;
+    color: #333333;
+    background: var(--white);
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #0066FF;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.form-input::placeholder {
+    color: #9CA3AF;
+}
+
+.form-input.error {
+    border-color: #EF4444;
+}
+
+.form-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Select Dropdown */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* Error Message */
+.form-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: #EF4444;
+    font-weight: 500;
+}
+
+.form-error svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Helper Text */
+.form-helper {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+/* ===========================================
+   SUMMARY CARD (MOBILE FIRST)
+   =========================================== */
+
+.summary-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.summary-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.summary-badge {
+    background: linear-gradient(135deg, #FF0099 0%, #FF5EEF 100%);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.875rem;
+}
+
+.summary-item svg,
+.summary-item img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.summary-item-content {
+    flex: 1;
+}
+
+.summary-item-label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 2px;
+}
+
+.summary-item-value {
+    color: #666666;
+}
+
+/* Summary Divider */
+.summary-divider {
+    height: 1px;
+    background: #E5E7EB;
+    margin: 15px 0;
+}
+
+/* Summary Pricing */
+.summary-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.summary-price-label {
+    color: #666666;
+}
+
+.summary-price-value {
+    font-weight: 600;
+    color: #333333;
+}
+
+.summary-price-discount {
+    color: #10B981;
+}
+
+/* Summary Total */
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 2px solid #E5E7EB;
+    margin-top: 10px;
+}
+
+.summary-total-label {
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0066FF;
+}
+
+.summary-total-value {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0066FF;
+}
+
+/* Payment Button */
+.btn-payment {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.btn-payment:hover {
+    background: linear-gradient(135deg, #0052CC 0%, #003D99 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
+}
+
+.btn-payment:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
+}
+
+/* Success Badge (green circle with E) */
+.success-badge {
+    width: 48px;
+    height: 48px;
+    background: #10B981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* ===========================================
+   LAYOUT: TWO COLUMNS (MOBILE FIRST)
+   =========================================== */
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.checkout-main {
+    order: 2;
+}
+
+.checkout-sidebar {
+    order: 1;
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-input,
+    .form-select {
+        font-size: 1rem;
+    }
+
+    .checkout-container {
+        padding: 30px;
+    }
+
+    .summary-card {
+        padding: 25px;
+    }
+
+    .btn-payment {
+        font-size: 1.25rem;
+        padding: 18px;
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1fr 380px;
+        gap: 30px;
+    }
+
+    .checkout-main {
+        order: 1;
+    }
+
+    .checkout-sidebar {
+        order: 2;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+
+    .form-collapsible-header {
+        padding: 20px 25px;
+    }
+
+    .form-collapsible-content {
+        padding: 25px;
+    }
+
+    .form-grid {
+        gap: 20px;
+    }
+
+    .form-row {
+        gap: 20px;
+    }
+
+    .summary-card {
+        padding: 30px;
+    }
+
+    .summary-total-label {
+        font-size: 1.25rem;
+    }
+
+    .summary-total-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===========================================
+   ADDITIONAL UTILITIES
+   =========================================== */
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Loading state */
+.btn-payment.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-payment.loading::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Disabled state */
+.form-input:disabled,
+.form-select:disabled {
+    background: #F3F4F6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
