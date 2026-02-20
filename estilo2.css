@@ -1956,7 +1956,33 @@
 /* ===========================================
    MOBILE: Convertir sidebar a footer fijo
    =========================================== */
+/* ===========================================
+   FIX COMPLETO: ELIMINAR ESPACIO BLANCO EN MOBILE
+   REEMPLAZA LA SECCIÓN "MOBILE: Convertir sidebar a footer fijo"
+   =========================================== */
+/* ELIMINAR el ::marker del summary */
+.summary-card summary::marker,
+.summary-collapsible-trigger::marker {
+    display: none !important;
+    content: none !important;
+}
+
+/* Firefox específico */
+.summary-card summary::-moz-list-bullet,
+.summary-collapsible-trigger::-moz-list-bullet {
+    list-style-type: none !important;
+}
+
+/* Asegurar que no tenga list-style */
+.summary-card summary,
+.summary-collapsible-trigger {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
 @media (max-width: 991px) {
+
+
 
     /* Sidebar fijo en la parte inferior */
     .checkout-sidebar {
@@ -1968,15 +1994,19 @@
         z-index: 1000;
         max-height: 85vh;
         overflow: visible;
+        margin: 0;
+        padding: 0;
     }
 
-    /* Summary card como details */
+    /* Summary card como details - SIN ESPACIOS */
     .summary-card {
         border-radius: 20px 20px 0 0;
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
         position: relative;
         overflow: visible;
         max-height: 85vh;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .summary-card[open] {
@@ -1987,13 +2017,15 @@
     /* Ocultar marker nativo de details */
     .summary-card summary {
         list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .summary-card summary::-webkit-details-marker {
         display: none;
     }
 
-    /* Trigger clickeable */
+    /* Trigger clickeable - SIN PADDING TOP */
     .summary-collapsible-trigger {
         cursor: pointer;
         position: sticky;
@@ -2001,13 +2033,17 @@
         background: white;
         z-index: 10;
         border-radius: 20px 20px 0 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     /* Header con indicador de colapso */
     .summary-collapsible-trigger .summary-header {
         position: relative;
-        padding-right: 50px;
-        /* Espacio para chevron */
+        padding: 15px 50px 15px 20px;
+        /* padding-right aumentado para chevron */
+        margin: 0;
+        border-radius: 20px 20px 0 0;
     }
 
     /* Agregar chevron al header */
@@ -2034,10 +2070,9 @@
         flex-direction: row;
         align-items: center;
         padding: 16px 20px;
-        margin-bottom: 9px;
+        margin: 0 0 9px 0;
         background: white;
         border-top: 1px solid #E5E7EB;
-        align-items: center;
         gap: 15px;
     }
 
@@ -2051,7 +2086,7 @@
 
     .summary-total-preview-value {
         font-family: var(--font-primary);
-        font-size: 1.rem;
+        font-size: 1rem;
         font-weight: 700;
         color: var(--primary);
     }
@@ -2064,13 +2099,11 @@
     /* Agregar padding al main */
     .checkout-main {
         padding-bottom: 160px;
-        /* Espacio para footer colapsado */
     }
 
     /* Ajustar header cuando está colapsado */
     .summary-card:not([open]) .summary-header {
         padding-bottom: 15px;
-        
     }
 
     /* Scroll suave */
@@ -2086,6 +2119,25 @@
     .summary-card::-webkit-scrollbar-thumb {
         background: #888;
         border-radius: 4px;
+    }
+
+    /* Reducir padding en elementos internos para mobile */
+    .summary-card[open] .summary-discount-text {
+        padding: 12px 20px 8px;
+    }
+
+    .summary-card[open] .summary-content {
+        padding: 8px 20px 12px;
+    }
+
+    /* Botón de código de descuento más compacto */
+    .discount-code-section {
+        padding: 0 20px 12px;
+    }
+
+    /* Total wrapper ajustado */
+    .summary-total-wrapper {
+        padding: 0 20px 20px;
     }
 }
 

@@ -143,7 +143,7 @@ body {
     color: var(--dark);
     border-radius: 20px;
     padding: 15px;
-    margin-bottom: 3rem;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -300,15 +300,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.logo-img {
-    height: 50px;
-}
-
-.plan-name {
-    font-weight: 800;
-    font-size: 1.2rem;
 }
 
 .pricing {
@@ -525,6 +516,10 @@ body {
     text-align: center;
     text-decoration-style: solid;
     text-decoration-thickness: 0%;
+}
+
+.plan-link:hover {
+    text-decoration: none;
 }
 
 .featured .plan-link,
@@ -817,7 +812,7 @@ body {
     background-color: var(--white);
 }
 
-.container-garantia .card {
+.card-garantia {
     background-color: #EEEEEE;
     border-radius: 10px;
     padding: 20px 30px;
@@ -828,6 +823,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-family: var(--font-primary);
 }
 
 .container-cards {
@@ -842,14 +838,10 @@ body {
 }
 
 .icon-wrapper {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #b8b3f0 0%, #a89ef5 100%);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .icon {
@@ -875,16 +867,17 @@ body {
 }
 
 .link {
-    color: #2b5ce6;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
+    color: var(--primary);
+    font-size: 1rem;
+    text-decoration: underline;
+    font-weight: 400;
+    text-align: center;
+    text-decoration-style: solid;
     transition: border-bottom-color 0.3s ease;
 }
 
 .link:hover {
-    border-bottom-color: #2b5ce6;
+    text-decoration: none;
 }
 
 /* ===========================================
@@ -1199,7 +1192,7 @@ body {
 
     /* Quote Summary */
     .quote-summary {
-        margin-bottom: 60px;
+        margin-bottom: 35px;
         gap: 8px;
     }
 
@@ -1454,7 +1447,7 @@ body {
 .modal-container {
     position: relative;
     background: white;
-    border-radius: 16px;
+    border-radius: 10px;
     width: 100%;
     max-width: 500px;
     max-height: 90vh;
@@ -1508,8 +1501,7 @@ body {
 }
 
 .modal-close:hover {
-    background: #f3f4f6;
-    color: #111827;
+    color: var(--primary);
 }
 
 /* Modal Content */
@@ -1656,8 +1648,6 @@ body {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .modal-plan-content {
@@ -1737,7 +1727,7 @@ body {
     font-family: var(--font-primary);
     font-size: 0.875rem;
     font-weight: 700;
-    color: #0284c7;
+    color: #3962CC;
     text-align: right;
     flex-shrink: 0;
 }
@@ -1938,15 +1928,15 @@ body {
    =========================================== */
 
 .sponsor-banner {
-    background: linear-gradient(90deg, #0066FF 0%, #6B4FED 50%, #FF0099 100%);
-    padding: 15px 0;
+    background: linear-gradient(90deg, #006AF4 0%, #FF00FF 100%);
+    padding: 5px 0;
     width: 100%;
 }
 
 .sponsor-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 5px 25px;
 }
 
 /* MOBILE: Layout vertical centrado */
@@ -1967,27 +1957,18 @@ body {
 }
 
 .shield-logo {
-    height: 45px;
+    height: 61px;
     width: auto;
 }
 
-.go-logo {
-    height: 38px;
-    width: auto;
-}
 
-/* Separador vertical entre logos */
-.sponsor-logo::after {
-    content: "";
-    width: 2px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.4);
-    display: block;
-}
+
+
 
 /* Text Section - Mobile */
 .sponsor-text {
     text-align: left;
+    font-family: var(--font-primary);
 }
 
 .sponsor-name {
@@ -2023,9 +2004,7 @@ body {
         height: 55px;
     }
 
-    .go-logo {
-        height: 45px;
-    }
+
 
     .sponsor-logo::after {
         height: 50px;
@@ -2045,7 +2024,7 @@ body {
    =========================================== */
 @media (min-width: 992px) {
     .sponsor-banner {
-        padding: 10px 0;
+        padding: 0;
     }
 
     .sponsor-content {
@@ -2058,10 +2037,6 @@ body {
 
     .shield-logo {
         height: 60px;
-    }
-
-    .go-logo {
-        height: 50px;
     }
 
     .sponsor-logo::after {
@@ -2087,12 +2062,10 @@ body {
     }
 
     .shield-logo {
-        height: 65px;
+        height: 80px;
     }
 
-    .go-logo {
-        height: 52px;
-    }
+
 
     .sponsor-logo::after {
         height: 60px;
@@ -2107,13 +2080,124 @@ body {
     }
 }
 
-/* ===========================================
-   VARIANTE: Sin separador vertical
-   =========================================== */
 
-/* Si NO quieres la línea vertical, comenta o elimina esto: */
-/*
-.sponsor-logo::after {
-    display: none;
+/****  BANNER SORTEO ****/
+
+
+/* --- CONFIGURACIÓN BASE (MOBILE) --- */
+.promo-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 21px 15px;
+    margin: 0 auto 60px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #00adef 0%, #0072bc 50%, #8e44ad 100%);
+    color: white;
+    overflow: hidden;
+    /* Corta las imágenes que sobresalgan */
+    max-width: 400px;
 }
-*/
+
+/* Manejo de visibilidad de las imágenes */
+.deco-desktop-left,
+.deco-desktop-right {
+    display: none;
+    /* Ocultas en móvil */
+}
+
+.deco-mobile-only {
+    display: block;
+    position: absolute;
+    right: -15px;
+    bottom: -27px;
+    width: 128px;
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+    margin-right: auto;
+    text-align: left;
+    font-family: var(--font-primary);
+}
+
+.banner-text {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.banner-subtext {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.banner-terms {
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* --- AJUSTES PARA DESKTOP --- */
+@media (min-width: 992px) {
+    .promo-banner {
+        max-width: 100%;
+        height: 160px;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    /* Invertimos la visibilidad */
+    .deco-mobile-only {
+        display: none;
+        /* Oculta la de móvil en desktop */
+    }
+
+    .deco-desktop-left {
+        display: block;
+        /* Muestra las de escritorio */
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+    }
+
+    .deco-desktop-right {
+        display: block;
+        /* Muestra las de escritorio */
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+    }
+
+    .deco-desktop-left {
+        left: 20px;
+        width: 150px;
+    }
+
+    .deco-desktop-right {
+        right: 15px;
+        width: 200px;
+    }
+
+    .banner-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .banner-text {
+        font-size: 1.6rem;
+    }
+}
+
+.deco-item img {
+    width: 85%;
+    height: auto;
+}
