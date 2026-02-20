@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap');
+
+/* ===========================================
+   CSS VARIABLES
+   =========================================== */
+:root {
+    --primary: #006AF4;
+    --sky-blue: #5EE1FF;
+    --bright-blue: #6FADE6;
+    --blue-dark: #0258D3;
+    --dark: #001a57;
+    --accent: #05FF50;
+    --pink: #F31DC4;
+    --pink-2: #FF5EEF;
+    --white: #ffffff;
+    --bg-dark: #000066;
+    --violet: #551A94;
+    --dark-gray: #333333;
+    --font-primary: "Bricolage Grotesque", sans-serif;
+    --font-secundary: "Nunito Sans", sans-serif;
+
+    --section-padding-y: 45px;
+    --section-padding-x: 20px;
+
+}
+
 /* ===========================================
    PASO 3: PÁGINA DE PAGO - ESTILOS ADICIONALES
    =========================================== */
@@ -67,9 +94,7 @@
 
 .form-collapsible-title svg,
 .form-collapsible-title img {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
+    width: 15px;
 }
 
 .form-collapsible-chevron {
@@ -131,7 +156,7 @@
     font-family: var(--font-secundary);
     font-size: 0.875rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--dark-gray);
 }
 
 .form-label-optional {
@@ -148,7 +173,7 @@
     border-radius: 8px;
     font-family: var(--font-secundary);
     font-size: 0.9375rem;
-    color: #333333;
+    color: var(--dark-gray);
     background: var(--white);
     transition: all 0.2s ease;
 }
@@ -156,8 +181,8 @@
 .form-input:focus,
 .form-select:focus {
     outline: none;
-    border-color: #0066FF;
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+    border: 1px solid #60A3F9;
+    box-shadow: 0 0 0 1px #60A3F9;
 }
 
 .form-input::placeholder {
@@ -212,110 +237,166 @@
 .summary-card {
     background: var(--white);
     border-radius: 20px;
-    padding: 20px;
     position: sticky;
     top: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* ===========================================
+   HEADER: Logo + Imagen de pareja
+   =========================================== */
 .summary-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background: #D4E6FD;
+    /* Fondo celeste */
+    padding: 15px 20px;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .summary-logo {
-    max-width: 100px;
+    max-width: 110px;
     height: auto;
+    flex-shrink: 0;
 }
 
-.summary-badge {
-    background: linear-gradient(135deg, #FF0099 0%, #FF5EEF 100%);
-    color: var(--white);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
+.summary-couple {
+    max-width: 150px;
+    height: auto;
+    flex-shrink: 0;
+    display: none;
+}
+
+/* ===========================================
+   TEXTO DE DESCUENTO
+   =========================================== */
+.summary-discount-text {
+    padding: 15px 20px 10px;
+    text-align: center;
+}
+
+.summary-discount-text p {
+    font-family: var(--font-primary);
+    font-size: 0.9375rem;
+    color: #666666;
+    margin: 0;
+    color: var(--pink);
+}
+
+.summary-discount-text .discount {
+    color: #FF0099;
     font-weight: 800;
-    text-transform: uppercase;
-    white-space: nowrap;
+    font-size: 1.125rem;
 }
 
+/* ===========================================
+   ITEMS DE INFORMACIÓN
+   =========================================== */
 .summary-content {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    padding: 10px 20px 15px;
 }
 
+/* Cada item con borde */
 .summary-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    font-size: 0.875rem;
+    border: 1px solid #D0E5FF;
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: var(--white);
 }
 
-.summary-item svg,
-.summary-item img {
-    width: 20px;
-    height: 20px;
+/* Icono del item */
+.summary-icon {
     flex-shrink: 0;
+    stroke: #0066FF;
     margin-top: 2px;
 }
 
-.summary-item-content {
+/* Grid de 2 columnas para items con doble información */
+.summary-item-grid {
     flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
+/* Labels y valores */
 .summary-item-label {
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--dark-gray);
     margin-bottom: 2px;
 }
 
 .summary-item-value {
-    color: #666666;
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--dark-gray);
 }
 
-/* Summary Divider */
+/* ===========================================
+   DIVIDER
+   =========================================== */
 .summary-divider {
     height: 1px;
     background: #E5E7EB;
-    margin: 15px 0;
+    margin: 5px 20px 15px;
 }
 
-/* Summary Pricing */
+/* ===========================================
+   PRICING
+   =========================================== */
 .summary-pricing {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    padding: 0 20px;
 }
 
 .summary-price-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: var(--font-secundary);
     font-size: 0.875rem;
 }
 
 .summary-price-label {
     color: #666666;
+    font-weight: 400;
 }
 
 .summary-price-value {
     font-weight: 600;
-    color: #333333;
+    color: var(--dark-gray);
 }
 
 .summary-price-discount {
     color: #10B981;
 }
 
-/* Summary Total */
+/* ===========================================
+   TOTAL
+   =========================================== */
+.summary-total-wrapper {
+    padding: 0 20px;
+}
+
 .summary-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 15px;
-    border-top: 2px solid #E5E7EB;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E5E7EB;
     margin-top: 10px;
 }
 
@@ -323,58 +404,177 @@
     font-family: var(--font-primary);
     font-size: 1.125rem;
     font-weight: 700;
-    color: #0066FF;
+    color: var(--dark-gray);
 }
 
 .summary-total-value {
     font-family: var(--font-primary);
     font-size: 1.25rem;
     font-weight: 700;
-    color: #0066FF;
+    color: var(--dark-gray);
 }
 
-/* Payment Button */
-.btn-payment {
-    width: 100%;
-    padding: 16px;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-    color: var(--white);
-    border: none;
-    border-radius: 12px;
-    font-family: var(--font-primary);
-    font-size: 1.125rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .summary-header {
+        padding: 18px 25px;
+    }
+
+    .summary-logo {
+        max-width: 130px;
+    }
+
+    .summary-couple {
+        max-width: 170px;
+    }
+
+    .summary-discount-text {
+        padding: 18px 25px 12px;
+    }
+
+    .summary-discount-text p {
+        font-size: 1rem;
+    }
+
+    .summary-discount-text .discount {
+        font-size: 1.25rem;
+    }
+
+    .summary-content {
+        padding: 10px 25px 18px;
+        gap: 14px;
+    }
+
+    .summary-item {
+        padding: 14px 16px;
+    }
+
+    .summary-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .summary-item-grid {
+        gap: 18px;
+    }
+
+    .summary-item-label,
+    .summary-item-value {
+        font-size: 0.9375rem;
+    }
+
+    .summary-divider {
+        margin: 5px 25px 18px;
+    }
+
+    .summary-pricing {
+        padding: 0 25px;
+        gap: 12px;
+    }
+
+    .summary-price-row {
+        font-size: 0.9375rem;
+    }
+
+    .summary-total-wrapper {
+        padding: 0 25px;
+    }
+
+    .summary-total {
+        padding-top: 10px;
+    }
+
+    .summary-total-label {
+        font-size: 1.25rem;
+    }
+
+    .summary-total-value {
+        font-size: 1.375rem;
+    }
 }
 
-.btn-payment:hover {
-    background: linear-gradient(135deg, #0052CC 0%, #003D99 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
-}
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .summary-header {
+        padding: 6px 28px 0;
+    }
 
-.btn-payment:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
-}
+    .summary-logo {
+        max-width: 135px;
+    }
 
-/* Success Badge (green circle with E) */
-.success-badge {
-    width: 48px;
-    height: 48px;
-    background: #10B981;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    .summary-couple {
+        max-width: 95px;
+        display: inherit;
+    }
+
+    .summary-discount-text {
+        padding: 6px 22px;
+    }
+
+    .summary-discount-text p {
+        font-size: 0.875rem;
+    }
+
+    .summary-discount-text .discount {
+        font-size: 1.063rem;
+    }
+
+    .summary-content {
+        padding: 0 28px 10px;
+        gap: 10px;
+    }
+
+    .summary-item {
+        padding: 8px 10px;
+    }
+
+    .summary-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .summary-item-grid {
+        gap: 5px;
+    }
+
+    .summary-item-label,
+    .summary-item-value {
+        font-size: 0.938rem;
+    }
+
+    .summary-divider {
+        margin: 5px 28px 20px;
+    }
+
+    .summary-pricing {
+        padding: 0 28px;
+        gap: 5px;
+    }
+
+    .summary-price-row {
+        font-size: 0.875rem;
+    }
+
+    .summary-total-wrapper {
+        padding: 0 28px 15px;
+    }
+
+    .summary-total {
+        padding-bottom: 5px;
+    }
+
+    .summary-total-label {
+        font-size: 1.375rem;
+    }
+
+    .summary-total-value {
+        font-size: 1.5rem;
+    }
 }
 
 /* ===========================================
@@ -422,14 +622,6 @@
         padding: 30px;
     }
 
-    .summary-card {
-        padding: 25px;
-    }
-
-    .btn-payment {
-        font-size: 1.25rem;
-        padding: 18px;
-    }
 }
 
 /* ===========================================
@@ -469,16 +661,9 @@
         gap: 20px;
     }
 
-    .summary-card {
-        padding: 30px;
-    }
-
-    .summary-total-label {
-        font-size: 1.25rem;
-    }
-
+    .summary-total-label,
     .summary-total-value {
-        font-size: 1.5rem;
+        font-size: 1.063rem;
     }
 }
 
@@ -499,25 +684,6 @@
     border-width: 0;
 }
 
-/* Loading state */
-.btn-payment.loading {
-    opacity: 0.7;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.btn-payment.loading::after {
-    content: "";
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-}
-
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -530,4 +696,1488 @@
     background: #F3F4F6;
     cursor: not-allowed;
     opacity: 0.6;
+}
+
+
+/* ===========================================
+   SECCIÓN DE PASAJEROS - DISEÑO EXACTO
+   =========================================== */
+
+.passengers-section {
+    margin-bottom: 20px;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 20px;
+    padding: 0 5px;
+}
+
+/* Collapsible de cada pasajero */
+.passenger-collapsible {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid #AAD2F8;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Header de cada pasajero con fondo celeste */
+.passenger-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: #D5E8FF;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.passenger-header:hover {
+    background: #C4DCFC;
+    /* Un poco más oscuro al hover */
+}
+
+.passenger-collapsible[open] .passenger-header {
+    background: #D4E6FD;
+    border-bottom: 1px solid #B8D4F8;
+}
+
+/* Título del pasajero */
+.passenger-header .form-collapsible-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333333;
+    /* Gris oscuro, no azul */
+}
+
+.passenger-header .form-collapsible-title svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    stroke: #0066FF;
+}
+
+/* Chevron del pasajero */
+.passenger-header .form-collapsible-chevron {
+    width: 24px;
+    height: 24px;
+    stroke: var(--bright-blue);
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.passenger-collapsible[open] .passenger-header .form-collapsible-chevron {
+    transform: rotate(180deg);
+}
+
+/* Contenido del formulario de pasajero */
+.passenger-collapsible .form-collapsible-content {
+    padding: 24px 20px;
+    background: var(--white);
+}
+
+/* Estilos específicos para los labels de pasajeros */
+.passenger-collapsible .form-label {
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #666666;
+    /* Gris medio */
+    margin-bottom: 6px;
+}
+
+/* Inputs de pasajeros */
+.passenger-collapsible .form-input,
+.passenger-collapsible .form-select {
+    border: 1px solid #D0E5FF;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.9375rem;
+    color: #333333;
+}
+
+.passenger-collapsible .form-input::placeholder {
+    color: #BBBBBB;
+    /* Placeholder más claro */
+}
+
+/* Grid de formulario de pasajeros */
+.passenger-collapsible .form-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.passenger-collapsible .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 25px;
+    }
+
+    .passenger-header {
+        padding: 18px 24px;
+    }
+
+    .passenger-header .form-collapsible-title {
+        font-size: 1.0625rem;
+    }
+
+    .passenger-collapsible .form-collapsible-content {
+        padding: 28px 24px;
+    }
+
+    .passenger-collapsible .form-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .passenger-collapsible .form-grid {
+        gap: 20px;
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .passenger-header {
+        padding: 20px 28px;
+    }
+
+    .passenger-header .form-collapsible-title {
+        font-size: 1.125rem;
+    }
+
+    .passenger-header .form-collapsible-chevron {
+        width: 26px;
+        height: 26px;
+    }
+
+    .passenger-collapsible .form-collapsible-content {
+        padding: 30px 28px;
+    }
+
+    .passenger-collapsible .form-row {
+        gap: 24px;
+    }
+
+    .passenger-collapsible .form-grid {
+        gap: 22px;
+    }
+
+    .passenger-collapsible .form-label {
+        font-size: 0.9375rem;
+    }
+
+    .passenger-collapsible .form-input,
+    .passenger-collapsible .form-select {
+        font-size: 1rem;
+        padding: 13px 16px;
+    }
+}
+
+
+/* ===========================================
+   MÉTODOS DE PAGO 
+   =========================================== */
+
+/* Ocultar los radio buttons reales */
+.payment-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Opciones de pago (Labels) */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* Label container del radio */
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 16px 18px;
+    border: 1px solid #AAD2F8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #ffffff;
+}
+
+.payment-option:hover {
+    border-color: var(--bright-blue);
+    background: #F8FAFF;
+}
+
+/* Radio button falso (visual) */
+.payment-option-radio {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #D1D5DB;
+    border-radius: 50%;
+    margin-right: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.payment-option:hover .payment-option-radio {
+    border-color: var(--primary);
+}
+
+/* Radio button checked - círculo relleno */
+#payment-credit:checked~.payment-options label[for="payment-credit"] .payment-option-radio,
+#payment-debit:checked~.payment-options label[for="payment-debit"] .payment-option-radio,
+#payment-cash:checked~.payment-options label[for="payment-cash"] .payment-option-radio {
+    border-color: var(--primary);
+    border-width: 7px;
+    background: #ffffff;
+}
+
+/* Opción seleccionada - border azul */
+#payment-credit:checked~.payment-options label[for="payment-credit"],
+#payment-debit:checked~.payment-options label[for="payment-debit"],
+#payment-cash:checked~.payment-options label[for="payment-cash"] {
+    border-color: var(--primary);
+    background: #F0F6FF;
+}
+
+/* Contenido de la opción */
+.payment-option-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.payment-option-text {
+    font-family: var(--font-secundary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+/* Badge de promoción - gradiente magenta */
+.payment-badge {
+    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-2) 100%);
+    color: var(--white);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: var(--font-secundary);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* ===========================================
+   MOSTRAR/OCULTAR GRIDS CON CSS PURO
+   =========================================== */
+
+/* Por defecto, ocultar TODOS los grids */
+.payment-methods-grid {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+#credit-card-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* o 4 en desktop */
+    gap: 12px;
+    align-items: start;
+    /* <--- CRUCIAL para que no se estiren las de al lado */
+}
+
+.payment-method-container {
+    width: 100%;
+    display: flex;
+    /* Para que el input y label se organicen bien internamente */
+    flex-direction: column;
+}
+
+/* Mostrar grid de CRÉDITO cuando payment-credit está checked */
+#payment-credit:checked~#credit-card-methods {
+    display: grid;
+    animation: fadeInSlide 0.3s ease-in-out;
+}
+
+/* Mostrar grid de DÉBITO cuando payment-debit está checked */
+#payment-debit:checked~#debit-card-methods {
+    display: grid;
+    animation: fadeInSlide 0.3s ease-in-out;
+}
+
+/* Mostrar grid de EFECTIVO cuando payment-cash está checked */
+#payment-cash:checked~#cash-methods {
+    display: grid;
+    animation: fadeInSlide 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   GRID DE MÉTODOS DE PAGO
+   =========================================== */
+
+/* Card de método de pago */
+.payment-method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 12px;
+    border: 1px solid #AAD2F8;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-height: 130px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.payment-method-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Card destacada (con borde azul) */
+.payment-method-card.highlighted {
+    border-color: var(--primary);
+    border-width: 2px;
+    background: #F0F6FF;
+}
+
+/* Logo del método de pago */
+.payment-logo {
+    max-width: 70px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Nombre del método */
+.payment-method-name {
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 4px;
+}
+
+/* Info adicional (cuotas, moneda) */
+.payment-method-info {
+    font-family: var(--font-secundary);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+/* ===========================================
+   AJUSTES ESPECÍFICOS POR GRID
+   =========================================== */
+
+/* Grid de débito - 2 columnas máximo */
+#debit-card-methods {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+}
+
+/* Grid de efectivo - 2 columnas en mobile */
+#cash-methods {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .payment-options {
+        gap: 14px;
+        margin-bottom: 30px;
+    }
+
+    .payment-option {
+        padding: 18px 22px;
+    }
+
+    .payment-option-radio {
+        width: 26px;
+        height: 26px;
+        margin-right: 16px;
+    }
+
+    .payment-option-text {
+        font-size: 1.0625rem;
+    }
+
+    .payment-badge {
+        font-size: 0.75rem;
+        padding: 5px 16px;
+    }
+
+    /* Grids en 4 columnas */
+    #credit-card-methods,
+    #cash-methods {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    /* Débito sigue en 2 columnas */
+    #debit-card-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .payment-method-card {
+        padding: 20px 14px;
+        min-height: 140px;
+    }
+
+    .payment-logo {
+        max-width: 80px;
+        max-height: 45px;
+        margin-bottom: 12px;
+    }
+
+    .payment-method-name {
+        font-size: 0.9375rem;
+    }
+
+    .payment-method-info {
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .payment-options {
+        gap: 16px;
+        margin-bottom: 35px;
+    }
+
+    .payment-option {
+        padding: 20px 24px;
+    }
+
+    .payment-option-radio {
+        width: 28px;
+        height: 28px;
+        margin-right: 18px;
+    }
+
+    .payment-option-text {
+        font-size: 1.125rem;
+    }
+
+    .payment-badge {
+        font-size: 0.8125rem;
+        padding: 6px 18px;
+    }
+
+    #credit-card-methods,
+    #cash-methods {
+        gap: 16px;
+    }
+
+    #debit-card-methods {
+        gap: 16px;
+    }
+
+    .payment-method-card {
+        padding: 22px 16px;
+        min-height: 150px;
+    }
+
+    .payment-logo {
+        max-width: 142px;
+        max-height: 58px;
+        margin-bottom: 14px;
+    }
+
+    .payment-method-name {
+        font-size: 1rem;
+    }
+
+    .payment-method-info {
+        font-size: 0.875rem;
+    }
+}
+
+/* ===========================================
+   ESTADOS ADICIONALES (OPCIONAL)
+   =========================================== */
+
+/* Active state */
+.payment-method-card:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Estado disabled para métodos no disponibles */
+.payment-method-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Ocultar los radios específicos de las tarjetas */
+.method-selector-radio {
+    display: none;
+}
+
+/* El detalle está oculto por defecto */
+.payment-method-details {
+    display: none;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #AAD2F8;
+    width: 100%;
+}
+
+/* LÓGICA DE SELECCIÓN: Cuando el radio está checked, modificamos el label hermano */
+.method-selector-radio:checked+.payment-method-card {
+    border-color: var(--primary);
+    border-width: 2px;
+    background: #F0F6FF;
+    height: auto;
+    align-self: start;
+}
+
+/* Mostramos el detalle solo cuando está seleccionado */
+.method-selector-radio:checked+.payment-method-card .payment-method-details {
+    display: block;
+    animation: fadeInSlide 0.3s ease-out;
+}
+
+/* Estilos de texto para el detalle */
+.installment-breakdown {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 2px;
+}
+
+.cft-info {
+    font-size: 0.7rem;
+    color: #6B7280;
+    font-weight: 400;
+}
+
+
+/* Forzamos que si el radio NO está checked, el grid NO se vea */
+#payment-credit:not(:checked)~#credit-card-methods,
+#payment-debit:not(:checked)~#debit-card-methods,
+#payment-cash:not(:checked)~#cash-methods {
+    display: none;
+}
+
+
+/* ===========================================
+   TÉRMINOS Y CONDICIONES - AGREGAR A ESTILO2.CSS
+   =========================================== */
+
+/* Grupo de checkbox */
+.terms-checkbox-group {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #F8FAFF;
+    border-radius: 12px;
+    border: 1px solid #D0E5FF;
+}
+
+/* Label del checkbox */
+.terms-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Ocultar checkbox nativo */
+.terms-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Checkbox personalizado */
+.terms-checkbox-custom {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid #D1D5DB;
+    border-radius: 6px;
+    background: var(--white);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-top: 2px;
+}
+
+.terms-checkbox-custom:hover {
+    border-color: var(--primary);
+}
+
+/* Checkbox checked */
+.terms-checkbox-input:checked+.terms-checkbox-custom {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Checkmark */
+.terms-checkbox-input:checked+.terms-checkbox-custom::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Contenedor de texto */
+.terms-text {
+    flex: 1;
+}
+
+/* Texto principal */
+.terms-main-text {
+    font-family: var(--font-secundary);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+/* Enlaces en términos */
+.terms-link {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.terms-link:hover {
+    color: var(--blue-dark);
+}
+
+/* Texto de información (con ícono) */
+.terms-info-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    padding: 12px;
+    background: rgba(0, 102, 255, 0.05);
+    border-radius: 8px;
+}
+
+/* Ícono de información */
+.terms-info-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    stroke: var(--primary);
+}
+
+/* ===========================================
+   SECCIÓN DE COMPRA SEGURA
+   =========================================== */
+
+.secure-purchase-section {
+    background: var(--white);
+    padding: 30px 25px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container-secure-purchase {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header con candado */
+.secure-purchase-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+/* Ícono de candado */
+.secure-lock-icon {
+    width: 28px;
+    height: 28px;
+    stroke: #4CAF50;
+    fill: #E8F5E9;
+    stroke-width: 2;
+}
+
+/* Título de seguridad */
+.secure-purchase-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+/* Descripción */
+.secure-purchase-description {
+    font-family: var(--font-secundary);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+/* Botón de compra principal */
+.btn-purchase {
+    width: 100%;
+    max-width: 400px;
+    padding: 18px 40px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+}
+
+.btn-purchase:hover {
+    background: var(--blue-dark);
+    transform: translateY(-3px);
+}
+
+.btn-purchase:active {
+    transform: translateY(-1px);
+}
+
+/* Estado deshabilitado */
+.btn-purchase:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .terms-checkbox-group {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .terms-checkbox-custom {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+    }
+
+    .terms-checkbox-input:checked+.terms-checkbox-custom::after {
+        left: 8px;
+        top: 3px;
+        width: 7px;
+        height: 12px;
+    }
+
+    .terms-main-text {
+        font-size: 1rem;
+    }
+
+    .terms-info-text {
+        font-size: 0.9375rem;
+        padding: 14px;
+    }
+
+    .terms-info-icon {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+
+    .secure-purchase-section {
+        padding: 40px 35px;
+        margin-top: 30px;
+    }
+
+    .secure-lock-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .secure-purchase-title {
+        font-size: 1.75rem;
+    }
+
+    .secure-purchase-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .btn-purchase {
+        font-size: 1.375rem;
+        padding: 20px 50px;
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .terms-checkbox-group {
+        padding: 28px;
+        margin-bottom: 28px;
+    }
+
+    .terms-checkbox-label {
+        gap: 16px;
+    }
+
+    .terms-checkbox-custom {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+
+    .terms-checkbox-input:checked+.terms-checkbox-custom::after {
+        left: 8px;
+        top: 3px;
+        width: 7px;
+        height: 13px;
+    }
+
+    .terms-main-text {
+        font-size: 1.0625rem;
+    }
+
+    .terms-info-text {
+        font-size: 1rem;
+        padding: 16px;
+    }
+
+    .terms-info-icon {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+    }
+
+    .secure-purchase-section {
+        padding: 45px 40px;
+        margin-top: 35px;
+    }
+
+    .secure-lock-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .secure-purchase-title {
+        font-size: 2rem;
+    }
+
+    .secure-purchase-description {
+        font-size: 1.0625rem;
+        margin-bottom: 35px;
+    }
+
+    .btn-purchase {
+        font-size: 1.5rem;
+        padding: 22px 60px;
+    }
+}
+
+/* ===========================================
+   VALIDACIÓN CON JAVASCRIPT (OPCIONAL)
+   =========================================== */
+
+/* Si los checkboxes no están marcados, deshabilitar botón */
+.btn-purchase.terms-not-accepted {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Indicador de error en checkbox */
+.terms-checkbox-custom.error {
+    border-color: #EF4444;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+
+/* ===========================================
+   CÓDIGO DE DESCUENTO EN ASIDE - AGREGAR A ESTILO2.CSS
+   =========================================== */
+
+/* Contenedor principal */
+.discount-code-section {
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+/* Details element */
+.discount-code-details {
+    background: transparent;
+}
+
+.discount-code-details summary {
+    list-style: none;
+}
+
+.discount-code-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Trigger colapsado */
+.discount-code-trigger {
+    font-family: var(--font-secundary);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.discount-code-trigger:hover {
+    color: var(--blue-dark);
+    text-decoration: underline;
+}
+
+/* Contenido expandido */
+.discount-code-content {
+    margin-top: 12px;
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grupo de input + botón */
+.discount-code-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Input del código */
+.discount-code-input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+    background: var(--white);
+    transition: all 0.2s ease;
+}
+
+.discount-code-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.discount-code-input::placeholder {
+    color: #9CA3AF;
+}
+
+/* Estado de error en el input */
+.discount-code-input.error {
+    border-color: #EF4444;
+}
+
+.discount-code-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Botón Aplicar */
+.discount-code-btn {
+    padding: 12px 24px;
+    background: var(--white);
+    color: var(--dark-gray);
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.discount-code-btn:hover {
+    background: #F9FAFB;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.discount-code-btn:active {
+    transform: scale(0.98);
+}
+
+/* Mensaje de error */
+.discount-code-error {
+    margin-top: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #EF4444;
+    animation: shakeError 0.3s ease;
+}
+
+@keyframes shakeError {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+    .discount-code-section {
+        padding: 0 25px;
+        margin-bottom: 18px;
+    }
+
+    .discount-code-trigger {
+        font-size: 1rem;
+    }
+
+    .discount-code-input,
+    .discount-code-btn {
+        font-size: 0.9375rem;
+        padding: 13px 16px;
+    }
+
+    .discount-code-btn {
+        padding: 13px 28px;
+    }
+
+    .discount-code-error {
+        font-size: 0.875rem;
+    }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+    .discount-code-section {
+        padding: 0 28px;
+        margin-bottom: 20px;
+    }
+
+    .discount-code-trigger {
+        font-size: 1.0625rem;
+    }
+
+    .discount-code-content {
+        margin-top: 14px;
+    }
+
+    .discount-code-input-group {
+        gap: 12px;
+    }
+
+    .discount-code-input,
+    .discount-code-btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .discount-code-btn {
+        padding: 10px 31px;
+    }
+
+    .discount-code-error {
+        font-size: 0.9375rem;
+        margin-top: 10px;
+    }
+}
+
+/* ===========================================
+   ESTADO DE ÉXITO (OPCIONAL - PARA CUANDO SISTEMAS LO IMPLEMENTE)
+   =========================================== */
+
+.discount-code-success {
+    margin-top: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.discount-code-success::before {
+    content: "✓";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #10B981;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Input en estado de éxito */
+.discount-code-input.success {
+    border-color: #10B981;
+}
+
+.discount-code-input.success:focus {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+
+/* DETALLE DE COMPRA MOBILE */
+
+/* ===========================================
+   SIDEBAR COMO FOOTER FIJO EN MOBILE (CON DETAILS)
+   AGREGAR AL FINAL DE ESTILO2.CSS
+   =========================================== */
+
+/* ===========================================
+   MOBILE: Convertir sidebar a footer fijo
+   =========================================== */
+@media (max-width: 991px) {
+
+    /* Sidebar fijo en la parte inferior */
+    .checkout-sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        max-height: 85vh;
+        overflow: visible;
+    }
+
+    /* Summary card como details */
+    .summary-card {
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: visible;
+        max-height: 85vh;
+    }
+
+    .summary-card[open] {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Ocultar marker nativo de details */
+    .summary-card summary {
+        list-style: none;
+    }
+
+    .summary-card summary::-webkit-details-marker {
+        display: none;
+    }
+
+    /* Trigger clickeable */
+    .summary-collapsible-trigger {
+        cursor: pointer;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        border-radius: 20px 20px 0 0;
+    }
+
+    /* Header con indicador de colapso */
+    .summary-collapsible-trigger .summary-header {
+        position: relative;
+        padding-right: 50px;
+        /* Espacio para chevron */
+    }
+
+    /* Agregar chevron al header */
+    .summary-collapsible-trigger::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #0066FF;
+        transition: transform 0.3s ease;
+    }
+
+    .summary-card[open] .summary-collapsible-trigger::after {
+        transform: rotate(180deg);
+    }
+
+    /* Preview del total (visible cuando está colapsado) */
+    .summary-total-preview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 20px;
+        margin-bottom: 9px;
+        background: white;
+        border-top: 1px solid #E5E7EB;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .summary-total-preview-label {
+        font-family: var(--font-primary);
+        font-size: 1rem;
+        font-weight: 900;
+        color: #666666;
+        text-transform: uppercase;
+    }
+
+    .summary-total-preview-value {
+        font-family: var(--font-primary);
+        font-size: 1.rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    /* Ocultar preview cuando está expandido */
+    .summary-card[open] .summary-total-preview {
+        display: none;
+    }
+
+    /* Agregar padding al main */
+    .checkout-main {
+        padding-bottom: 160px;
+        /* Espacio para footer colapsado */
+    }
+
+    /* Ajustar header cuando está colapsado */
+    .summary-card:not([open]) .summary-header {
+        padding-bottom: 15px;
+        
+    }
+
+    /* Scroll suave */
+    .summary-card::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .summary-card::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 0 0 0 20px;
+    }
+
+    .summary-card::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+}
+
+/* ===========================================
+   DESKTOP: Sidebar normal
+   =========================================== */
+@media (min-width: 992px) {
+
+    /* Volver a comportamiento normal */
+    .checkout-sidebar {
+        position: relative;
+        max-height: none;
+    }
+
+    /* Summary card no es details en desktop */
+    .summary-card {
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 20px;
+    }
+
+    /* Ocultar el trigger y preview en desktop */
+    .summary-collapsible-trigger {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .summary-collapsible-trigger::after {
+        display: none;
+        /* Ocultar chevron */
+    }
+
+    .summary-total-preview {
+        display: none;
+        /* Ocultar preview */
+    }
+
+    .checkout-main {
+        padding-bottom: 0;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+@media (max-width: 991px) {
+
+    /* Animación al expandir */
+    @keyframes expandFooter {
+        from {
+            max-height: 120px;
+        }
+
+        to {
+            max-height: 85vh;
+        }
+    }
+
+    .summary-card[open] {
+        animation: expandFooter 0.3s ease-out;
+    }
+
+    /* Transición suave del chevron */
+    .summary-collapsible-trigger::after {
+        transition: transform 0.3s ease;
+    }
+}
+
+/* ===========================================
+   AJUSTES ADICIONALES PARA MOBILE
+   =========================================== */
+
+@media (max-width: 991px) {
+
+    /* Reducir padding en elementos internos para mobile */
+    .summary-card[open] .summary-discount-text {
+        padding: 12px 20px 8px;
+    }
+
+    .summary-card[open] .summary-content {
+        padding: 8px 20px 12px;
+    }
+
+    /* Botón de código de descuento más compacto */
+    .discount-code-section {
+        padding: 0 20px 12px;
+    }
+
+    /* Total wrapper ajustado */
+    .summary-total-wrapper {
+        padding: 0 20px 20px;
+    }
 }

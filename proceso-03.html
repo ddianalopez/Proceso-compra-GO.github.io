@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago - GO! Asistencia al Viajero</title>
-    
+
     <!-- CSS Principal -->
     <link rel="stylesheet" href="estilo.css">
     <!-- CSS Checkout -->
     <link rel="stylesheet" href="estilo2.css">
 </head>
+
 <body>
 
     <!-- Checkout Container -->
     <div class="checkout-container">
-        
+
         <!-- Stepper (reutilizado del paso anterior) -->
         <header class="flow-header">
             <h1>Realiza el pago de tu asistencia</h1>
@@ -43,57 +45,247 @@
 
         <!-- Checkout Grid -->
         <div class="checkout-grid">
-            
+
             <!-- Main Content -->
             <main class="checkout-main">
-                
+
                 <!-- Datos de los pasajeros -->
-                <details class="form-collapsible" open>
-                    <summary class="form-collapsible-header">
-                        <div class="form-collapsible-title">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
+
+                <section class="passengers-section">
+                    <h2 class="section-title">Datos de los pasajeros</h2>
+
+                    <!-- PASAJERO 1 - Acordeón individual -->
+                    <details class="form-collapsible passenger-collapsible" open>
+                        <summary class="form-collapsible-header passenger-header">
+                            <div class="form-collapsible-title">
+                                <img src="images/icono-pasajero.png" alt="Icono pasajero">
+                                <span>Pasajero 1 · Edad 25 años</span>
+                            </div>
+                            <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="#0066FF"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                            <span>Datos de los pasajeros</span>
+                        </summary>
+
+                        <div class="form-collapsible-content">
+                            <div class="form-grid">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger1-name">Nombre</label>
+                                        <input type="text" id="passenger1-name" class="form-input"
+                                            placeholder="Pepita Gómez de los Palotes"
+                                            value="Pepita Gómez de los Palotes">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger1-lastname">Apellido</label>
+                                        <input type="text" id="passenger1-lastname" class="form-input"
+                                            placeholder="Apellido del pasajero 1">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger1-doctype">Tipo de documento</label>
+                                        <select id="passenger1-doctype" class="form-select">
+                                            <option value="">Seleccionar</option>
+                                            <option value="dni" selected="">DNI (Documento Nacional de
+                                                Identidad)</option>
+                                            <option value="passport">CUIT (Código de Identificacion
+                                                Único Tributario)</option>
+                                            <option value="other">CUIL (Clave Única de
+                                                Identificación Tributaria)</option>
+                                            <option value="other">CDI (Cédula de Identidad)</option>
+                                            <option value="other">LE (Libreta de Enrolamiento)</option>
+                                            <option value="other">LC (Libreta Cívica)</option>
+                                            <option value="other">PAS (Pasaporte)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger1-docnumber">Número de documento</label>
+                                        <input type="text" id="passenger1-docnumber" class="form-input"
+                                            placeholder="XX.XXX.XXX">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </summary>
+                    </details>
+
+                    <!-- PASAJERO 2 - Acordeón individual separado -->
+                    <details class="form-collapsible passenger-collapsible">
+                        <summary class="form-collapsible-header passenger-header">
+                            <div class="form-collapsible-title">
+                                <img src="images/icono-pasajero.png" alt="Icono pasajero">
+
+                                <span>Pasajero 2 · Edad 26 años</span>
+                            </div>
+                            <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="#0066FF"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="form-collapsible-content">
+                            <div class="form-grid">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger2-name">Nombre</label>
+                                        <input type="text" id="passenger2-name" class="form-input"
+                                            placeholder="Nombre del pasajero 2">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger2-lastname">Apellido</label>
+                                        <input type="text" id="passenger2-lastname" class="form-input"
+                                            placeholder="Apellido del pasajero 2">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger1-doctype">Tipo de documento</label>
+                                        <select id="passenger1-doctype" class="form-select">
+                                            <option value="">Seleccionar</option>
+                                            <option value="dni" selected="">DNI (Documento Nacional de
+                                                Identidad)</option>
+                                            <option value="passport">CUIT (Código de Identificacion
+                                                Único Tributario)</option>
+                                            <option value="other">CUIL (Clave Única de
+                                                Identificación Tributaria)</option>
+                                            <option value="other">CDI (Cédula de Identidad)</option>
+                                            <option value="other">LE (Libreta de Enrolamiento)</option>
+                                            <option value="other">LC (Libreta Cívica)</option>
+                                            <option value="other">PAS (Pasaporte)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="passenger2-docnumber">Número de documento</label>
+                                        <input type="text" id="passenger2-docnumber" class="form-input"
+                                            placeholder="XX.XXX.XXX">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                </section>
+
+                <!-- DATOS DE CONTACTO -->
+
+                <section class="passengers-section">
+                    <h2 class="section-title">Datos de contacto</h2>
+
+                    <!-- Persona responsable de la cobertura -->
+                    <details class="form-collapsible passenger-collapsible" open>
+                        <summary class="form-collapsible-header passenger-header">
+                            <div class="form-collapsible-title">
+                                <img src="images/icono-pasajero.png" alt="Icono pasajero">
+                                <span>Persona responsable de la cobertura</span>
+                            </div>
+                            <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="#0066FF"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="form-collapsible-content">
+                            <p style="font-size: 0.875rem; color: #666; margin-bottom: 20px;">
+                                Datos de la persona a quien le enviaremos el voucher y las comunicaciones.
+                            </p>
+                            <div class="form-grid">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="contact-email">E-mail</label>
+                                        <input type="email" id="contact-email" class="form-input"
+                                            placeholder="pepitagomezz@gamil.com" value="pepitagomezz@gamil.com">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="contact-email-confirm">Confirmar e-mail</label>
+                                        <input type="email" id="contact-email-confirm" class="form-input error"
+                                            placeholder="pepitagomezz@gamil.com" value="pepitagomezz@gamil.com">
+                                        <div class="form-error">
+                                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path
+                                                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                                            </svg>
+                                            Las direcciones de correo no coinciden
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="contact-phone">Teléfono</label>
+                                        <input type="tel" id="contact-phone" class="form-input"
+                                            placeholder="+54 9 11 2222 2222">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Contacto de emergencia  -->
+                    <details class="form-collapsible passenger-collapsible">
+                        <summary class="form-collapsible-header passenger-header">
+                            <div class="form-collapsible-title">
+                                <img src="images/icono-pasajero.png" alt="Icono pasajero">
+
+                                <span>Contacto de emergencia</span>
+                            </div>
+                            <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="#0066FF"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="form-collapsible-content">
+                            <div class="form-grid">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="emergency-name">Nombre y Apellido</label>
+                                        <input type="text" id="emergency-name" class="form-input"
+                                            placeholder="Nombre del contacto">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="emergency-phone">Teléfono</label>
+                                        <input type="tel" id="emergency-phone" class="form-input"
+                                            placeholder="+54 9 11 2222 2222">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                </section>
+
+                <!-- DATOS DE FACTURACIÓN-->
+                <section class="passengers-section">
+                    <h2 class="section-title">Datos de facturación</h2>
 
                     <div class="form-collapsible-content">
-                        
-                        <!-- Pasajero 1 -->
-                        <div class="passenger-badge">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            Pasajero 1 - Edad 25 años
-                        </div>
-
                         <div class="form-grid">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label" for="passenger1-name">Nombre</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger1-name" 
-                                        class="form-input" 
-                                        placeholder="Pepita Gómez de los Pelotes"
-                                        value="Pepita Gómez de los Pelotes"
-                                    >
+                                    <label class="form-label" for="contact-email">Nombre y Apellido</label>
+                                    <input type="email" id="contact-email" class="form-input"
+                                        placeholder="pepitagomezz@gamil.com" value="pepitagomezz@gamil.com">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-label" for="passenger1-lastname">Apellido</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger1-lastname" 
-                                        class="form-input" 
-                                        placeholder="Apellido del pasajero 1"
-                                    >
+                                    <label class="form-label" for="passenger1-doctype">Situación Fiscal</label>
+                                    <select id="passenger1-doctype" class="form-select">
+                                        <option value="">Seleccionar</option>
+                                        <option value="dni" selected="">Consumidor Final</option>
+                                        <option value="passport">Responsable Inscripto</option>
+                                        <option value="other">Monotributista</option>
+                                        <option value="other">Exento</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -102,275 +294,452 @@
                                     <label class="form-label" for="passenger1-doctype">Tipo de documento</label>
                                     <select id="passenger1-doctype" class="form-select">
                                         <option value="">Seleccionar</option>
-                                        <option value="dni" selected>DNI</option>
-                                        <option value="passport">Pasaporte</option>
-                                        <option value="other">Otro</option>
+                                        <option value="dni" selected="">DNI (Documento Nacional de
+                                            Identidad)</option>
+                                        <option value="passport">CUIT (Código de Identificacion
+                                            Único Tributario)</option>
+                                        <option value="other">CUIL (Clave Única de
+                                            Identificación Tributaria)</option>
+                                        <option value="other">CDI (Cédula de Identidad)</option>
+                                        <option value="other">LE (Libreta de Enrolamiento)</option>
+                                        <option value="other">LC (Libreta Cívica)</option>
+                                        <option value="other">PAS (Pasaporte)</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="form-label" for="passenger1-docnumber">Número de documento</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger1-docnumber" 
-                                        class="form-input" 
-                                        placeholder="XX.XXX.XXX"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pasajero 2 -->
-                        <div class="passenger-badge" style="margin-top: 30px;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            Pasajero 2 - Edad 26 años
-                        </div>
-
-                        <div class="form-grid">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="passenger2-name">Nombre</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger2-name" 
-                                        class="form-input" 
-                                        placeholder="Nombre del pasajero 2"
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label" for="passenger2-lastname">Apellido</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger2-lastname" 
-                                        class="form-input" 
-                                        placeholder="Apellido del pasajero 2"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="passenger2-doctype">Tipo de documento</label>
-                                    <select id="passenger2-doctype" class="form-select">
-                                        <option value="">Seleccionar</option>
-                                        <option value="dni">DNI</option>
-                                        <option value="passport">Pasaporte</option>
-                                        <option value="other">Otro</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label" for="passenger2-docnumber">Número de documento</label>
-                                    <input 
-                                        type="text" 
-                                        id="passenger2-docnumber" 
-                                        class="form-input" 
-                                        placeholder="XX.XXX.XXX"
-                                    >
+                                    <input type="text" id="passenger1-docnumber" class="form-input"
+                                        placeholder="XX.XXX.XXX">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </details>
 
-                <!-- Datos de contacto -->
-                <details class="form-collapsible" open>
-                    <summary class="form-collapsible-header">
-                        <div class="form-collapsible-title">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <span>Datos de contacto</span>
-                        </div>
-                        <svg class="form-collapsible-chevron" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </summary>
+                </section>
 
-                    <div class="form-collapsible-content">
-                        
-                        <!-- Persona responsable -->
-                        <div class="passenger-badge">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            Persona responsable de la cobertura
-                        </div>
+                <!---- MÉTODOS DE PAGO ---->
 
-                        <p style="font-size: 0.875rem; color: #666; margin-bottom: 20px;">
-                            Datos de la persona a quien le enviaremos el voucher y las comunicaciones.
-                        </p>
+                <section class="passengers-section">
+                    <h2 class="section-title">Forma de pago</h2>
 
-                        <div class="form-grid">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="contact-email">E-mail</label>
-                                    <input 
-                                        type="email" 
-                                        id="contact-email" 
-                                        class="form-input" 
-                                        placeholder="pepitagomezz@gamil.com"
-                                        value="pepitagomezz@gamil.com"
-                                    >
-                                </div>
+                    <!-- Radio buttons FUERA de los labels para poder usar CSS :checked -->
+                    <input type="radio" name="payment-method" value="credit-card" id="payment-credit"
+                        class="payment-radio" checked>
+                    <input type="radio" name="payment-method" value="debit-card" id="payment-debit"
+                        class="payment-radio">
+                    <input type="radio" name="payment-method" value="cash" id="payment-cash" class="payment-radio">
 
-                                <div class="form-group">
-                                    <label class="form-label" for="contact-email-confirm">Confirmar e-mail</label>
-                                    <input 
-                                        type="email" 
-                                        id="contact-email-confirm" 
-                                        class="form-input error" 
-                                        placeholder="pepitagomezz@gamil.com"
-                                        value="pepitagomezz@gamil.com"
-                                    >
-                                    <div class="form-error">
-                                        <svg viewBox="0 0 16 16" fill="currentColor">
-                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                                        </svg>
-                                        Las direcciones de correo no coinciden
-                                    </div>
-                                </div>
+                    <!-- Opciones de pago (Labels) -->
+                    <div class="payment-options">
+
+                        <!-- Tarjeta de crédito -->
+                        <label class="payment-option" for="payment-credit">
+                            <div class="payment-option-radio"></div>
+                            <div class="payment-option-content">
+                                <span class="payment-option-text">Tarjeta de crédito</span>
+                                <span class="payment-badge">HASTA 6 CUOTAS SIN INTERÉS</span>
                             </div>
+                        </label>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="contact-phone">Teléfono</label>
-                                    <input 
-                                        type="tel" 
-                                        id="contact-phone" 
-                                        class="form-input" 
-                                        placeholder="+54 9 11 2222 2222"
-                                    >
-                                </div>
+                        <!-- Tarjeta de débito -->
+                        <label class="payment-option" for="payment-debit">
+                            <div class="payment-option-radio"></div>
+                            <div class="payment-option-content">
+                                <span class="payment-option-text">Tarjeta de débito</span>
                             </div>
-                        </div>
+                        </label>
 
-                        <!-- Contacto de emergencia -->
-                        <div class="passenger-badge" style="margin-top: 30px;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            Contacto de emergencia
-                        </div>
-
-                        <div class="form-grid">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="emergency-name">Nombre completo</label>
-                                    <input 
-                                        type="text" 
-                                        id="emergency-name" 
-                                        class="form-input" 
-                                        placeholder="Nombre del contacto"
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label" for="emergency-phone">Teléfono</label>
-                                    <input 
-                                        type="tel" 
-                                        id="emergency-phone" 
-                                        class="form-input" 
-                                        placeholder="+54 9 11 2222 2222"
-                                    >
-                                </div>
+                        <!-- Efectivo -->
+                        <label class="payment-option" for="payment-cash">
+                            <div class="payment-option-radio"></div>
+                            <div class="payment-option-content">
+                                <span class="payment-option-text">Efectivo</span>
                             </div>
-                        </div>
+                        </label>
+
                     </div>
-                </details>
+
+                    <!-- Grid de métodos - TARJETA DE CRÉDITO -->
+                    <div class="payment-methods-grid" id="credit-card-methods">
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-3-no-interest"
+                                class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-3-no-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">3 cuotas sin interés</div>
+                                <!--<div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-6-no-interest"
+                                class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-6-no-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">6 cuotas sin interés</div>
+                                <!--<div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="Amex" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="Amex">
+                                <img src="images/medio-de-pago-amex.png" alt="Amex" class="payment-logo">
+                                <div class="payment-method-name">Amex</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="Visa" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="Visa">
+                                <img src="images/medio-de-pago-visa.png" alt="Visa" class="payment-logo">
+                                <div class="payment-method-name">Visa</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="Mastercard" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="Mastercard">
+                                <img src="images/medio-de-pago-mastercard.png" alt="Mastercard" class="payment-logo">
+                                <div class="payment-method-name">Mastercard</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="Cencosud" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="Cencosud">
+                                <img src="images/medio-de-pago-cencosud.png" alt="Cencosud" class="payment-logo">
+                                <div class="payment-method-name">Cencosud</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="Cabal" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="Cabal">
+                                <img src="images/medio-de-pago-cabal.png" alt="Cabal" class="payment-logo">
+                                <div class="payment-method-name">Cabal</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="nativa" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="nativa">
+                                <img src="images/medio-de-pago-nativa.png" alt="Nativa" class="payment-logo">
+                                <div class="payment-method-name">Nativa</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="shopping" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="shopping">
+                                <img src="images/medio-de-pago-tarjetashopping.png" alt="Tarjeta Shopping"
+                                    class="payment-logo">
+                                <div class="payment-method-name">Tarjeta Shopping</div>
+                                <!--<div class="payment-method-info">Moneda EU €</div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="paypal-usd" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="paypal-usd">
+                                <img src="images/medio-de-pago-paypal.png" alt="Paypal" class="payment-logo">
+                                <div class="payment-method-name">Paypal</div>
+                                <div class="payment-method-info">Moneda USD $</div>
+                                <!--<div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="paypal-eu" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="paypal-eu">
+                                <img src="images/medio-de-pago-paypal.png" alt="Paypal" class="payment-logo">
+                                <div class="payment-method-name">Paypal</div>
+                                <div class="payment-method-info">Moneda EU €</div>
+                                <!--<div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="argencard" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="argencard">
+                                <img src="images/medio-de-pago-argencard.png" alt="Argencard" class="payment-logo">
+                                <div class="payment-method-name">Argencard</div>
+                                <!--<div class="payment-method-info"></div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="diners-club" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="diners-club">
+                                <img src="images/medio-de-pago-dinersclub.png" alt="Diners Club" class="payment-logo">
+                                <div class="payment-method-name">Diners Club</div>
+                                <!--<div class="payment-method-info"></div>
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown"></div>
+                                    <div class="cft-info"></div>
+                                </div>-->
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-3-interest" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-3-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">3 cuotas con interés</div>
+
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown">3 x AR$ 14873<br>(AR$ 44618)</div>
+                                    <div class="cft-info">CFTEA: 10.13%</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-6-interest" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-6-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">6 cuotas con interés</div>
+
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown">6 x AR$ 14873<br>(AR$ 44618)</div>
+                                    <div class="cft-info">CFTEA: 10.13%</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-9-interest" class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-9-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">9 cuotas con interés</div>
+
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown">9 x AR$ 14873<br>(AR$ 44618)</div>
+                                    <div class="cft-info">CFTEA: 10.13%</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="payment-method-container">
+                            <input type="radio" name="specific-method" id="mp-12-interest"
+                                class="method-selector-radio">
+
+                            <label class="payment-method-card" for="mp-12-interest">
+                                <img src="images/medio-de-pago-mercadopago.png" alt="Mercado Pago" class="payment-logo">
+                                <div class="payment-method-name">Mercado Pago</div>
+                                <div class="payment-method-info">12 cuotas con interés</div>
+
+                                <div class="payment-method-details">
+                                    <div class="installment-breakdown">12 x AR$ 14873<br>(AR$ 44618)</div>
+                                    <div class="cft-info">CFTEA: 10.13%</div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Grid de métodos - TARJETA DE DÉBITO -->
+                    <div class="payment-methods-grid" id="debit-card-methods">
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-provincia net.png" alt="Provincia Pagos NET"
+                                class="payment-logo">
+                            <div class="payment-method-name">Provincia Pagos NET</div>
+                        </div>
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-red-link.png" alt="Red Link" class="payment-logo">
+                            <div class="payment-method-name">Red link</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Grid de métodos - EFECTIVO -->
+                    <div class="payment-methods-grid" id="cash-methods">
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-pago-facil.png" alt="Pago Fácil" class="payment-logo">
+                            <div class="payment-method-name">Pago fácil</div>
+                        </div>
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-rapipago.png" alt="Rapipago" class="payment-logo">
+                            <div class="payment-method-name">Rapipago</div>
+                        </div>
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-deposito-transferencia.png" alt="Depósito"
+                                class="payment-logo">
+                            <div class="payment-method-name">Depósito</div>
+                        </div>
+
+                        <div class="payment-method-card">
+                            <img src="images/medio-de-pago-deposito-transferencia.png" alt="Transferencia"
+                                class="payment-logo">
+                            <div class="payment-method-name">Transferencia</div>
+                        </div>
+
+                    </div>
+
+                </section>
 
             </main>
 
             <!-- Sidebar -->
+            <!-- SOLUCIÓN COMPLETA: ENVOLVER SIDEBAR EXISTENTE EN DETAILS -->
+            <!-- Reemplaza tu <aside> actual con esta estructura -->
+
             <aside class="checkout-sidebar">
-                <div class="summary-card">
-                    
-                    <!-- Header con logo y badge -->
-                    <div class="summary-header">
-                        <img src="images/logo-go-365eco-color-horizontal.png" alt="GO! 365 ECO" class="summary-logo">
-                        <span class="summary-badge">50% OFF</span>
+                <!-- Envolver en details para colapsar nativamente -->
+                <details class="summary-card" open>
+
+                    <!-- SUMMARY: Header clickeable (siempre visible) -->
+                    <summary class="summary-collapsible-trigger">
+
+                        <!-- Header: Logo + Imagen pareja (tu código existente) -->
+                        <div class="summary-header">
+                            <img src="images/logo-go-365eco-color-horizontal.png" alt="GO! 365 ECO"
+                                class="summary-logo">
+                            <img src="images/img-pareja-banner.png" alt="Pareja feliz" class="summary-couple">
+                        </div>
+
+                        <!-- Agregar indicador de Total visible en colapsado -->
+                        <div class="summary-total-preview">
+                            <span class="summary-total-preview-label">TOTAL</span>
+                            <span class="summary-total-preview-value">ARS $ 321.018,6</span>
+                        </div>
+
+                    </summary>
+
+                    <!-- CONTENIDO COLAPSABLE (tu código existente) -->
+
+                    <!-- Texto de descuento -->
+                    <div class="summary-discount-text">
+                        <p>Con este plan estás ahorrando <span class="discount">50% OFF</span></p>
                     </div>
 
-                    <!-- Detalles del viaje -->
+                    <!-- Items de información -->
                     <div class="summary-content">
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Pasajeros</div>
-                                <div class="summary-item-value">2 pasajeros</div>
+                        <!-- Item 1: Pasajeros + Edades -->
+                        <div class="summary-item two-columns">
+                            <img class="summary-icon" src="images/icono-pasajero-desktop.png" alt="Icono de pasajeros">
+                            <div class="summary-item-grid">
+                                <div>
+                                    <div class="summary-item-label">Pasajeros</div>
+                                    <div class="summary-item-value">2 pasajeros</div>
+                                </div>
+                                <div>
+                                    <div class="summary-item-label">Edades</div>
+                                    <div class="summary-item-value">25, 26 años</div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M12 1v6m0 6v6"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Edades</div>
-                                <div class="summary-item-value">25, 26 años</div>
+                        <!-- Item 2: Origen + Destino -->
+                        <div class="summary-item two-columns">
+                            <img class="summary-icon" src="images/icono-destino-desktop.png" alt="Icono de destino">
+                            <div class="summary-item-grid">
+                                <div>
+                                    <div class="summary-item-label">Origen</div>
+                                    <div class="summary-item-value">Argentina</div>
+                                </div>
+                                <div>
+                                    <div class="summary-item-label">Destino</div>
+                                    <div class="summary-item-value">América Central</div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Origen</div>
-                                <div class="summary-item-value">Argentina</div>
-                            </div>
-                        </div>
-
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Destino</div>
-                                <div class="summary-item-value">América Central</div>
-                            </div>
-                        </div>
-
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
-                                <line x1="3" y1="10" x2="21" y2="10"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Salida</div>
-                                <div class="summary-item-value">17/11/25</div>
-                            </div>
-                        </div>
-
-                        <div class="summary-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
-                                <line x1="3" y1="10" x2="21" y2="10"/>
-                            </svg>
-                            <div class="summary-item-content">
-                                <div class="summary-item-label">Regreso</div>
-                                <div class="summary-item-value">30/12/25</div>
+                        <!-- Item 3: Salida + Regreso -->
+                        <div class="summary-item two-columns">
+                            <img class="summary-icon" src="images/icono-calendario-desktop.png"
+                                alt="Icono de Calendario">
+                            <div class="summary-item-grid">
+                                <div>
+                                    <div class="summary-item-label">Salida</div>
+                                    <div class="summary-item-value">17/11/25</div>
+                                </div>
+                                <div>
+                                    <div class="summary-item-label">Regreso</div>
+                                    <div class="summary-item-value">30/12/25</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Divider -->
                     <div class="summary-divider"></div>
 
                     <!-- Pricing -->
@@ -385,23 +754,205 @@
                         </div>
                     </div>
 
-                    <div class="summary-total">
-                        <span class="summary-total-label">Total</span>
-                        <span class="summary-total-value">ARS $ 321.018,6</span>
+                    <!-- Total -->
+                    <div class="summary-total-wrapper">
+                        <div class="summary-total">
+                            <span class="summary-total-label">Total</span>
+                            <span class="summary-total-value">ARS $ 321.018,6</span>
+                        </div>
                     </div>
 
-                    <!-- Success Badge (optional) -->
-                    <div style="display: flex; justify-content: center; margin-top: 20px;">
-                        <div class="success-badge">E</div>
+                    <!-- Código de descuento -->
+                    <div class="discount-code-section">
+                        <details class="discount-code-details">
+                            <summary class="discount-code-trigger">
+                                ¿Tienes un código de descuento?
+                            </summary>
+                            <div class="discount-code-content">
+                                <div class="discount-code-input-group">
+                                    <input type="text" class="discount-code-input" placeholder="Código de descuento"
+                                        id="discount-code-field">
+                                    <button type="button" class="discount-code-btn">Aplicar</button>
+                                </div>
+                                <div class="discount-code-error" style="display: none;">
+                                    Cupón inválido
+                                </div>
+                            </div>
+                        </details>
                     </div>
 
-                    <!-- Payment Button -->
-                    <button class="btn-payment" type="button">Continuar al pago</button>
-                </div>
+                </details>
             </aside>
-
         </div>
     </div>
 
+    <!-- TÉRMINOS Y CONDICIONES -->
+    <section class="secure-purchase-section section">
+        <div class="container-secure-purchase">
+            <!-- Checkbox 1: Declaración principal -->
+            <div class="terms-checkbox-group">
+                <label class="terms-checkbox-label">
+                    <input type="checkbox" class="terms-checkbox-input" id="terms-main" required checked>
+                    <span class="terms-checkbox-custom"></span>
+                    <div class="terms-text">
+                        <p class="terms-main-text">
+                            Declaro ser mayor de edad con capacidad para realizar este acto y haber leído, comprendido y
+                            aceptado las
+                            <a href="#" class="terms-link">Condiciones Generales</a> de la póliza. Confirmo que contrato
+                            el
+                            servicio desde mi país de residencia o,
+                            si estoy viajando, comprendo y acepto las restricciones y el <strong>período de
+                                carencia</strong> aplicable.
+                        </p>
+                        <p class="terms-info-text">
+                            <svg class="terms-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 18v-7"></path>
+                                <path d="M12 8v.9"></path>
+                                <path d="M12 7v.9"></path>
+                            </svg>
+                            Si estás realizando la compra estando en viaje, aplican restricciones que podrás consultar
+                            en
+                            las Condiciones Generales del servicio contratado.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Checkbox 2: Período de carencia -->
+            <div class="terms-checkbox-group">
+                <label class="terms-checkbox-label">
+                    <input type="checkbox" class="terms-checkbox-input" id="terms-carencia" required>
+                    <span class="terms-checkbox-custom"></span>
+                    <div class="terms-text">
+                        <p class="terms-main-text">
+                            Acepto los términos de <strong>7 días de carencia de la póliza (Solo pasajeros en
+                                viaje)</strong>.
+                        </p>
+                        <p class="terms-info-text">
+                            <svg class="terms-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 18v-7"></path>
+                                <path d="M12 8v.9"></path>
+                                <path d="M12 7v.9"></path>
+                            </svg>
+                            Si actualmente estás en viaje, tu voucher tiene 7 días de carencia: son días que NO podrás
+                            contar con tu asistencia de viaje.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Checkbox 3: SORTEO WORLD CUP -->
+            <!-- ***(Solo se agrega cuando compren un plan que tiene incluido participar por el SORTEO)*** -->
+            <div class="terms-checkbox-group">
+                <label class="terms-checkbox-label">
+                    <input type="checkbox" class="terms-checkbox-input" id="terms-carencia" required checked>
+                    <span class="terms-checkbox-custom"></span>
+                    <div class="terms-text">
+                        <p class="terms-main-text">
+                            Al comprar el plan con el membrete <strong>“SORTEO WORLD CUP”</strong> acepto los <a
+                                href="#" class="terms-link">Terminos y Condiciones</a> del sorteo.
+                        </p>
+
+                    </div>
+                </label>
+            </div>
+
+            <!-- Texto de seguridad -->
+            <div class="secure-purchase-header">
+                <svg class="secure-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <h3 class="secure-purchase-title">Transacción 100% SEGURA</h3>
+            </div>
+
+            <p class="secure-purchase-description">
+                Al hacer click en comprar, serás redirigido a una pasarela certificada, para realizar el pago.
+            </p>
+
+            <!-- Botón de compra -->
+            <button type="submit" class="btn-purchase">Comprar</button>
+        </div>
+
+    </section>
+
+    <!--BANNER SPONSOR OFICIAL -->
+
+    <section class="sponsor-banner">
+        <div class="sponsor-container">
+            <div class="sponsor-content">
+                <div class="sponsor-logo">
+                    <img src="images/escudo-velez.png" alt="Vélez Sarsfield" class="shield-logo">
+                    <img src="images/logo-go-assistance-vertical-blanco.png" alt="GO! Assistance" class="go-logo">
+                </div>
+
+                <div class="sponsor-text">
+                    <span class="sponsor-label">SPONSOR OFICIAL DE</span>
+                    <span class="sponsor-name">VÉLEZ SARSFIELD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         FOOTER
+         =========================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Redes Sociales -->
+                <div class="footer-social">
+                    <h3>Seguinos en<br>nuestra redes</h3>
+                    <nav class="social-icons" aria-label="Redes sociales">
+                        <a href="https://tiktok.com/@goassist" class="social-icon tiktok" aria-label="TikTok"
+                            target="_blank" rel="noopener">
+                            <img src="images/icon-social-tiktok.png" alt="">
+                        </a>
+                        <a href="https://instagram.com/goassist" class="social-icon instagram" aria-label="Instagram"
+                            target="_blank" rel="noopener">
+                            <img src="images/icon-social-instagram.png" alt="">
+                        </a>
+                        <a href="https://youtube.com/@goassist" class="social-icon youtube" aria-label="YouTube"
+                            target="_blank" rel="noopener">
+                            <img src="images/icon-social-youtube.png" alt="">
+                        </a>
+                        <a href="https://facebook.com/goassist" class="social-icon facebook" aria-label="Facebook"
+                            target="_blank" rel="noopener">
+                            <img src="images/icon-social-facebook.png" alt="">
+                        </a>
+                        <a href="https://linkedin.com/company/goassist" class="social-icon linkedin"
+                            aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img src="images/icon-social-linkedin.png" alt="">
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Enlaces Legales -->
+                <nav class="footer-links" aria-label="Enlaces legales">
+                    <a href="#voucher">Mi voucher</a>
+                    <a href="#privacy">Políticas de privacidad</a>
+                    <a href="#contracts">Contratos de Adhesión - Ley N° 24.240 de Defensa del Consumidor</a>
+                    <a href="#withdrawal">Botón de arrepentimiento</a>
+                    <a href="#unsubscribe">Dar de baja el servicio</a>
+                </nav>
+
+                <!-- Data Fiscal -->
+                <aside class="footer-fiscal">
+                    <img src="images/qr-data-fiscal.png" alt="Código QR de datos fiscales">
+                </aside>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>© TODOS LOS DERECHOS RESERVADOS 2002 - 2025 GO ASSIST S.A, CUIT 30-71196418-1, Panamá 1248 Piso 1
+                    Dpto 1 - Martínez - CP. 1640</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
