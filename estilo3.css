@@ -571,6 +571,13 @@
         font-size: 2.25rem;
         margin-bottom: 40px;
     }
+
+    .container-table-plan .content-row {
+                display: grid;
+        grid-template-columns: 50% repeat(1, 1fr);
+        border-bottom: 1px solid #e0e0e0;
+
+    }
 }
 
 /* Responsive: pasar a vertical en móviles */
@@ -652,26 +659,7 @@
 }
 
 /* Seccion - Beneficio plan */
-
-@media (min-width: 992px) {
-    .content-row-plan {
-        display: grid;
-        grid-template-columns: 50% repeat(1, 1fr);
-        border-bottom: 1px solid #e0e0e0;
-    }
-
-    .content-row-plan:hover {
-        background: #f9f9f9;
-    }
-
-}
-
-
-    .content-row-plan {
-        display: grid;
-        grid-template-columns: 50% repeat(1, 1fr);
-        border-bottom: 1px solid #e0e0e0;
-    }
+.container-table-plan .content-row {}
 
 .section-title-benefit {
     display: flex;

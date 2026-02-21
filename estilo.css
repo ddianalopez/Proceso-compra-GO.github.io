@@ -20,7 +20,6 @@
 
     --section-padding-y: 45px;
     --section-padding-x: 20px;
-
 }
 
 /* ===========================================
@@ -47,6 +46,19 @@ body {
 
 .section {
     padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+/* ===========================================
+   UTILITY CLASSES
+   =========================================== */
+/* La tabla desktop (.hidden-mobile) se controla SOLO en 992px+,
+   no en 768px — evita que aparezca en tablets */
+.hidden-mobile {
+    display: none;
+}
+
+.hidden-desktop {
+    display: block;
 }
 
 /* ===========================================
@@ -221,6 +233,78 @@ body {
 }
 
 /* ===========================================
+   PROMO BANNER (MOBILE FIRST)
+   =========================================== */
+.promo-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px 14px;
+    margin: 0 auto 60px;
+    border-radius: 20px;
+    background: linear-gradient(270deg, #7F4AFB 5.29%, #008FD7 32.21%, #008FD7 83.17%, #96DCFF 100%);
+    color: white;
+    overflow: hidden;
+}
+
+.deco-desktop-left,
+.deco-desktop-right {
+    display: none;
+}
+
+.deco-mobile-only {
+    display: block;
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    width: clamp(80px, 25vw, 128px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 72%;
+    margin-right: auto;
+    text-align: left;
+    font-family: var(--font-primary);
+}
+
+.banner-text {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.banner-subtext {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.banner-terms {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.banner-terms:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.deco-item img {
+    width: 95%;
+    height: auto;
+}
+
+/* ===========================================
    PLANS GRID (MOBILE FIRST)
    =========================================== */
 .plans-grid {
@@ -255,7 +339,7 @@ body {
 .card.multitrip {
     background: var(--primary);
     color: var(--white);
-    border: 6px solid var(--primary)
+    border: 6px solid var(--primary);
 }
 
 /* Badges */
@@ -528,7 +612,7 @@ body {
 }
 
 /* ===========================================
-   MOBILE COMPARISON TABLE
+   COMPARISON TABLE (MOBILE FIRST)
    =========================================== */
 .plans-comparison {
     background: var(--white);
@@ -563,7 +647,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px 20px;
+    padding: 20px 5px 20px;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -572,8 +656,8 @@ body {
     background: var(--white);
     border: 2px solid var(--primary);
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -625,12 +709,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60px;
-    margin-bottom: 10px;
 }
 
 .plan-logo-container img {
-    max-width: 120px;
+    max-width: 220px;
     max-height: 50px;
     width: auto;
     height: auto;
@@ -642,6 +724,7 @@ body {
     line-height: 1.4;
     padding: 0 10px;
     margin-bottom: 15px;
+    display: none;
 }
 
 /* Collapsible Sections */
@@ -653,7 +736,6 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Remove default details/summary styling */
 .collapsible-section summary {
     list-style: none;
 }
@@ -774,6 +856,34 @@ body {
     line-height: 1;
 }
 
+/* Content Row — mobile: 2 cols */
+.content-row {
+    display: grid;
+    grid-template-columns: 60% repeat(1, 1fr);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.row-label {
+    padding: 15px;
+    font-size: 13px;
+    color: #333333;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.row-cell {
+    padding: 15px 10px;
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #3962CC;
+    font-weight: 700;
+}
+
 /* Carousel Dots */
 .carousel-dots {
     display: flex;
@@ -812,6 +922,17 @@ body {
     background-color: var(--white);
 }
 
+.container-cards {
+    max-width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .card-garantia {
     background-color: #EEEEEE;
     border-radius: 10px;
@@ -824,17 +945,6 @@ body {
     align-items: center;
     text-align: center;
     font-family: var(--font-primary);
-}
-
-.container-cards {
-    max-width: 1200px;
-    margin: 0px auto;
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: column;
 }
 
 .icon-wrapper {
@@ -878,6 +988,56 @@ body {
 
 .link:hover {
     text-decoration: none;
+}
+
+/* ===========================================
+   SPONSOR BANNER (MOBILE FIRST)
+   =========================================== */
+.sponsor-banner {
+    background: linear-gradient(90deg, #006AF4 0%, #FF00FF 100%);
+    padding: 5px 0;
+    width: 100%;
+}
+
+.sponsor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 25px;
+}
+
+.sponsor-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.sponsor-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shield-logo {
+    height: 61px;
+    width: auto;
+}
+
+.sponsor-text {
+    text-align: left;
+    font-family: var(--font-primary);
+}
+
+.sponsor-name {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 /* ===========================================
@@ -1006,399 +1166,12 @@ body {
 }
 
 /* ===========================================
-   UTILITY CLASSES
+   MODALES (MOBILE FIRST)
    =========================================== */
-.hidden-mobile {
-    display: none;
-}
-
-.hidden-desktop {
-    display: block;
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-
-    /* Stepper */
-    .flow-header {
-        margin-bottom: 25px;
-    }
-
-    .flow-header h1 {
-        font-size: 2.5rem;
-        margin: 18px 0;
-    }
-
-    .flow-header .stepper {
-        max-width: 600px;
-        gap: 0;
-    }
-
-    .step {
-        width: 120px;
-    }
-
-    .step span {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .step p {
-        font-size: 1rem;
-    }
-
-    .step-line {
-        margin-top: 25px;
-        margin-left: -40px;
-        margin-right: -40px;
-    }
-
-    /* Quote Summary */
-    .quote-summary {
-        margin-bottom: 35px;
-    }
-
-    .quote-header h2 {
-        font-size: 1.15rem;
-    }
-
-    .btn-recotizar-outline {
-        font-size: 1.15rem;
-        padding: 10px 35px;
-    }
-
-    /* Plans Grid */
-    .plans-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 55px;
-    }
-
-    .btn-select {
-        font-size: 1.5rem;
-    }
-
-    /* Comparison Table */
-    .subtitle {
-        font-size: 36px;
-    }
-
-    .carousel-header {
-        padding: 0 20px 30px;
-    }
-
-    .nav-button {
-        width: 50px;
-        height: 50px;
-    }
-
-    .plan-description {
-        font-size: 14px;
-    }
-
-    /* Guarantee Cards */
-    .container-cards {
-        flex-direction: row;
-    }
-
-    /* Footer */
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .footer-fiscal {
-        grid-column: 1 / -1;
-        justify-self: center;
-    }
-
-    .footer-social h3 {
-        font-size: 24px;
-    }
-
-    .social-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer-links a {
-        font-size: 15px;
-    }
-
-    .fiscal-dimensions {
-        font-size: 14px;
-        padding: 6px 20px;
-    }
-
-    .footer-copyright p {
-        font-size: 13px;
-    }
-
-    /* Utility Classes */
-    .hidden-desktop {
-        display: none;
-    }
-
-    .hidden-mobile {
-        display: block;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-
-    /* Stepper */
-    .flow-header {
-        margin-bottom: 30px;
-    }
-
-    .flow-header h1 {
-        font-size: 3.4rem;
-        margin: 20px 0;
-    }
-
-    .flow-header .stepper {
-        max-width: 800px;
-    }
-
-    .step {
-        width: 180px;
-    }
-
-    .step span {
-        width: 59.43px;
-        height: 57.47px;
-        font-size: 1.858rem;
-    }
-
-    .step p {
-        font-size: 1.393rem;
-    }
-
-    .step-line {
-        margin-top: 28.7px;
-        margin-left: -60px;
-        margin-right: -60px;
-    }
-
-    /* Quote Summary */
-    .quote-summary {
-        margin-bottom: 35px;
-        gap: 8px;
-    }
-
-    .quote-header {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-    .quote-header h2 {
-        font-size: 1.25rem;
-    }
-
-    .quote-data {
-        display: grid;
-        grid-template-columns: repeat(6, auto);
-        grid-auto-rows: minmax(40px, 45px);
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .data-item div {
-        width: auto;
-        max-width: none;
-    }
-
-    .data-item img {
-        width: auto;
-        max-height: max-content;
-    }
-
-    .btn-recotizar-outline {
-        font-size: 1.25rem;
-        padding: 8px 43px;
-        margin: 20px 0;
-        grid-column: inherit;
-    }
-
-    /* Plans Grid */
-    .plans-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
-    }
-
-    .btn-select {
-        font-size: 24px;
-    }
-
-    .subtitle {
-        font-size: 50px;
-        padding: 0;
-        margin: 0px auto 20px;
-    }
-
-    .mobile-comparison {
-        display: none;
-    }
-
-    .desktop-comparison {
-        display: block;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 40px;
-    }
-
-    .container-table {
-        border: 0.5px solid var(--primary);
-        border-radius: 8px;
-        overflow: hidden;
-        max-width: 1200px;
-        margin: 0px auto;
-    }
-
-    .plans-header {
-        display: grid;
-        grid-template-columns: 202px repeat(9, 1fr);
-        border-bottom: 2px solid #e0e0e0;
-    }
-
-    .empty-cell {
-        padding: 20px;
-    }
-
-    .plan-logo {
-        padding: 15px;
-        text-align: center;
-        border-left: 1px solid #e0e0e0;
-    }
-
-    .plan-logo img {
-        max-width: 80px;
-        height: auto;
-    }
-
-    .desktop-section-header {
-        color: white;
-        padding: 15px 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    .content-row {
-        display: grid;
-        grid-template-columns: 202px repeat(9, 1fr);
-        border-bottom: 1px solid #e0e0e0;
-    }
-
-    .content-row:hover {
-        background: #f9f9f9;
-    }
-
-    .row-label {
-        padding: 15px;
-        font-size: 13px;
-        color: #333333;
-        border-right: 1px solid #e0e0e0;
-        display: flex;
-        align-items: center;
-    }
-
-    .row-cell {
-        padding: 15px 10px;
-        text-align: center;
-        border-left: 1px solid #e0e0e0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        color: #3962CC;
-        font-weight: 700;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 60px 40px 30px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr auto;
-        gap: 60px;
-        align-items: start;
-        margin-bottom: 50px;
-        text-align: left;
-    }
-
-    .footer-social {
-        align-items: flex-start;
-    }
-
-    .footer-social h3 {
-        font-size: 42px;
-    }
-
-    .social-icons {
-        justify-content: flex-start;
-    }
-
-    .footer-links {
-        align-items: flex-start;
-    }
-
-    .footer-links a {
-        font-size: 16px;
-    }
-
-    .footer-fiscal {
-        grid-column: auto;
-        justify-self: auto;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: LARGE TABLET (1024px+)
-   =========================================== */
-@media (min-width: 1024px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr auto;
-        gap: 60px;
-    }
-
-    .footer-fiscal {
-        grid-column: auto;
-        justify-self: auto;
-    }
-}
-
-/* ===========================================
-   MODAL: MEDIOS DE PAGO - SOLO CSS (MOBILE FIRST)
-   =========================================== */
-
-/* ===========================================
-   MODALES - REGLAS ESPECÍFICAS (REEMPLAZAR EN ESTILO.CSS)
-   =========================================== */
-
-/* Esconder checkbox de control */
 .modal-toggle {
     display: none;
 }
 
-/* CRÍTICO: Todos los modales ocultos por defecto */
 .modal {
     position: fixed;
     top: 0;
@@ -1407,31 +1180,21 @@ body {
     height: 100%;
     z-index: 1000;
     display: none;
-    /* CAMBIADO: siempre oculto por defecto */
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
-/* ELIMINADO: las reglas genéricas que causaban el problema
-   NO usar: .modal-toggle:checked ~ .modal
-*/
-
-/* SOLO reglas específicas para cada modal */
-
-/* Modal de detalles del plan */
 #plan-details-modal-toggle:checked~.modal.modal-plan-details {
     display: flex;
     z-index: 1001;
 }
 
-/* Modal de medios de pago */
 #payment-modal-toggle:checked~#payment-modal {
     display: flex;
     z-index: 1000;
 }
 
-/* Overlay */
 .modal-overlay {
     position: absolute;
     top: 0;
@@ -1443,7 +1206,6 @@ body {
     cursor: pointer;
 }
 
-/* Container */
 .modal-container {
     position: relative;
     background: white;
@@ -1468,7 +1230,6 @@ body {
     }
 }
 
-/* Modal Header */
 .modal-header {
     display: flex;
     align-items: center;
@@ -1504,14 +1265,12 @@ body {
     color: var(--primary);
 }
 
-/* Modal Content */
 .modal-content {
     overflow-y: auto;
     padding: 10px 20px 20px;
     flex: 1;
 }
 
-/* Payment Sections (Accordion) */
 .payment-section {
     border: 1px solid #e5e7eb;
     border-radius: 12px;
@@ -1535,36 +1294,36 @@ body {
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s ease;
+    background: #D5E8FF;
 }
 
 .payment-header:hover {
-    background: #f9fafb;
+    background: #c8e0fd;
 }
 
 .payment-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: var(--font-primary);
+    font-family: var(--font-secundary);
     font-size: 1rem;
     font-weight: 600;
-    color: #111827;
+    color: #333333;
 }
 
 .chevron {
     flex-shrink: 0;
     transition: transform 0.3s ease;
+    stroke: #6FADE6;
 }
 
 .payment-section[open] .chevron {
     transform: rotate(180deg);
 }
 
-/* Payment Content */
 .payment-content {
     padding: 0 16px 16px;
     border-top: 1px solid #e5e7eb;
-
 }
 
 .payment-grid {
@@ -1611,10 +1370,6 @@ body {
     line-height: 1.2;
 }
 
-/* ===========================================
-   MODAL: DETALLES DEL PLAN
-   =========================================== */
-
 .modal-plan-details {
     z-index: 1001;
 }
@@ -1626,7 +1381,7 @@ body {
 
 .modal-plan-header {
     background: var(--white);
-    padding: 16px 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1741,6 +1496,163 @@ body {
    RESPONSIVE: TABLET (768px+)
    =========================================== */
 @media (min-width: 768px) {
+
+    /* NOTE: hidden-mobile/hidden-desktop se controlan solo en 992px+
+       para que la tabla desktop NO aparezca en tablets */
+
+    /* Stepper */
+    .flow-header {
+        margin-bottom: 25px;
+    }
+
+    .flow-header h1 {
+        font-size: 2.5rem;
+        margin: 18px 0;
+    }
+
+    .flow-header .stepper {
+        max-width: 600px;
+        gap: 0;
+    }
+
+    .step {
+        width: 120px;
+    }
+
+    .step span {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .step p {
+        font-size: 1rem;
+    }
+
+    .step-line {
+        margin-top: 25px;
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+
+    /* Quote Summary — en tablet el botón deja de ser full-width */
+    .quote-summary {
+        margin-bottom: 35px;
+    }
+
+    .quote-header h2 {
+        font-size: 1.15rem;
+    }
+
+    .quote-data {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn-recotizar-outline {
+        grid-column: 1 / -1;
+        width: auto;
+        justify-self: stretch;
+        font-size: 1.1rem;
+        padding: 10px 30px;
+    }
+
+    /* Plans Grid */
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 55px 24px;
+    }
+
+    .btn-select {
+        font-size: 1.5rem;
+    }
+
+    /* Comparison — subtitle */
+    .subtitle {
+        font-size: 36px;
+    }
+
+    .carousel-header {
+        padding: 16px 20px 28px;
+    }
+
+    .nav-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Guarantee Cards */
+    .container-cards {
+        flex-direction: row;
+    }
+
+    /* Sponsor Banner */
+    .sponsor-banner {
+        padding: 12px 0;
+    }
+
+    .sponsor-content {
+        gap: 20px;
+    }
+
+    .sponsor-logo {
+        gap: 15px;
+    }
+
+    .shield-logo {
+        height: 55px;
+    }
+
+    .sponsor-name {
+        font-size: 1.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .footer-social {
+        align-items: flex-start;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        align-items: flex-start;
+    }
+
+    .footer-fiscal {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .footer-social h3 {
+        font-size: 24px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-links a {
+        font-size: 15px;
+    }
+
+    .footer-copyright p {
+        font-size: 13px;
+    }
+
+    /* Modal */
     .modal {
         padding: 40px;
     }
@@ -1800,7 +1712,6 @@ body {
         font-size: 0.6875rem;
     }
 
-    /* Plan modal responsive */
     .modal-plan-container {
         max-width: 750px;
     }
@@ -1840,12 +1751,305 @@ body {
    RESPONSIVE: DESKTOP (992px+)
    =========================================== */
 @media (min-width: 992px) {
+
+    /* Utility — se activa la tabla desktop y se oculta el carrusel mobile */
+    .hidden-mobile {
+        display: block !important;
+    }
+
+    .hidden-desktop {
+        display: none !important;
+    }
+
+    /* Stepper */
+    .flow-header {
+        margin-bottom: 30px;
+    }
+
+    .flow-header h1 {
+        font-size: 3.4rem;
+        margin: 20px 0;
+    }
+
+    .flow-header .stepper {
+        max-width: 800px;
+    }
+
+    .step {
+        width: 180px;
+    }
+
+    .step span {
+        width: 59.43px;
+        height: 57.47px;
+        font-size: 1.858rem;
+    }
+
+    .step p {
+        font-size: 1.393rem;
+    }
+
+    .step-line {
+        margin-top: 28.7px;
+        margin-left: -60px;
+        margin-right: -60px;
+    }
+
+    /* Quote Summary — fila horizontal completa */
+    .quote-summary {
+        margin-bottom: 35px;
+    }
+
+    .quote-header {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .quote-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .quote-data {
+        grid-template-columns: repeat(5, auto) auto;
+        grid-auto-rows: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px 12px;
+    }
+
+    .data-item {
+        font-size: 0.85rem;
+    }
+
+    .data-item div {
+        width: auto;
+        max-width: none;
+    }
+
+    .btn-recotizar-outline {
+        grid-column: auto;
+        width: auto;
+        white-space: nowrap;
+        font-size: 1rem;
+        padding: 8px 28px;
+        margin: 0;
+        align-self: center;
+    }
+
+    /* Plans Grid */
+    .plans-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px 24px;
+    }
+
+    .btn-select {
+        font-size: 1.4rem;
+    }
+
+    /* Comparison Table — desktop version */
+    .subtitle {
+        font-size: 50px;
+        padding: 0;
+        margin: 0 auto 20px;
+    }
+
+    .mobile-comparison {
+        display: none !important;
+    }
+
+    .desktop-comparison {
+        display: block;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .container-table {
+        border: 0.5px solid var(--primary);
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .plans-header {
+        display: grid;
+        grid-template-columns: 202px repeat(9, 1fr);
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .empty-cell {
+        padding: 20px;
+    }
+
+    .plan-logo {
+        padding: 5px 0;
+        text-align: center;
+        border-left: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 55px;
+    }
+
+    .plan-logo img {
+        max-width: 80px;
+        height: auto;
+        max-height: 44px;
+    }
+
+    .desktop-section-header {
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .content-row {
+        display: grid;
+        grid-template-columns: 202px repeat(9, 1fr);
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .content-row:hover {
+        background: #f9f9f9;
+    }
+
+    .row-label {
+        padding: 15px;
+        font-size: 13px;
+        color: #333333;
+        border-right: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+    }
+
+    .row-cell {
+        padding: 15px 10px;
+        text-align: center;
+        border-left: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #3962CC;
+        font-weight: 700;
+    }
+
+    /* Promo Banner */
+    .promo-banner {
+        max-width: 100%;
+        height: 160px;
+        flex-direction: row;
+        padding: 0 60px;
+        border-radius: 20px;
+    }
+
+    .deco-mobile-only {
+        display: none;
+    }
+
+    .deco-desktop-left {
+        display: block;
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+        left: 20px;
+        width: 150px;
+    }
+
+    .deco-desktop-right {
+        display: block;
+        position: absolute;
+        top: 53%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 200px;
+    }
+
+    .banner-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        max-width: none;
+        width: 76%;
+    }
+
+    .banner-text {
+        font-size: 1.5rem;
+    }
+
+    /* Sponsor Banner */
+    .sponsor-banner {
+        padding: 0;
+    }
+
+    .sponsor-content {
+        gap: 25px;
+    }
+
+    .sponsor-logo {
+        gap: 18px;
+    }
+
+    .shield-logo {
+        height: 60px;
+    }
+
+    .sponsor-name {
+        font-size: 1.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 60px 40px 30px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr auto;
+        gap: 60px;
+        align-items: start;
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    .footer-social {
+        align-items: flex-start;
+    }
+
+    .footer-social h3 {
+        font-size: 42px;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        align-items: flex-start;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+
+    .footer-fiscal {
+        grid-column: auto;
+        justify-self: auto;
+    }
+
+    /* Modal */
     .modal-container {
-        max-width: 720px;
+        max-width: 650px;
     }
 
     .modal-header {
-        padding: 28px 32px;
+        padding: 10px 32px;
     }
 
     .modal-title {
@@ -1853,7 +2057,7 @@ body {
     }
 
     .modal-content {
-        padding: 16px 32px 32px;
+        padding: 16px 32px 6px;
     }
 
     .payment-header {
@@ -1881,7 +2085,6 @@ body {
         font-size: 0.875rem;
     }
 
-    /* Plan modal responsive */
     .modal-plan-container {
         max-width: 800px;
         max-height: 90vh;
@@ -1924,132 +2127,17 @@ body {
 }
 
 /* ===========================================
-   SPONSOR BANNER - RESPONSIVE (MOBILE FIRST)
+   RESPONSIVE: LARGE DESKTOP (1024px+)
    =========================================== */
-
-.sponsor-banner {
-    background: linear-gradient(90deg, #006AF4 0%, #FF00FF 100%);
-    padding: 5px 0;
-    width: 100%;
-}
-
-.sponsor-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5px 25px;
-}
-
-/* MOBILE: Layout vertical centrado */
-.sponsor-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
-}
-
-/* Logo Section - Mobile */
-.sponsor-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.shield-logo {
-    height: 61px;
-    width: auto;
-}
-
-
-
-
-
-/* Text Section - Mobile */
-.sponsor-text {
-    text-align: left;
-    font-family: var(--font-primary);
-}
-
-.sponsor-name {
-    font-family: var(--font-primary);
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.1;
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .sponsor-banner {
-        padding: 12px 0;
+@media (min-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr auto;
+        gap: 60px;
     }
 
-    /* Cambio a layout horizontal */
-    .sponsor-content {
-        flex-direction: row;
-        gap: 20px;
-        text-align: left;
-    }
-
-    .sponsor-logo {
-        gap: 15px;
-    }
-
-    .shield-logo {
-        height: 55px;
-    }
-
-
-
-    .sponsor-logo::after {
-        height: 50px;
-    }
-
-    .sponsor-label {
-        font-size: 0.8125rem;
-    }
-
-    .sponsor-name {
-        font-size: 1.5rem;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .sponsor-banner {
-        padding: 0;
-    }
-
-    .sponsor-content {
-        gap: 25px;
-    }
-
-    .sponsor-logo {
-        gap: 18px;
-    }
-
-    .shield-logo {
-        height: 60px;
-    }
-
-    .sponsor-logo::after {
-        height: 55px;
-    }
-
-    .sponsor-label {
-        font-size: 0.875rem;
-    }
-
-    .sponsor-name {
-        font-size: 1.75rem;
-        letter-spacing: 1.5px;
+    .footer-fiscal {
+        grid-column: auto;
+        justify-self: auto;
     }
 }
 
@@ -2065,8 +2153,6 @@ body {
         height: 80px;
     }
 
-
-
     .sponsor-logo::after {
         height: 60px;
     }
@@ -2078,126 +2164,4 @@ body {
     .sponsor-name {
         font-size: 2rem;
     }
-}
-
-
-/****  BANNER SORTEO ****/
-
-
-/* --- CONFIGURACIÓN BASE (MOBILE) --- */
-.promo-banner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 21px 15px;
-    margin: 0 auto 60px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #00adef 0%, #0072bc 50%, #8e44ad 100%);
-    color: white;
-    overflow: hidden;
-    /* Corta las imágenes que sobresalgan */
-    max-width: 400px;
-}
-
-/* Manejo de visibilidad de las imágenes */
-.deco-desktop-left,
-.deco-desktop-right {
-    display: none;
-    /* Ocultas en móvil */
-}
-
-.deco-mobile-only {
-    display: block;
-    position: absolute;
-    right: -15px;
-    bottom: -27px;
-    width: 128px;
-    z-index: 1;
-}
-
-.banner-content {
-    position: relative;
-    z-index: 2;
-    max-width: 80%;
-    margin-right: auto;
-    text-align: left;
-    font-family: var(--font-primary);
-}
-
-.banner-text {
-    font-size: 0.75rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-}
-
-.banner-subtext {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 5px;
-}
-
-.banner-terms {
-    color: white;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-
-/* --- AJUSTES PARA DESKTOP --- */
-@media (min-width: 992px) {
-    .promo-banner {
-        max-width: 100%;
-        height: 160px;
-        flex-direction: row;
-        padding: 0;
-    }
-
-    /* Invertimos la visibilidad */
-    .deco-mobile-only {
-        display: none;
-        /* Oculta la de móvil en desktop */
-    }
-
-    .deco-desktop-left {
-        display: block;
-        /* Muestra las de escritorio */
-        position: absolute;
-        top: 70%;
-        transform: translateY(-50%);
-    }
-
-    .deco-desktop-right {
-        display: block;
-        /* Muestra las de escritorio */
-        position: absolute;
-        top: 60%;
-        transform: translateY(-50%);
-    }
-
-    .deco-desktop-left {
-        left: 20px;
-        width: 150px;
-    }
-
-    .deco-desktop-right {
-        right: 15px;
-        width: 200px;
-    }
-
-    .banner-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .banner-text {
-        font-size: 1.6rem;
-    }
-}
-
-.deco-item img {
-    width: 85%;
-    height: auto;
 }

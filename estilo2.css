@@ -22,23 +22,63 @@
 
     --section-padding-y: 45px;
     --section-padding-x: 20px;
-
 }
 
 /* ===========================================
-   PASO 3: PÁGINA DE PAGO - ESTILOS ADICIONALES
+   BASE RESET (complemento)
    =========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 /* ===========================================
-   FORMULARIOS Y INPUTS (MOBILE FIRST)
+   LAYOUT: CHECKOUT — mobile first
    =========================================== */
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
 
-/* Sección de formulario */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0; /* sin gap en mobile: sidebar es footer fijo */
+}
+
+/* En mobile: main arriba, sidebar abajo (footer fijo) */
+.checkout-main    { order: 1; }
+.checkout-sidebar { order: 2; }
+
+/* ===========================================
+   SECCIÓN DE PASAJEROS — mobile first
+   =========================================== */
+.passengers-section {
+    margin-bottom: 16px;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 18px 16px;
+}
+
+/* Título de sección — scope a passengers-section
+   para no pisar .section-title de estilo.css */
+.passengers-section .section-title {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 18px;
+    padding: 0 2px;
+}
+
+/* ===========================================
+   FORMULARIOS Y INPUTS — mobile first
+   =========================================== */
 .form-section {
     background: var(--white);
     border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 18px 16px;
+    margin-bottom: 16px;
 }
 
 .form-section-header {
@@ -46,117 +86,105 @@
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e5e7eb;
 }
 
-/* Collapsible Form Sections */
-.form-collapsible {
+/* Collapsible de cada pasajero */
+.passenger-collapsible {
     background: var(--white);
-    border-radius: 20px;
-    margin-bottom: 15px;
+    border-radius: 16px;
+    border: 1px solid #AAD2F8;
+    margin-bottom: 12px;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-.form-collapsible summary {
-    list-style: none;
-}
+.passenger-collapsible summary { list-style: none; }
+.passenger-collapsible summary::-webkit-details-marker { display: none; }
 
-.form-collapsible summary::-webkit-details-marker {
-    display: none;
-}
-
-.form-collapsible-header {
+/* Header de cada pasajero */
+.passenger-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 20px;
+    padding: 14px 16px;
     cursor: pointer;
-    background: linear-gradient(135deg, #E8F0FF 0%, #F0F4FF 100%);
+    background: #D5E8FF;
     user-select: none;
-    transition: all 0.2s ease;
+    -webkit-user-select: none;
+    transition: background 0.2s ease;
 }
 
-.form-collapsible-header:hover {
-    background: linear-gradient(135deg, #D8E6FF 0%, #E0E8FF 100%);
+.passenger-header:hover { background: #C4DCFC; }
+
+.passenger-collapsible[open] .passenger-header {
+    background: #D4E6FD;
+    border-bottom: 1px solid #B8D4F8;
 }
 
-.form-collapsible-title {
+.passenger-header .form-collapsible-title {
     display: flex;
     align-items: center;
     gap: 10px;
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: #0066FF;
+    color: #333333;
 }
 
-.form-collapsible-title svg,
-.form-collapsible-title img {
-    width: 15px;
+.passenger-header .form-collapsible-title img,
+.passenger-header .form-collapsible-title svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
 }
 
-.form-collapsible-chevron {
-    width: 20px;
-    height: 20px;
+.passenger-header .form-collapsible-title svg {
     stroke: #0066FF;
+}
+
+.passenger-header .form-collapsible-chevron {
+    width: 22px;
+    height: 22px;
+    stroke: var(--bright-blue);
     stroke-width: 2;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
-.form-collapsible[open] .form-collapsible-chevron {
+.passenger-collapsible[open] .passenger-header .form-collapsible-chevron {
     transform: rotate(180deg);
 }
 
+/* Contenido del formulario */
 .form-collapsible-content {
-    padding: 20px;
+    padding: 18px 16px;
+    background: var(--white);
 }
 
-/* Passenger Badge */
-.passenger-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #F0F4FF;
-    color: #0066FF;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.passenger-badge svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* Form Grid */
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
+/* Form Grid — mobile: 1 columna */
+.form-grid { display: grid; gap: 14px; }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 14px;
 }
 
 /* Form Groups */
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .form-label {
     font-family: var(--font-secundary);
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--dark-gray);
+    color: #666666;
 }
 
 .form-label-optional {
@@ -168,91 +196,332 @@
 .form-input,
 .form-select {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #D1D5DB;
+    padding: 11px 14px;
+    border: 1px solid #D0E5FF;
     border-radius: 8px;
     font-family: var(--font-secundary);
     font-size: 0.9375rem;
     color: var(--dark-gray);
     background: var(--white);
     transition: all 0.2s ease;
+    /* Evita zoom en iOS */
+    -webkit-text-size-adjust: 100%;
 }
 
 .form-input:focus,
 .form-select:focus {
     outline: none;
-    border: 1px solid #60A3F9;
+    border-color: #60A3F9;
     box-shadow: 0 0 0 1px #60A3F9;
 }
 
-.form-input::placeholder {
-    color: #9CA3AF;
-}
+.form-input::placeholder { color: #BBBBBB; }
 
-.form-input.error {
-    border-color: #EF4444;
-}
+.form-input.error { border-color: #EF4444; }
+.form-input.error:focus { box-shadow: 0 0 0 2px rgba(239,68,68,0.15); }
 
-.form-input.error:focus {
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
-/* Select Dropdown */
+/* Select */
 .form-select {
     appearance: none;
+    -webkit-appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
-    padding-right: 40px;
+    padding-right: 38px;
     cursor: pointer;
 }
 
-/* Error Message */
+/* Error message */
 .form-error {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     color: #EF4444;
     font-weight: 500;
 }
 
-.form-error svg {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
+.form-error svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.form-helper {
+    font-size: 0.8rem;
+    color: #6B7280;
 }
 
-/* Helper Text */
-.form-helper {
-    font-size: 0.8125rem;
-    color: #6B7280;
-    margin-top: 4px;
+/* Disabled */
+.form-input:disabled,
+.form-select:disabled {
+    background: #F3F4F6;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 /* ===========================================
-   SUMMARY CARD (MOBILE FIRST)
+   MÉTODOS DE PAGO — mobile first
    =========================================== */
+
+/* Radio buttons ocultos */
+.payment-radio,
+.method-selector-radio { display: none; }
+
+/* Opciones principales */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border: 1px solid #AAD2F8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.payment-option:hover {
+    border-color: var(--bright-blue);
+    background: #F8FAFF;
+}
+
+.payment-option-radio {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #D1D5DB;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.payment-option:hover .payment-option-radio { border-color: var(--primary); }
+
+/* Estado checked — opción seleccionada */
+#payment-credit:checked ~ .payment-options label[for="payment-credit"] .payment-option-radio,
+#payment-debit:checked  ~ .payment-options label[for="payment-debit"]  .payment-option-radio,
+#payment-cash:checked   ~ .payment-options label[for="payment-cash"]   .payment-option-radio {
+    border-color: var(--primary);
+    border-width: 7px;
+    background: #fff;
+}
+
+#payment-credit:checked ~ .payment-options label[for="payment-credit"],
+#payment-debit:checked  ~ .payment-options label[for="payment-debit"],
+#payment-cash:checked   ~ .payment-options label[for="payment-cash"] {
+    border-color: var(--primary);
+    background: #F0F6FF;
+}
+
+.payment-option-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+}
+
+.payment-option-text {
+    font-family: var(--font-secundary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.payment-badge {
+    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-2) 100%);
+    color: var(--white);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: var(--font-secundary);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* ===========================================
+   GRIDS DE MÉTODOS — mobile first: 2 cols
+   =========================================== */
+
+/* Todos ocultos por defecto */
+.payment-methods-grid { display: none; }
+
+/* Crédito — visible cuando está checked */
+#payment-credit:checked ~ #credit-card-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: start;
+    animation: fadeInSlide 0.25s ease-out;
+}
+
+/* Débito */
+#payment-debit:checked ~ #debit-card-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: start;
+    animation: fadeInSlide 0.25s ease-out;
+}
+
+/* Efectivo */
+#payment-cash:checked ~ #cash-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: start;
+    animation: fadeInSlide 0.25s ease-out;
+}
+
+/* Forzar oculto cuando no está checked */
+#payment-credit:not(:checked) ~ #credit-card-methods,
+#payment-debit:not(:checked)  ~ #debit-card-methods,
+#payment-cash:not(:checked)   ~ #cash-methods {
+    display: none !important;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards de método */
+.payment-method-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.payment-method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    border: 1px solid #AAD2F8;
+    border-radius: 12px;
+    background: #fff;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-height: 110px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.payment-method-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0,102,255,0.1);
+    transform: translateY(-1px);
+}
+
+.payment-method-card:active { transform: scale(0.98); }
+
+.payment-method-card.highlighted {
+    border-color: var(--primary);
+    border-width: 2px;
+    background: #F0F6FF;
+}
+
+.payment-method-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.payment-logo {
+    max-width: 60px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.payment-method-name {
+    font-family: var(--font-secundary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 3px;
+}
+
+.payment-method-info {
+    font-family: var(--font-secundary);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+/* Selección de método específico */
+.method-selector-radio:checked + .payment-method-card {
+    border-color: var(--primary);
+    border-width: 2px;
+    background: #F0F6FF;
+    align-self: start;
+}
+
+/* Detalle de cuotas */
+.payment-method-details {
+    display: none;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #AAD2F8;
+    width: 100%;
+}
+
+.method-selector-radio:checked + .payment-method-card .payment-method-details {
+    display: block;
+    animation: fadeInSlide 0.25s ease-out;
+}
+
+.installment-breakdown {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 2px;
+}
+
+.cft-info {
+    font-size: 0.68rem;
+    color: #6B7280;
+    font-weight: 400;
+}
+
+/* ===========================================
+   SUMMARY CARD — mobile first (footer fijo)
+   =========================================== */
+
+/* Ocultar marker nativo */
+.summary-card summary::marker,
+.summary-collapsible-trigger::marker { display: none !important; content: none !important; }
+.summary-card summary::-moz-list-bullet,
+.summary-collapsible-trigger::-moz-list-bullet { list-style-type: none !important; }
+.summary-card summary,
+.summary-collapsible-trigger { list-style: none !important; }
 
 .summary-card {
     background: var(--white);
     border-radius: 20px;
-    position: sticky;
-    top: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* ===========================================
-   HEADER: Logo + Imagen de pareja
-   =========================================== */
+/* Header */
 .summary-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #D4E6FD;
-    /* Fondo celeste */
-    padding: 15px 20px;
+    padding: 14px 18px;
     gap: 10px;
 }
 
@@ -263,74 +532,67 @@
 }
 
 .summary-couple {
-    max-width: 150px;
+    max-width: 140px;
     height: auto;
     flex-shrink: 0;
     display: none;
 }
 
-/* ===========================================
-   TEXTO DE DESCUENTO
-   =========================================== */
+/* Descuento */
 .summary-discount-text {
-    padding: 15px 20px 10px;
+    padding: 12px 18px 8px;
     text-align: center;
 }
 
 .summary-discount-text p {
     font-family: var(--font-primary);
-    font-size: 0.9375rem;
-    color: #666666;
-    margin: 0;
+    font-size: 0.9rem;
     color: var(--pink);
+    margin: 0;
 }
 
 .summary-discount-text .discount {
     color: #FF0099;
     font-weight: 800;
-    font-size: 1.125rem;
+    font-size: 1.05rem;
 }
 
-/* ===========================================
-   ITEMS DE INFORMACIÓN
-   =========================================== */
+/* Items */
 .summary-content {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 10px 20px 15px;
+    gap: 10px;
+    padding: 8px 18px 12px;
 }
 
-/* Cada item con borde */
 .summary-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     border: 1px solid #D0E5FF;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 10px 12px;
     background: var(--white);
 }
 
-/* Icono del item */
 .summary-icon {
     flex-shrink: 0;
     stroke: #0066FF;
-    margin-top: 2px;
+    width: 22px;
+    height: 22px;
 }
 
-/* Grid de 2 columnas para items con doble información */
 .summary-item-grid {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 12px;
+    min-width: 0;
 }
 
-/* Labels y valores */
 .summary-item-label {
     font-family: var(--font-secundary);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--dark-gray);
     margin-bottom: 2px;
@@ -338,28 +600,24 @@
 
 .summary-item-value {
     font-family: var(--font-secundary);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 300;
     color: var(--dark-gray);
 }
 
-/* ===========================================
-   DIVIDER
-   =========================================== */
+/* Divider */
 .summary-divider {
     height: 1px;
     background: #E5E7EB;
-    margin: 5px 20px 15px;
+    margin: 4px 18px 12px;
 }
 
-/* ===========================================
-   PRICING
-   =========================================== */
+/* Pricing */
 .summary-pricing {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 0 20px;
+    gap: 8px;
+    padding: 0 18px;
 }
 
 .summary-price-row {
@@ -367,1365 +625,59 @@
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-secundary);
-    font-size: 0.875rem;
+    font-size: 0.85rem;
 }
 
-.summary-price-label {
-    color: #666666;
-    font-weight: 400;
-}
+.summary-price-label { color: #666666; font-weight: 400; }
+.summary-price-value { font-weight: 600; color: var(--dark-gray); }
+.summary-price-discount { color: #10B981; }
 
-.summary-price-value {
-    font-weight: 600;
-    color: var(--dark-gray);
-}
-
-.summary-price-discount {
-    color: #10B981;
-}
-
-/* ===========================================
-   TOTAL
-   =========================================== */
-.summary-total-wrapper {
-    padding: 0 20px;
-}
+/* Total */
+.summary-total-wrapper { padding: 0 18px; }
 
 .summary-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #E5E7EB;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .summary-total-label {
     font-family: var(--font-primary);
-    font-size: 1.125rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--dark-gray);
 }
 
 .summary-total-value {
     font-family: var(--font-primary);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--dark-gray);
 }
 
 /* ===========================================
-   RESPONSIVE: TABLET (768px+)
+   CÓDIGO DE DESCUENTO — mobile first
    =========================================== */
-@media (min-width: 768px) {
-    .summary-header {
-        padding: 18px 25px;
-    }
-
-    .summary-logo {
-        max-width: 130px;
-    }
-
-    .summary-couple {
-        max-width: 170px;
-    }
-
-    .summary-discount-text {
-        padding: 18px 25px 12px;
-    }
-
-    .summary-discount-text p {
-        font-size: 1rem;
-    }
-
-    .summary-discount-text .discount {
-        font-size: 1.25rem;
-    }
-
-    .summary-content {
-        padding: 10px 25px 18px;
-        gap: 14px;
-    }
-
-    .summary-item {
-        padding: 14px 16px;
-    }
-
-    .summary-icon {
-        width: 26px;
-        height: 26px;
-    }
-
-    .summary-item-grid {
-        gap: 18px;
-    }
-
-    .summary-item-label,
-    .summary-item-value {
-        font-size: 0.9375rem;
-    }
-
-    .summary-divider {
-        margin: 5px 25px 18px;
-    }
-
-    .summary-pricing {
-        padding: 0 25px;
-        gap: 12px;
-    }
-
-    .summary-price-row {
-        font-size: 0.9375rem;
-    }
-
-    .summary-total-wrapper {
-        padding: 0 25px;
-    }
-
-    .summary-total {
-        padding-top: 10px;
-    }
-
-    .summary-total-label {
-        font-size: 1.25rem;
-    }
-
-    .summary-total-value {
-        font-size: 1.375rem;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .summary-header {
-        padding: 6px 28px 0;
-    }
-
-    .summary-logo {
-        max-width: 135px;
-    }
-
-    .summary-couple {
-        max-width: 95px;
-        display: inherit;
-    }
-
-    .summary-discount-text {
-        padding: 6px 22px;
-    }
-
-    .summary-discount-text p {
-        font-size: 0.875rem;
-    }
-
-    .summary-discount-text .discount {
-        font-size: 1.063rem;
-    }
-
-    .summary-content {
-        padding: 0 28px 10px;
-        gap: 10px;
-    }
-
-    .summary-item {
-        padding: 8px 10px;
-    }
-
-    .summary-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .summary-item-grid {
-        gap: 5px;
-    }
-
-    .summary-item-label,
-    .summary-item-value {
-        font-size: 0.938rem;
-    }
-
-    .summary-divider {
-        margin: 5px 28px 20px;
-    }
-
-    .summary-pricing {
-        padding: 0 28px;
-        gap: 5px;
-    }
-
-    .summary-price-row {
-        font-size: 0.875rem;
-    }
-
-    .summary-total-wrapper {
-        padding: 0 28px 15px;
-    }
-
-    .summary-total {
-        padding-bottom: 5px;
-    }
-
-    .summary-total-label {
-        font-size: 1.375rem;
-    }
-
-    .summary-total-value {
-        font-size: 1.5rem;
-    }
-}
-
-/* ===========================================
-   LAYOUT: TWO COLUMNS (MOBILE FIRST)
-   =========================================== */
-
-.checkout-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.checkout-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.checkout-main {
-    order: 2;
-}
-
-.checkout-sidebar {
-    order: 1;
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .form-input,
-    .form-select {
-        font-size: 1rem;
-    }
-
-    .checkout-container {
-        padding: 30px;
-    }
-
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .checkout-grid {
-        grid-template-columns: 1fr 380px;
-        gap: 30px;
-    }
-
-    .checkout-main {
-        order: 1;
-    }
-
-    .checkout-sidebar {
-        order: 2;
-    }
-
-    .form-section {
-        padding: 25px;
-    }
-
-    .form-collapsible-header {
-        padding: 20px 25px;
-    }
-
-    .form-collapsible-content {
-        padding: 25px;
-    }
-
-    .form-grid {
-        gap: 20px;
-    }
-
-    .form-row {
-        gap: 20px;
-    }
-
-    .summary-total-label,
-    .summary-total-value {
-        font-size: 1.063rem;
-    }
-}
-
-/* ===========================================
-   ADDITIONAL UTILITIES
-   =========================================== */
-
-/* Screen reader only */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Disabled state */
-.form-input:disabled,
-.form-select:disabled {
-    background: #F3F4F6;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-
-/* ===========================================
-   SECCIÓN DE PASAJEROS - DISEÑO EXACTO
-   =========================================== */
-
-.passengers-section {
-    margin-bottom: 20px;
-    background: var(--white);
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.section-title {
-    font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--blue-dark);
-    margin-bottom: 20px;
-    padding: 0 5px;
-}
-
-/* Collapsible de cada pasajero */
-.passenger-collapsible {
-    background: var(--white);
-    border-radius: 16px;
-    border: 1px solid #AAD2F8;
-    margin-bottom: 15px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
-/* Header de cada pasajero con fondo celeste */
-.passenger-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    cursor: pointer;
-    background: #D5E8FF;
-    user-select: none;
-    transition: all 0.2s ease;
-}
-
-.passenger-header:hover {
-    background: #C4DCFC;
-    /* Un poco más oscuro al hover */
-}
-
-.passenger-collapsible[open] .passenger-header {
-    background: #D4E6FD;
-    border-bottom: 1px solid #B8D4F8;
-}
-
-/* Título del pasajero */
-.passenger-header .form-collapsible-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333333;
-    /* Gris oscuro, no azul */
-}
-
-.passenger-header .form-collapsible-title svg {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    stroke: #0066FF;
-}
-
-/* Chevron del pasajero */
-.passenger-header .form-collapsible-chevron {
-    width: 24px;
-    height: 24px;
-    stroke: var(--bright-blue);
-    stroke-width: 2;
-    transition: transform 0.3s ease;
-}
-
-.passenger-collapsible[open] .passenger-header .form-collapsible-chevron {
-    transform: rotate(180deg);
-}
-
-/* Contenido del formulario de pasajero */
-.passenger-collapsible .form-collapsible-content {
-    padding: 24px 20px;
-    background: var(--white);
-}
-
-/* Estilos específicos para los labels de pasajeros */
-.passenger-collapsible .form-label {
-    font-family: var(--font-secundary);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #666666;
-    /* Gris medio */
-    margin-bottom: 6px;
-}
-
-/* Inputs de pasajeros */
-.passenger-collapsible .form-input,
-.passenger-collapsible .form-select {
-    border: 1px solid #D0E5FF;
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 0.9375rem;
-    color: #333333;
-}
-
-.passenger-collapsible .form-input::placeholder {
-    color: #BBBBBB;
-    /* Placeholder más claro */
-}
-
-/* Grid de formulario de pasajeros */
-.passenger-collapsible .form-grid {
-    display: grid;
-    gap: 18px;
-}
-
-.passenger-collapsible .form-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 25px;
-    }
-
-    .passenger-header {
-        padding: 18px 24px;
-    }
-
-    .passenger-header .form-collapsible-title {
-        font-size: 1.0625rem;
-    }
-
-    .passenger-collapsible .form-collapsible-content {
-        padding: 28px 24px;
-    }
-
-    .passenger-collapsible .form-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .passenger-collapsible .form-grid {
-        gap: 20px;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .section-title {
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-
-    .passenger-header {
-        padding: 20px 28px;
-    }
-
-    .passenger-header .form-collapsible-title {
-        font-size: 1.125rem;
-    }
-
-    .passenger-header .form-collapsible-chevron {
-        width: 26px;
-        height: 26px;
-    }
-
-    .passenger-collapsible .form-collapsible-content {
-        padding: 30px 28px;
-    }
-
-    .passenger-collapsible .form-row {
-        gap: 24px;
-    }
-
-    .passenger-collapsible .form-grid {
-        gap: 22px;
-    }
-
-    .passenger-collapsible .form-label {
-        font-size: 0.9375rem;
-    }
-
-    .passenger-collapsible .form-input,
-    .passenger-collapsible .form-select {
-        font-size: 1rem;
-        padding: 13px 16px;
-    }
-}
-
-
-/* ===========================================
-   MÉTODOS DE PAGO 
-   =========================================== */
-
-/* Ocultar los radio buttons reales */
-.payment-radio {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Opciones de pago (Labels) */
-.payment-options {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-
-/* Label container del radio */
-.payment-option {
-    display: flex;
-    align-items: center;
-    padding: 16px 18px;
-    border: 1px solid #AAD2F8;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: #ffffff;
-}
-
-.payment-option:hover {
-    border-color: var(--bright-blue);
-    background: #F8FAFF;
-}
-
-/* Radio button falso (visual) */
-.payment-option-radio {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #D1D5DB;
-    border-radius: 50%;
-    margin-right: 14px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-}
-
-.payment-option:hover .payment-option-radio {
-    border-color: var(--primary);
-}
-
-/* Radio button checked - círculo relleno */
-#payment-credit:checked~.payment-options label[for="payment-credit"] .payment-option-radio,
-#payment-debit:checked~.payment-options label[for="payment-debit"] .payment-option-radio,
-#payment-cash:checked~.payment-options label[for="payment-cash"] .payment-option-radio {
-    border-color: var(--primary);
-    border-width: 7px;
-    background: #ffffff;
-}
-
-/* Opción seleccionada - border azul */
-#payment-credit:checked~.payment-options label[for="payment-credit"],
-#payment-debit:checked~.payment-options label[for="payment-debit"],
-#payment-cash:checked~.payment-options label[for="payment-cash"] {
-    border-color: var(--primary);
-    background: #F0F6FF;
-}
-
-/* Contenido de la opción */
-.payment-option-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    flex: 1;
-}
-
-.payment-option-text {
-    font-family: var(--font-secundary);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--dark-gray);
-}
-
-/* Badge de promoción - gradiente magenta */
-.payment-badge {
-    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-2) 100%);
-    color: var(--white);
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-family: var(--font-secundary);
-    font-size: 0.6875rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-}
-
-/* ===========================================
-   MOSTRAR/OCULTAR GRIDS CON CSS PURO
-   =========================================== */
-
-/* Por defecto, ocultar TODOS los grids */
-.payment-methods-grid {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    align-items: start;
-}
-
-#credit-card-methods {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* o 4 en desktop */
-    gap: 12px;
-    align-items: start;
-    /* <--- CRUCIAL para que no se estiren las de al lado */
-}
-
-.payment-method-container {
-    width: 100%;
-    display: flex;
-    /* Para que el input y label se organicen bien internamente */
-    flex-direction: column;
-}
-
-/* Mostrar grid de CRÉDITO cuando payment-credit está checked */
-#payment-credit:checked~#credit-card-methods {
-    display: grid;
-    animation: fadeInSlide 0.3s ease-in-out;
-}
-
-/* Mostrar grid de DÉBITO cuando payment-debit está checked */
-#payment-debit:checked~#debit-card-methods {
-    display: grid;
-    animation: fadeInSlide 0.3s ease-in-out;
-}
-
-/* Mostrar grid de EFECTIVO cuando payment-cash está checked */
-#payment-cash:checked~#cash-methods {
-    display: grid;
-    animation: fadeInSlide 0.3s ease-in-out;
-}
-
-/* Animación de entrada */
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateY(-15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===========================================
-   GRID DE MÉTODOS DE PAGO
-   =========================================== */
-
-/* Card de método de pago */
-.payment-method-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 12px;
-    border: 1px solid #AAD2F8;
-    border-radius: 12px;
-    background: #ffffff;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    min-height: 130px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-
-.payment-method-card:hover {
-    border-color: var(--primary);
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1);
-    transform: translateY(-2px);
-}
-
-/* Card destacada (con borde azul) */
-.payment-method-card.highlighted {
-    border-color: var(--primary);
-    border-width: 2px;
-    background: #F0F6FF;
-}
-
-/* Logo del método de pago */
-.payment-logo {
-    max-width: 70px;
-    max-height: 40px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-/* Nombre del método */
-.payment-method-name {
-    font-family: var(--font-secundary);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--dark-gray);
-    margin-bottom: 4px;
-}
-
-/* Info adicional (cuotas, moneda) */
-.payment-method-info {
-    font-family: var(--font-secundary);
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--primary);
-    line-height: 1.2;
-}
-
-/* ===========================================
-   AJUSTES ESPECÍFICOS POR GRID
-   =========================================== */
-
-/* Grid de débito - 2 columnas máximo */
-#debit-card-methods {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
-}
-
-/* Grid de efectivo - 2 columnas en mobile */
-#cash-methods {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .payment-options {
-        gap: 14px;
-        margin-bottom: 30px;
-    }
-
-    .payment-option {
-        padding: 18px 22px;
-    }
-
-    .payment-option-radio {
-        width: 26px;
-        height: 26px;
-        margin-right: 16px;
-    }
-
-    .payment-option-text {
-        font-size: 1.0625rem;
-    }
-
-    .payment-badge {
-        font-size: 0.75rem;
-        padding: 5px 16px;
-    }
-
-    /* Grids en 4 columnas */
-    #credit-card-methods,
-    #cash-methods {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-    }
-
-    /* Débito sigue en 2 columnas */
-    #debit-card-methods {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .payment-method-card {
-        padding: 20px 14px;
-        min-height: 140px;
-    }
-
-    .payment-logo {
-        max-width: 80px;
-        max-height: 45px;
-        margin-bottom: 12px;
-    }
-
-    .payment-method-name {
-        font-size: 0.9375rem;
-    }
-
-    .payment-method-info {
-        font-size: 0.8125rem;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .payment-options {
-        gap: 16px;
-        margin-bottom: 35px;
-    }
-
-    .payment-option {
-        padding: 20px 24px;
-    }
-
-    .payment-option-radio {
-        width: 28px;
-        height: 28px;
-        margin-right: 18px;
-    }
-
-    .payment-option-text {
-        font-size: 1.125rem;
-    }
-
-    .payment-badge {
-        font-size: 0.8125rem;
-        padding: 6px 18px;
-    }
-
-    #credit-card-methods,
-    #cash-methods {
-        gap: 16px;
-    }
-
-    #debit-card-methods {
-        gap: 16px;
-    }
-
-    .payment-method-card {
-        padding: 22px 16px;
-        min-height: 150px;
-    }
-
-    .payment-logo {
-        max-width: 142px;
-        max-height: 58px;
-        margin-bottom: 14px;
-    }
-
-    .payment-method-name {
-        font-size: 1rem;
-    }
-
-    .payment-method-info {
-        font-size: 0.875rem;
-    }
-}
-
-/* ===========================================
-   ESTADOS ADICIONALES (OPCIONAL)
-   =========================================== */
-
-/* Active state */
-.payment-method-card:active {
-    transform: translateY(0) scale(0.98);
-}
-
-/* Estado disabled para métodos no disponibles */
-.payment-method-card.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-/* Ocultar los radios específicos de las tarjetas */
-.method-selector-radio {
-    display: none;
-}
-
-/* El detalle está oculto por defecto */
-.payment-method-details {
-    display: none;
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid #AAD2F8;
-    width: 100%;
-}
-
-/* LÓGICA DE SELECCIÓN: Cuando el radio está checked, modificamos el label hermano */
-.method-selector-radio:checked+.payment-method-card {
-    border-color: var(--primary);
-    border-width: 2px;
-    background: #F0F6FF;
-    height: auto;
-    align-self: start;
-}
-
-/* Mostramos el detalle solo cuando está seleccionado */
-.method-selector-radio:checked+.payment-method-card .payment-method-details {
-    display: block;
-    animation: fadeInSlide 0.3s ease-out;
-}
-
-/* Estilos de texto para el detalle */
-.installment-breakdown {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    color: var(--dark-gray);
-    margin-bottom: 2px;
-}
-
-.cft-info {
-    font-size: 0.7rem;
-    color: #6B7280;
-    font-weight: 400;
-}
-
-
-/* Forzamos que si el radio NO está checked, el grid NO se vea */
-#payment-credit:not(:checked)~#credit-card-methods,
-#payment-debit:not(:checked)~#debit-card-methods,
-#payment-cash:not(:checked)~#cash-methods {
-    display: none;
-}
-
-
-/* ===========================================
-   TÉRMINOS Y CONDICIONES - AGREGAR A ESTILO2.CSS
-   =========================================== */
-
-/* Grupo de checkbox */
-.terms-checkbox-group {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #F8FAFF;
-    border-radius: 12px;
-    border: 1px solid #D0E5FF;
-}
-
-/* Label del checkbox */
-.terms-checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Ocultar checkbox nativo */
-.terms-checkbox-input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Checkbox personalizado */
-.terms-checkbox-custom {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    border: 2px solid #D1D5DB;
-    border-radius: 6px;
-    background: var(--white);
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
-    margin-top: 2px;
-}
-
-.terms-checkbox-custom:hover {
-    border-color: var(--primary);
-}
-
-/* Checkbox checked */
-.terms-checkbox-input:checked+.terms-checkbox-custom {
-    background: var(--primary);
-    border-color: var(--primary);
-}
-
-/* Checkmark */
-.terms-checkbox-input:checked+.terms-checkbox-custom::after {
-    content: "";
-    position: absolute;
-    left: 7px;
-    top: 3px;
-    width: 6px;
-    height: 11px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-/* Contenedor de texto */
-.terms-text {
-    flex: 1;
-}
-
-/* Texto principal */
-.terms-main-text {
-    font-family: var(--font-secundary);
-    font-size: 0.9375rem;
-    font-weight: 400;
-    color: var(--dark-gray);
-    line-height: 1.6;
-    margin: 0 0 12px 0;
-    text-align: left;
-}
-
-/* Enlaces en términos */
-.terms-link {
-    color: var(--primary);
-    text-decoration: underline;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.terms-link:hover {
-    color: var(--blue-dark);
-}
-
-/* Texto de información (con ícono) */
-.terms-info-text {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-secundary);
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #666666;
-    line-height: 1.5;
-    margin: 0;
-    padding: 12px;
-    background: rgba(0, 102, 255, 0.05);
-    border-radius: 8px;
-}
-
-/* Ícono de información */
-.terms-info-icon {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    stroke: var(--primary);
-}
-
-/* ===========================================
-   SECCIÓN DE COMPRA SEGURA
-   =========================================== */
-
-.secure-purchase-section {
-    background: var(--white);
-    padding: 30px 25px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.container-secure-purchase {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header con candado */
-.secure-purchase-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-/* Ícono de candado */
-.secure-lock-icon {
-    width: 28px;
-    height: 28px;
-    stroke: #4CAF50;
-    fill: #E8F5E9;
-    stroke-width: 2;
-}
-
-/* Título de seguridad */
-.secure-purchase-title {
-    font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 0;
-}
-
-/* Descripción */
-.secure-purchase-description {
-    font-family: var(--font-secundary);
-    font-size: 0.9375rem;
-    font-weight: 400;
-    color: #666666;
-    line-height: 1.6;
-    margin: 0 0 25px 0;
-}
-
-/* Botón de compra principal */
-.btn-purchase {
-    width: 100%;
-    max-width: 400px;
-    padding: 18px 40px;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 50px;
-    font-family: var(--font-primary);
-    font-size: 1.25rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
-}
-
-.btn-purchase:hover {
-    background: var(--blue-dark);
-    transform: translateY(-3px);
-}
-
-.btn-purchase:active {
-    transform: translateY(-1px);
-}
-
-/* Estado deshabilitado */
-.btn-purchase:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .terms-checkbox-group {
-        padding: 25px;
-        margin-bottom: 25px;
-    }
-
-    .terms-checkbox-custom {
-        width: 26px;
-        height: 26px;
-        min-width: 26px;
-    }
-
-    .terms-checkbox-input:checked+.terms-checkbox-custom::after {
-        left: 8px;
-        top: 3px;
-        width: 7px;
-        height: 12px;
-    }
-
-    .terms-main-text {
-        font-size: 1rem;
-    }
-
-    .terms-info-text {
-        font-size: 0.9375rem;
-        padding: 14px;
-    }
-
-    .terms-info-icon {
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-    }
-
-    .secure-purchase-section {
-        padding: 40px 35px;
-        margin-top: 30px;
-    }
-
-    .secure-lock-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .secure-purchase-title {
-        font-size: 1.75rem;
-    }
-
-    .secure-purchase-description {
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
-
-    .btn-purchase {
-        font-size: 1.375rem;
-        padding: 20px 50px;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .terms-checkbox-group {
-        padding: 28px;
-        margin-bottom: 28px;
-    }
-
-    .terms-checkbox-label {
-        gap: 16px;
-    }
-
-    .terms-checkbox-custom {
-        width: 28px;
-        height: 28px;
-        min-width: 28px;
-    }
-
-    .terms-checkbox-input:checked+.terms-checkbox-custom::after {
-        left: 8px;
-        top: 3px;
-        width: 7px;
-        height: 13px;
-    }
-
-    .terms-main-text {
-        font-size: 1.0625rem;
-    }
-
-    .terms-info-text {
-        font-size: 1rem;
-        padding: 16px;
-    }
-
-    .terms-info-icon {
-        width: 22px;
-        height: 22px;
-        min-width: 22px;
-    }
-
-    .secure-purchase-section {
-        padding: 45px 40px;
-        margin-top: 35px;
-    }
-
-    .secure-lock-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .secure-purchase-title {
-        font-size: 2rem;
-    }
-
-    .secure-purchase-description {
-        font-size: 1.0625rem;
-        margin-bottom: 35px;
-    }
-
-    .btn-purchase {
-        font-size: 1.5rem;
-        padding: 22px 60px;
-    }
-}
-
-/* ===========================================
-   VALIDACIÓN CON JAVASCRIPT (OPCIONAL)
-   =========================================== */
-
-/* Si los checkboxes no están marcados, deshabilitar botón */
-.btn-purchase.terms-not-accepted {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-/* Indicador de error en checkbox */
-.terms-checkbox-custom.error {
-    border-color: #EF4444;
-    animation: shake 0.3s ease;
-}
-
-@keyframes shake {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-5px);
-    }
-
-    75% {
-        transform: translateX(5px);
-    }
-}
-
-
-/* ===========================================
-   CÓDIGO DE DESCUENTO EN ASIDE - AGREGAR A ESTILO2.CSS
-   =========================================== */
-
-/* Contenedor principal */
 .discount-code-section {
-    padding: 0 20px;
-    margin-bottom: 15px;
+    padding: 0 18px 12px;
+    margin-bottom: 0;
 }
 
-/* Details element */
-.discount-code-details {
-    background: transparent;
-}
+.discount-code-details summary { list-style: none; }
+.discount-code-details summary::-webkit-details-marker { display: none; }
 
-.discount-code-details summary {
-    list-style: none;
-}
-
-.discount-code-details summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Trigger colapsado */
 .discount-code-trigger {
     font-family: var(--font-secundary);
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
     font-weight: 400;
     text-align: center;
     color: var(--primary);
     cursor: pointer;
-    padding: 0;
-    margin-bottom: 0;
+    display: block;
+    padding: 8px 0 0;
     transition: color 0.2s ease;
     user-select: none;
 }
@@ -1735,34 +687,25 @@
     text-decoration: underline;
 }
 
-/* Contenido expandido */
 .discount-code-content {
-    margin-top: 12px;
-    animation: fadeInDown 0.3s ease-out;
+    margin-top: 10px;
+    animation: fadeInDown 0.25s ease-out;
 }
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Grupo de input + botón */
 .discount-code-input-group {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* Input del código */
 .discount-code-input {
     flex: 1;
-    padding: 12px 14px;
+    min-width: 0;
+    padding: 10px 12px;
     border: 1px solid #D1D5DB;
     border-radius: 8px;
     font-family: var(--font-secundary);
@@ -1775,25 +718,16 @@
 .discount-code-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(0,102,255,0.1);
 }
 
-.discount-code-input::placeholder {
-    color: #9CA3AF;
-}
+.discount-code-input::placeholder { color: #9CA3AF; }
 
-/* Estado de error en el input */
-.discount-code-input.error {
-    border-color: #EF4444;
-}
+.discount-code-input.error { border-color: #EF4444; }
+.discount-code-input.success { border-color: #10B981; }
 
-.discount-code-input.error:focus {
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
-/* Botón Aplicar */
 .discount-code-btn {
-    padding: 12px 24px;
+    padding: 10px 18px;
     background: var(--white);
     color: var(--dark-gray);
     border: 1px solid #D1D5DB;
@@ -1804,6 +738,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .discount-code-btn:hover {
@@ -1812,109 +747,20 @@
     color: var(--primary);
 }
 
-.discount-code-btn:active {
-    transform: scale(0.98);
-}
+.discount-code-btn:active { transform: scale(0.98); }
 
-/* Mensaje de error */
 .discount-code-error {
-    margin-top: 8px;
+    margin-top: 6px;
     font-family: var(--font-secundary);
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #EF4444;
-    animation: shakeError 0.3s ease;
 }
-
-@keyframes shakeError {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-5px);
-    }
-
-    75% {
-        transform: translateX(5px);
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: TABLET (768px+)
-   =========================================== */
-@media (min-width: 768px) {
-    .discount-code-section {
-        padding: 0 25px;
-        margin-bottom: 18px;
-    }
-
-    .discount-code-trigger {
-        font-size: 1rem;
-    }
-
-    .discount-code-input,
-    .discount-code-btn {
-        font-size: 0.9375rem;
-        padding: 13px 16px;
-    }
-
-    .discount-code-btn {
-        padding: 13px 28px;
-    }
-
-    .discount-code-error {
-        font-size: 0.875rem;
-    }
-}
-
-/* ===========================================
-   RESPONSIVE: DESKTOP (992px+)
-   =========================================== */
-@media (min-width: 992px) {
-    .discount-code-section {
-        padding: 0 28px;
-        margin-bottom: 20px;
-    }
-
-    .discount-code-trigger {
-        font-size: 1.0625rem;
-    }
-
-    .discount-code-content {
-        margin-top: 14px;
-    }
-
-    .discount-code-input-group {
-        gap: 12px;
-    }
-
-    .discount-code-input,
-    .discount-code-btn {
-        font-size: 15px;
-        padding: 10px;
-    }
-
-    .discount-code-btn {
-        padding: 10px 31px;
-    }
-
-    .discount-code-error {
-        font-size: 0.9375rem;
-        margin-top: 10px;
-    }
-}
-
-/* ===========================================
-   ESTADO DE ÉXITO (OPCIONAL - PARA CUANDO SISTEMAS LO IMPLEMENTE)
-   =========================================== */
 
 .discount-code-success {
-    margin-top: 8px;
+    margin-top: 6px;
     font-family: var(--font-secundary);
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #10B981;
     display: flex;
@@ -1924,65 +770,23 @@
 
 .discount-code-success::before {
     content: "✓";
-    display: inline-block;
-    width: 18px;
-    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
     background: #10B981;
-    color: white;
+    color: #fff;
     border-radius: 50%;
-    text-align: center;
-    line-height: 18px;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
 }
-
-/* Input en estado de éxito */
-.discount-code-input.success {
-    border-color: #10B981;
-}
-
-.discount-code-input.success:focus {
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-}
-
-
-/* DETALLE DE COMPRA MOBILE */
 
 /* ===========================================
-   SIDEBAR COMO FOOTER FIJO EN MOBILE (CON DETAILS)
-   AGREGAR AL FINAL DE ESTILO2.CSS
+   SIDEBAR COMO FOOTER FIJO EN MOBILE
    =========================================== */
-
-/* ===========================================
-   MOBILE: Convertir sidebar a footer fijo
-   =========================================== */
-/* ===========================================
-   FIX COMPLETO: ELIMINAR ESPACIO BLANCO EN MOBILE
-   REEMPLAZA LA SECCIÓN "MOBILE: Convertir sidebar a footer fijo"
-   =========================================== */
-/* ELIMINAR el ::marker del summary */
-.summary-card summary::marker,
-.summary-collapsible-trigger::marker {
-    display: none !important;
-    content: none !important;
-}
-
-/* Firefox específico */
-.summary-card summary::-moz-list-bullet,
-.summary-collapsible-trigger::-moz-list-bullet {
-    list-style-type: none !important;
-}
-
-/* Asegurar que no tenga list-style */
-.summary-card summary,
-.summary-collapsible-trigger {
-    list-style: none !important;
-    list-style-type: none !important;
-}
-
 @media (max-width: 991px) {
-
-
 
     /* Sidebar fijo en la parte inferior */
     .checkout-sidebar {
@@ -1991,14 +795,14 @@
         left: 0;
         right: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 100;
         max-height: 85vh;
         overflow: visible;
         margin: 0;
         padding: 0;
     }
 
-    /* Summary card como details - SIN ESPACIOS */
+    /* Summary card como details colapsable */
     .summary-card {
         border-radius: 20px 20px 0 0;
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
@@ -2014,54 +818,53 @@
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Ocultar marker nativo de details */
     .summary-card summary {
-        list-style: none;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    .summary-card summary::-webkit-details-marker {
-        display: none;
-    }
+    .summary-card summary::-webkit-details-marker { display: none; }
 
-    /* Trigger clickeable - SIN PADDING TOP */
+    /* Trigger clickeable */
     .summary-collapsible-trigger {
         cursor: pointer;
         position: sticky;
         top: 0;
-        background: white;
+        background: #fff;
         z-index: 10;
         border-radius: 20px 20px 0 0;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* Header con indicador de colapso */
+    /* Header con padding ajustado para el chevron */
     .summary-collapsible-trigger .summary-header {
         position: relative;
-        padding: 15px 50px 15px 20px;
-        /* padding-right aumentado para chevron */
+        padding: 14px 50px 14px 18px;
         margin: 0;
         border-radius: 20px 20px 0 0;
     }
 
-    /* Agregar chevron al header */
+    /* Chevron indicador — SVG igual que los acordeones */
     .summary-collapsible-trigger::after {
         content: "";
         position: absolute;
-        top: 25px;
-        right: 25px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid #0066FF;
+        top: 25%;
+        right: 20px;
+        transform: translateY(-50%) rotate(180deg);
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230066FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
         transition: transform 0.3s ease;
     }
 
+    /* Abierto: chevron apunta hacia arriba */
     .summary-card[open] .summary-collapsible-trigger::after {
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(0deg);
+        top: 50%;
     }
 
     /* Preview del total (visible cuando está colapsado) */
@@ -2069,16 +872,16 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 16px 20px;
-        margin: 0 0 9px 0;
-        background: white;
+        padding: 12px 18px;
+        margin: 0 0 8px 0;
+        background: #fff;
         border-top: 1px solid #E5E7EB;
-        gap: 15px;
+        gap: 12px;
     }
 
     .summary-total-preview-label {
         font-family: var(--font-primary);
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 900;
         color: #666666;
         text-transform: uppercase;
@@ -2086,150 +889,475 @@
 
     .summary-total-preview-value {
         font-family: var(--font-primary);
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 700;
         color: var(--primary);
     }
 
     /* Ocultar preview cuando está expandido */
-    .summary-card[open] .summary-total-preview {
-        display: none;
-    }
+    .summary-card[open] .summary-total-preview { display: none; }
 
-    /* Agregar padding al main */
-    .checkout-main {
-        padding-bottom: 160px;
-    }
+    /* Padding bottom al main para que no quede tapado */
+    .checkout-main { padding-bottom: 130px; }
 
-    /* Ajustar header cuando está colapsado */
-    .summary-card:not([open]) .summary-header {
-        padding-bottom: 15px;
-    }
-
-    /* Scroll suave */
-    .summary-card::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .summary-card::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 0 0 0 20px;
-    }
-
-    .summary-card::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-
-    /* Reducir padding en elementos internos para mobile */
-    .summary-card[open] .summary-discount-text {
-        padding: 12px 20px 8px;
-    }
-
-    .summary-card[open] .summary-content {
-        padding: 8px 20px 12px;
-    }
-
-    /* Botón de código de descuento más compacto */
-    .discount-code-section {
-        padding: 0 20px 12px;
-    }
-
-    /* Total wrapper ajustado */
-    .summary-total-wrapper {
-        padding: 0 20px 20px;
-    }
+    /* Scrollbar sutil */
+    .summary-card::-webkit-scrollbar { width: 4px; }
+    .summary-card::-webkit-scrollbar-track { background: #f1f1f1; }
+    .summary-card::-webkit-scrollbar-thumb { background: #aaa; border-radius: 4px; }
 }
 
 /* ===========================================
-   DESKTOP: Sidebar normal
+   TÉRMINOS Y CONDICIONES — mobile first
+   =========================================== */
+.terms-checkbox-group {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #F8FAFF;
+    border-radius: 12px;
+    border: 1px solid #D0E5FF;
+}
+
+.terms-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.terms-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.terms-checkbox-custom {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid #D1D5DB;
+    border-radius: 6px;
+    background: var(--white);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.terms-checkbox-custom:hover { border-color: var(--primary); }
+
+.terms-checkbox-input:checked + .terms-checkbox-custom {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.terms-checkbox-input:checked + .terms-checkbox-custom::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.terms-checkbox-custom.error {
+    border-color: #EF4444;
+    animation: shake 0.3s ease;
+}
+
+.terms-text { flex: 1; min-width: 0; }
+
+.terms-main-text {
+    font-family: var(--font-secundary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+.terms-link {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.terms-link:hover { color: var(--blue-dark); }
+
+.terms-info-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-family: var(--font-secundary);
+    font-size: 0.83rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    padding: 10px 12px;
+    background: rgba(0,102,255,0.05);
+    border-radius: 8px;
+}
+
+.terms-info-icon {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    stroke: var(--primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ===========================================
+   SECCIÓN COMPRA SEGURA — mobile first
+   =========================================== */
+.secure-purchase-section {
+    background: var(--white);
+    padding: 28px 20px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.container-secure-purchase {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secure-purchase-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.secure-lock-icon {
+    width: 26px;
+    height: 26px;
+    stroke: #4CAF50;
+    fill: #E8F5E9;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.secure-purchase-title {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.secure-purchase-description {
+    font-family: var(--font-secundary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0 0 22px 0;
+}
+
+.btn-purchase {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px 32px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,102,255,0.3);
+    touch-action: manipulation;
+}
+
+.btn-purchase:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.btn-purchase:active { transform: translateY(0) scale(0.98); }
+
+.btn-purchase:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-purchase.terms-not-accepted {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===========================================
+   UTILIDADES
+   =========================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET 600px+
+   =========================================== */
+@media (min-width: 600px) {
+    .checkout-container { padding: 20px; }
+
+    /* Payment grid: 3 cols en pantallas intermedias */
+    #payment-credit:checked ~ #credit-card-methods,
+    #payment-cash:checked   ~ #cash-methods {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .payment-method-card { min-height: 120px; }
+
+    .payment-logo { max-width: 70px; max-height: 40px; }
+    .payment-method-name { font-size: 0.85rem; }
+    .payment-method-info { font-size: 0.75rem; }
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET 768px+
+   =========================================== */
+@media (min-width: 768px) {
+    .checkout-container { padding: 24px; }
+
+    /* Formularios */
+    .form-row { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .form-grid { gap: 18px; }
+    .form-input, .form-select { font-size: 1rem; padding: 12px 14px; }
+    .form-label { font-size: 0.9rem; }
+
+    .passengers-section { padding: 22px 20px; margin-bottom: 18px; }
+    .passengers-section .section-title { font-size: 1.55rem; margin-bottom: 22px; }
+
+    .passenger-header { padding: 16px 20px; }
+    .passenger-header .form-collapsible-title { font-size: 1rem; }
+    .form-collapsible-content { padding: 22px 20px; }
+
+    /* Payment options */
+    .payment-options { gap: 12px; margin-bottom: 24px; }
+    .payment-option { padding: 16px 20px; }
+    .payment-option-radio { width: 24px; height: 24px; margin-right: 14px; }
+    .payment-option-text { font-size: 1rem; }
+    .payment-badge { font-size: 0.7rem; padding: 4px 12px; }
+
+    /* Payment grids: 4 cols en tablet */
+    #payment-credit:checked ~ #credit-card-methods,
+    #payment-cash:checked   ~ #cash-methods {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    #payment-debit:checked ~ #debit-card-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 500px;
+    }
+
+    .payment-method-card { padding: 18px 12px; min-height: 130px; }
+    .payment-logo { max-width: 76px; max-height: 42px; margin-bottom: 10px; }
+    .payment-method-name { font-size: 0.875rem; }
+    .payment-method-info { font-size: 0.75rem; }
+
+    /* Summary */
+    .summary-header { padding: 16px 22px; }
+    .summary-logo { max-width: 125px; }
+    .summary-couple { max-width: 165px; }
+    .summary-discount-text { padding: 16px 22px 10px; }
+    .summary-discount-text p { font-size: 0.95rem; }
+    .summary-discount-text .discount { font-size: 1.15rem; }
+    .summary-content { padding: 10px 22px 16px; gap: 12px; }
+    .summary-item { padding: 12px 14px; }
+    .summary-item-label, .summary-item-value { font-size: 0.875rem; }
+    .summary-divider { margin: 4px 22px 14px; }
+    .summary-pricing { padding: 0 22px; gap: 10px; }
+    .summary-price-row { font-size: 0.9rem; }
+    .summary-total-wrapper { padding: 0 22px; }
+    .summary-total-label { font-size: 1.1rem; }
+    .summary-total-value { font-size: 1.25rem; }
+    .discount-code-section { padding: 0 22px 14px; }
+    .discount-code-trigger { font-size: 0.95rem; }
+    .discount-code-input, .discount-code-btn { font-size: 0.9rem; padding: 11px 14px; }
+    .discount-code-btn { padding: 11px 22px; }
+
+    /* Términos */
+    .terms-checkbox-group { padding: 20px; margin-bottom: 20px; }
+    .terms-main-text { font-size: 0.95rem; }
+    .terms-info-text { font-size: 0.875rem; padding: 12px 14px; }
+    .terms-info-icon { width: 18px; height: 18px; min-width: 18px; }
+
+    /* Compra segura */
+    .secure-purchase-section { padding: 36px 30px; margin-top: 24px; }
+    .secure-lock-icon { width: 30px; height: 30px; }
+    .secure-purchase-title { font-size: 1.6rem; }
+    .secure-purchase-description { font-size: 0.95rem; margin-bottom: 26px; }
+    .btn-purchase { font-size: 1.25rem; padding: 18px 44px; }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP 992px+
    =========================================== */
 @media (min-width: 992px) {
+    .checkout-container { padding: 28px 32px; }
 
-    /* Volver a comportamiento normal */
+    /* Layout: 2 columnas */
+    .checkout-grid {
+        grid-template-columns: 1fr 370px;
+        gap: 28px;
+    }
+
+    .checkout-main    { order: 1; padding-bottom: 0; }
+    .checkout-sidebar { order: 2; }
+
+    /* Sidebar: vuelve a posición normal */
     .checkout-sidebar {
         position: relative;
         max-height: none;
+        z-index: auto;
     }
 
-    /* Summary card no es details en desktop */
     .summary-card {
         border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         position: sticky;
         top: 20px;
+        overflow: hidden;
+        max-height: none;
     }
 
-    /* Ocultar el trigger y preview en desktop */
+    /* Desactivar comportamiento de details en desktop */
     .summary-collapsible-trigger {
         pointer-events: none;
         cursor: default;
     }
 
-    .summary-collapsible-trigger::after {
-        display: none;
-        /* Ocultar chevron */
+    .summary-collapsible-trigger::after { display: none; }
+    .summary-total-preview { display: none !important; }
+
+    /* Summary desktop compacto */
+    .summary-header { padding: 6px 26px 0; }
+    .summary-logo { max-width: 130px; }
+    .summary-couple { max-width: 90px; display: block; }
+    .summary-discount-text { padding: 8px 22px 6px; }
+    .summary-discount-text p { font-size: 0.875rem; }
+    .summary-discount-text .discount { font-size: 1rem; }
+    .summary-content { padding: 0 26px 10px; gap: 8px; }
+    .summary-item { padding: 8px 10px; }
+    .summary-icon { width: 22px; height: 22px; }
+    .summary-item-grid { gap: 5px; }
+    .summary-item-label, .summary-item-value { font-size: 0.875rem; }
+    .summary-divider { margin: 4px 26px 14px; }
+    .summary-pricing { padding: 0 26px; gap: 6px; }
+    .summary-price-row { font-size: 0.875rem; }
+    .summary-total-wrapper { padding: 0 26px 12px; }
+    .summary-total-label { font-size: 1rem; }
+    .summary-total-value { font-size: 1.125rem; }
+    .discount-code-section { padding: 0 26px 12px; }
+    .discount-code-trigger { font-size: 0.9375rem; }
+    .discount-code-input, .discount-code-btn { font-size: 0.875rem; padding: 9px 12px; }
+    .discount-code-btn { padding: 9px 24px; }
+
+    /* Formularios */
+    .passengers-section { padding: 24px 22px; }
+    .passengers-section .section-title { font-size: 1.25rem; margin-bottom: 24px; }
+
+    .form-section { padding: 22px; }
+    .form-collapsible-content { padding: 24px 22px; }
+
+    .passenger-header { padding: 18px 24px; }
+    .passenger-header .form-collapsible-title { font-size: 1.05rem; }
+    .passenger-header .form-collapsible-chevron { width: 24px; height: 24px; }
+
+    .form-row { gap: 20px; }
+    .form-grid { gap: 20px; }
+    .form-label { font-size: 0.9375rem; }
+    .form-input, .form-select { font-size: 0.9375rem; padding: 11px 14px; }
+
+    /* Payment */
+    .payment-options { gap: 14px; margin-bottom: 28px; }
+    .payment-option { padding: 18px 22px; }
+    .payment-option-radio { width: 26px; height: 26px; margin-right: 16px; }
+    .payment-option-text { font-size: 1.05rem; }
+    .payment-badge { font-size: 0.75rem; padding: 5px 14px; }
+
+    #payment-credit:checked ~ #credit-card-methods,
+    #payment-cash:checked   ~ #cash-methods {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
     }
 
-    .summary-total-preview {
-        display: none;
-        /* Ocultar preview */
+    #payment-debit:checked ~ #debit-card-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        max-width: none;
     }
 
-    .checkout-main {
-        padding-bottom: 0;
+    .payment-method-card { padding: 20px 14px; min-height: 140px; }
+    .payment-logo { max-width: 90px; max-height: 50px; margin-bottom: 12px; }
+    .payment-method-name { font-size: 0.9rem; }
+    .payment-method-info { font-size: 0.8rem; }
+    .installment-breakdown { font-size: 0.8rem; }
+
+    /* Términos */
+    .terms-checkbox-group { padding: 24px; margin-bottom: 22px; }
+    .terms-checkbox-label { gap: 14px; }
+    .terms-checkbox-custom { width: 24px; height: 24px; min-width: 24px; }
+    .terms-checkbox-input:checked + .terms-checkbox-custom::after {
+        left: 7px; top: 2px; width: 6px; height: 12px;
     }
+    .terms-main-text { font-size: 1rem; }
+    .terms-info-text { font-size: 0.9375rem; padding: 14px; }
+    .terms-info-icon { width: 20px; height: 20px; min-width: 20px; }
+
+    /* Compra segura */
+    .secure-purchase-section { padding: 40px 36px; margin-top: 28px; }
+    .secure-lock-icon { width: 34px; height: 34px; }
+    .secure-purchase-title { font-size: 1.875rem; }
+    .secure-purchase-description { font-size: 1rem; margin-bottom: 30px; }
+    .btn-purchase { font-size: 1.375rem; padding: 20px 56px; }
 }
 
 /* ===========================================
-   ANIMACIONES
+   RESPONSIVE: LARGE DESKTOP 1200px+
    =========================================== */
+@media (min-width: 1200px) {
+    .checkout-container { padding: 32px 40px; }
+    .checkout-grid { grid-template-columns: 1fr 390px; gap: 32px; }
 
-@media (max-width: 991px) {
-
-    /* Animación al expandir */
-    @keyframes expandFooter {
-        from {
-            max-height: 120px;
-        }
-
-        to {
-            max-height: 85vh;
-        }
+    #payment-credit:checked ~ #credit-card-methods,
+    #payment-cash:checked   ~ #cash-methods {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
     }
 
-    .summary-card[open] {
-        animation: expandFooter 0.3s ease-out;
-    }
-
-    /* Transición suave del chevron */
-    .summary-collapsible-trigger::after {
-        transition: transform 0.3s ease;
-    }
-}
-
-/* ===========================================
-   AJUSTES ADICIONALES PARA MOBILE
-   =========================================== */
-
-@media (max-width: 991px) {
-
-    /* Reducir padding en elementos internos para mobile */
-    .summary-card[open] .summary-discount-text {
-        padding: 12px 20px 8px;
-    }
-
-    .summary-card[open] .summary-content {
-        padding: 8px 20px 12px;
-    }
-
-    /* Botón de código de descuento más compacto */
-    .discount-code-section {
-        padding: 0 20px 12px;
-    }
-
-    /* Total wrapper ajustado */
-    .summary-total-wrapper {
-        padding: 0 20px 20px;
-    }
+    .payment-method-card { padding: 22px 16px; min-height: 150px; }
+    .payment-logo { max-width: 100px; max-height: 56px; }
 }
