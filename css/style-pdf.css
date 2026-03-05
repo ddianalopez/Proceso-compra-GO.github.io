@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #0258D3;
+    --dark-gray: #333333;
+    --mid-gray: #666666;
+    --border: #e0e0e0;
+    --blue-light: #D4E6FD;
+    --blue-border: #AAD2F8;
+    --coverage: #FF0099;
+    --medicine: #CC0099;
+    --white: #ffffff;
+    --font-primary: "Bricolage Grotesque", sans-serif;
+    --font-secondary: "Nunito Sans", sans-serif;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background: #fff;
+    color: var(--dark-gray);
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    body {
+        width: 794px;
+    }
+
+    .page {
+        padding: 20px 28px;
+    }
+}
+
+.page {
+    background: #fff;
+}
+
+.page-container {
+    width: 915px;
+    margin: 0 auto;
+    padding: 10px 28px;
+}
+
+/* =========================================
+   HEADER — logo + teléfono
+   ========================================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 915px;
+    padding: 15px 28px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-tagline {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.header-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    color: #2A7AFF;
+    text-decoration: none;
+}
+
+.header-phone .phone-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-phone .phone-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+/* =========================================
+   VOUCHER INFO BAR
+   ========================================= */
+.voucher-bar {
+    background: var(--blue-light);
+    border-radius: 12px;
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.voucher-bar-logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.voucher-bar-logos img {
+    height: 34px;
+    width: auto;
+}
+
+.voucher-bar-sep {
+    width: 1px;
+    height: 36px;
+    background: rgba(0, 102, 244, 0.2);
+    flex-shrink: 0;
+}
+
+.voucher-bar-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.voucher-bar-label {
+    font-family: var(--font-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--mid-gray);
+    display: block;
+    margin-bottom: 1px;
+}
+
+.voucher-bar-value {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    display: block;
+}
+
+.voucher-bar-couple {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    height: 80px;
+    width: auto;
+}
+
+/* =========================================
+   SECTION BLOCK
+   ========================================= */
+.section-block {
+    border: 1px solid var(--blue-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.section-block-title {
+    background: var(--blue-light);
+    padding: 7px 14px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    border-bottom: 1px solid var(--blue-border);
+}
+
+.section-block-body {
+    background: #fff;
+    padding: 12px 14px;
+}
+
+/* =========================================
+   DATOS DEL VIAJE
+   ========================================= */
+.travel-row {
+    display: flex;
+    align-items: center;
+}
+
+.travel-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 10px;
+    flex: 1;
+    padding-right: 20px;
+}
+
+.travel-group:not(:first-child) {
+    border-left: 1px solid #D1E1F5;
+    padding-left: 20px;
+}
+
+.travel-group:last-child {
+    flex: 1.1;
+}
+
+.travel-group > img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.data-travel {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.travel-label {
+    font-size: 11px;
+    color: var(--mid-gray);
+    display: block;
+    margin-bottom: 1px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.travel-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    display: block;
+    font-family: var(--font-primary);
+    white-space: nowrap;
+}
+
+/* =========================================
+   BENEFICIARIOS
+   ========================================= */
+.passenger-block {
+    padding: 10px 0;
+    border-bottom: 1px solid #EAF2FD;
+}
+
+.passenger-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.passenger-block:first-child {
+    padding-top: 0;
+}
+
+.passenger-name {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 8px;
+}
+
+.beneficiary-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.beneficiary-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    padding-right: 16px;
+}
+
+.beneficiary-group:not(:first-child) {
+    border-left: 1px solid #D1E1F5;
+    padding-left: 16px;
+}
+
+.beneficiary-group img {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.beneficiary-group > div {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.b-label {
+    font-size: 10.5px;
+    color: var(--mid-gray);
+    display: block;
+    margin-bottom: 1px;
+    font-weight: 500;
+}
+
+.b-value {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    display: block;
+    font-family: var(--font-primary);
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* =========================================
+   BENEFICIOS TITLE
+   ========================================= */
+.benefits-title {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+/* =========================================
+   PLAN TABLE
+   ========================================= */
+.plan-table {
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tbl-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tbl-section-header svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.tbl-section-header.coverage {
+    background: #FF0099;
+}
+
+.tbl-section-header.medicine {
+    background: #CC0099;
+}
+
+.tbl-row {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border);
+}
+
+.tbl-label {
+    flex: 1;
+    padding: 7px 14px;
+    font-size: 14px;
+    color: var(--dark-gray);
+    border-right: 1px solid var(--border);
+    line-height: 1.35;
+}
+
+.tbl-value {
+    width: 160px;
+    padding: 7px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: var(--font-primary);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.tbl-check {
+    color: #22c55e;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+    width: 160px;
+    padding: 7px 14px;
+    flex-shrink: 0;
+}

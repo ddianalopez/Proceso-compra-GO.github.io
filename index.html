@@ -7,7 +7,7 @@
     <meta name="description"
         content="Selecciona tu plan de asistencia al viajero ideal con GO! - Compara coberturas, precios y beneficios">
     <title>Cotizador GO! - Selección de Plan de Asistencia al Viajero</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -27,8 +27,9 @@
             <!-- Header -->
             <header class="modal-header modal-plan-header">
                 <div class="plan-modal-logo">
-                    <img src="images/logo-go-adventure-usa-color-horizontal.svg" alt="GO! Priority"
-                        class="plan-logo-modal">
+                    <img src="images/logo-go-smart-color-horizontal.svg" alt="GO! Priority" class="plan-logo-modal">
+                    <!-- Agregar solamente a los productos que tienen multitrip -->
+                    <div class="multitrip-table-comparative" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
                 </div>
 
                 <!-- Botón X que cierra el modal -->
@@ -45,17 +46,14 @@
                 <!-- Alcances de cobertura -->
                 <div class="plan-section coverage-section">
                     <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />
-                        </svg>
+                        <img src="images/GO-icon-item.alcances.svg" alt="Alcance de cobertura">
                         <span>Alcances de cobertura</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
                             <span class="detail-label">MONTO MÁXIMO GLOBAL (MMG)</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 80.000</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Deducible / Franquicia / Copago</span>
@@ -75,27 +73,23 @@
                 <!-- Medicina y medicamentos -->
                 <div class="plan-section medicine-section">
                     <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M12 8v8m-4-4h8" />
-                        </svg>
+                        <img src="images/GO-icon-item.medicina.svg" alt="Medicina y medicamentos">
                         <span>Medicina y medicamentos</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
                             <span class="detail-label">Asistencia médica en caso de accidente</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 80.000</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Asistencia médica en caso de enfermedad no preexistente</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 80.000</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Asistencia médica solo por emergencias en caso de enfermedades
                                 preexistentes</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 300</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Asistencia Médica COVID-19</span>
@@ -103,23 +97,37 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Asistencia médica en caso de Accidente en Evento Múltiple</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 80.000</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Asistencia médica por embarazo (hasta semana 26)</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 1.000</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Odontología de urgencia</span>
-                            <span class="detail-value">USD 7.500</span>
+                            <span class="detail-value">USD 450</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Invalidez total y permanente</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-label">Medicamentos por hospitalización</span>
+                            <span class="detail-value">USD 500</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Medicamentos ambulatorios</span>
-                            <span class="detail-value">USD 300.000</span>
+                            <span class="detail-value">USD 300</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Gastos de hotel por convalecencia</span>
+                            <span class="detail-value">USD 300</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Invalidez total y permanente
+                            </span>
+                            <span class="detail-value">Hasta el monto máximo global
+                            </span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Dr.Online</span>
+                            <span class="detail-value"><span class="checkmark" aria-label="Incluido">✓</span></span>
                         </div>
                     </div>
                 </div>
@@ -127,53 +135,55 @@
                 <!-- Legales -->
                 <div class="plan-section legal-section">
                     <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <path d="M14 2v6h6" />
-                        </svg>
+                        <img src="images/GO-icon-item.legales.svg" alt="Legales">
                         <span>Legales</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
-                            <span class="detail-label">Asistencia legal telefónica</span>
-                            <span class="detail-value">USD 3.000</span>
+                            <span class="detail-label">Asistencia legal por accidente de tránsito
+                            </span>
+                            <span class="detail-value">USD 1.000</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Gastos de defensa legal</span>
-                            <span class="detail-value">USD 8.000</span>
+                            <span class="detail-label">Asistencia Legal por Usurpación de Domicilio
+                            </span>
+                            <span class="detail-value">USD 150</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Fianza en el exterior</span>
-                            <span class="detail-value">USD 15.000</span>
+                            <span class="detail-label">Asistencia Legal para Defensa Penal
+                            </span>
+                            <span class="detail-value">USD 150</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Responsabilidad civil
+                            </span>
+                            <span class="detail-value">USD 1.000</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cancelaciones y demoras -->
                 <div class="plan-section cancellation-section">
-                    <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M15 9l-6 6M9 9l6 6" />
-                        </svg>
+                    <div class="plan-section-header cancellations">
+                        <img src="images/GO-icon-item.cancelaciones.svg" alt="Cancelaciones y demoras">
                         <span>Cancelaciones y demoras</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
-                            <span class="detail-label">Cancelación de viaje</span>
-                            <span class="detail-value">USD 5.000</span>
+                            <span class="detail-label">Penalidades de TKT por cambios en viaje de regreso (anticipado o
+                                retrasado)</span>
+                            <span class="detail-value">USD 150</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Interrupción de viaje</span>
-                            <span class="detail-value">USD 5.000</span>
+                            <span class="detail-label">Reembolso de gastos por transporte demorado o cancelado</span>
+                            <span class="detail-value">USD 100</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Gastos por demora del viaje</span>
-                            <span class="detail-value">USD 500</span>
+                            <span class="detail-label">Reembolso de entradas a espectáculos y/o eventos
+                                deportivos</span>
+                            <span class="detail-value"><span class="crossmark" aria-label="No incluido">×</span></span>
                         </div>
                     </div>
                 </div>
@@ -181,53 +191,166 @@
                 <!-- Equipaje -->
                 <div class="plan-section baggage-section">
                     <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <rect x="6" y="4" width="12" height="16" rx="2" />
-                            <path d="M9 2v2m6-2v2M9 20v2m6-2v2" />
-                        </svg>
+                        <img src="images/GO-icon-item.equipaje.svg" alt="Equipaje">
                         <span>Equipaje y efectos personales</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
-                            <span class="detail-label">Pérdida de equipaje</span>
-                            <span class="detail-value">USD 1.500</span>
+                            <span class="detail-label">Envío de objetos olvidados durante el viaje
+                            </span>
+                            <span class="detail-value">USD 50</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Demora de equipaje</span>
-                            <span class="detail-value">USD 800</span>
+                            <span class="detail-label">Reposición de pasaporte o documentos de viaje
+                            </span>
+                            <span class="detail-value">USD 50</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Compensación por demora</span>
-                            <span class="detail-value">USD 150</span>
+                            <span class="detail-label">Localización de equipaje
+                            </span>
+                            <span class="detail-value"><span class="checkmark" aria-label="Incluido">✓</span></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Gastos por demora en entrega de equipaje
+                            </span>
+                            <span class="detail-value">USD 200</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Compensación por pérdida de equipaje
+                            </span>
+                            <span class="detail-value">USD 1.000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Robo de equipaje en vía pública
+                            </span>
+                            <span class="detail-value">USD 100</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Traslados y Estadias -->
+                <div class="plan-section services-section">
+                    <div class="plan-section-header">
+                        <img src="images/GO-icon-item.traslados.svg" alt="Traslados y estadias">
+                        <span>Traslados y estadías</span>
+                    </div>
+
+                    <div class="plan-details-grid">
+                        <div class="detail-row">
+                            <span class="detail-label">Traslado de familiar por hospitalización
+                            </span>
+                            <span class="detail-value">USD 450</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Gastos de hotel de familiar
+                            </span>
+                            <span class="detail-value">USD 250</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Traslado de ejecutivo reemplazante
+
+                            </span>
+                            <span class="detail-value"><span class="checkmark" aria-label="Incluido">✓</span></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Gastos de hotel por convalecencia
+                            </span>
+                            <span class="detail-value">USD 300</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Acompañamiento de menores
+
+                            </span>
+                            <span class="detail-value">USD 450</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Coordinación de traslados a aeropuerto
+
+                            </span>
+                            <span class="detail-value"><span class="checkmark" aria-label="Incluido">✓</span></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Traslados sanitarios
+
+
+                            </span>
+                            <span class="detail-value">USD 35.000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Repatriación sanitaria
+
+
+                            </span>
+                            <span class="detail-value">USD 35.000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Repatriación funeraria
+
+
+                            </span>
+                            <span class="detail-value">USD 35.000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Repatriación por quiebra de aerolínea
+
+
+                            </span>
+                            <span class="detail-value"><span class="crossmark" aria-label="No incluido">×</span></span>
+                        </div>
+                    </div>
+                </div>
                 <!-- Otros servicios -->
                 <div class="plan-section services-section">
                     <div class="plan-section-header">
-                        <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 6v6l4 2" />
-                        </svg>
+                        <img src="images/GO-icon-item.servicios.svg" alt="Otros servicios">
                         <span>Otros servicios</span>
                     </div>
 
                     <div class="plan-details-grid">
                         <div class="detail-row">
-                            <span class="detail-label">Asistencia de mascotas</span>
+                            <span class="detail-label">Transferencia de fondos ante emergencias
+                            </span>
+                            <span class="detail-value">7.500</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Transferencia de fondos para fianza por accidentes
+                            </span>
+                            <span class="detail-value">USD 7.500</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Servicio de Concierge
+                            </span>
                             <span class="detail-value detail-check">✓</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Repatriación sanitaria</span>
-                            <span class="detail-value">USD 50.000</span>
+                            <span class="detail-label">Seguridad privada
+
+                            </span>
+                            <span class="detail-value detail-check">✓</span>
                         </div>
                         <div class="detail-row">
-                            <span class="detail-label">Concierge 24/7</span>
+                            <span class="detail-label">Asistente personal
+
+                            </span>
                             <span class="detail-value detail-check">✓</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Personal shopper
+
+
+                            </span>
+                            <span class="detail-value"><span class="crossmark" aria-label="No incluido">×</span></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Práctica recreativa de deportes y en competencia para amateurs
+                            </span>
+                            <span class="detail-value">USD 1.000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Pet Assistance
+                            </span>
+                            <span class="detail-value">USD 300</span>
                         </div>
                     </div>
                 </div>
@@ -399,6 +522,34 @@
         </div>
     </div>
 
+        <!-- =========================================
+         HEADER: logo + teléfono
+         ========================================= -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <!-- Logo -->
+            <a href="/" class="site-header-logo" aria-label="GO! Assistance - Ir al inicio">
+                <img src="images/logo-go-assistance-color-vertical.svg" alt="GO! Assistance">
+            </a>
+
+            <!-- Teléfono -->
+            <a href="tel:08103620054" class="site-header-phone" aria-label="Llamar al 0810-362-0054">
+                0810-362-0054<img src="images/icono-telefono-header.svg" alt="">
+            </a>
+        </div>
+    </header>
+
+    <!-- WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5491144344610&text=%F0%9F%98%80%20Buenos%20d%C3%ADas!%20Quiero%20solicitar%20informaci%C3%B3n%20sobre%20seguros%20de%20viaje"
+        class="whatsapp-bubble" target="_blank" rel="noopener noreferrer">
+        <div class="whatsapp-icon">
+            <div class="whatsapp-dot"></div>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+            </svg>
+        </div>
+    </a>
     <!-- Main Container -->
     <main class="main-container">
 
@@ -880,9 +1031,14 @@
                 <div class="plan-logo"><img src="images/logo-go-smart-color-vertical.svg" alt="GO! Smart"></div>
                 <div class="plan-logo"><img src="images/logo-go-nomads-color-vertical.svg" alt="GO! Nomads"></div>
                 <div class="plan-logo"><img src="images/logo-go-priority-color-vertical.svg" alt="GO! Priority"></div>
-                <div class="plan-logo"><img src="images/logo-go-nacional-color-vertical.svg" alt="GO! Nacional"></div>
-                <div class="plan-logo"><img src="images/logo-go-sport-color-vertical.svg" alt="GO! Sport"></div>
-                <div class="plan-logo"><img src="images/logo-go-pet-color-vertical.svg" alt="GO! Pets">
+                <div class="plan-logo"><img src="images/logo-go-smart-color-vertical.svg" alt="GO! Nacional">
+                    <div class="multitrip-table-comparative" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                </div>
+                <div class="plan-logo"><img src="images/logo-go-nomads-color-vertical.svg" alt="GO! Sport">
+                    <div class="multitrip-table-comparative" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                </div>
+                <div class="plan-logo"><img src="images/logo-go-priority-color-vertical.svg" alt="GO! Pets">
+                    <div class="multitrip-table-comparative" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
                 </div>
             </div>
 
@@ -902,20 +1058,21 @@
                 <div class="section-content">
                     <div class="content-row">
                         <div class="row-label">Monto máximo global (MMG)</div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 350.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 300.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Cobertura Prequirúrgica / Cirugía</div>
-                        <div class="row-cell">SIN DEDUCIBLE</div>
+                        <div class="row-label">Deducible / Franquicia / Copago
+                        </div>
+                        <div class="row-cell">USD 100</div>
                         <div class="row-cell">SIN DEDUCIBLE</div>
                         <div class="row-cell">SIN DEDUCIBLE</div>
                         <div class="row-cell">SIN DEDUCIBLE</div>
@@ -927,7 +1084,8 @@
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Asistencia dental</div>
+                        <div class="row-label">Ámbito de cobertura
+                        </div>
                         <div class="row-cell">MUNDIAL</div>
                         <div class="row-cell">MUNDIAL</div>
                         <div class="row-cell">MUNDIAL</div>
@@ -940,7 +1098,8 @@
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Límite de edad</div>
+                        <div class="row-label">Límite de edad
+                        </div>
                         <div class="row-cell">75/85</div>
                         <div class="row-cell">75/85</div>
                         <div class="row-cell">75/85</div>
@@ -969,42 +1128,46 @@
                 <div class="section-content">
 
                     <div class="content-row">
-                        <div class="row-label">Asistencia médica en caso de urgencia o accidente</div>
+                        <div class="row-label">Asistencia médica en caso de accidente
+                        </div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 330.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 350.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                    </div>
-
-                    <div class="content-row">
-                        <div class="row-label">Asistencia médica en caso de enfermedad no preexistente</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 350.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 300.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Asistencia médica por emergencia hasta el alta o estabilización</div>
+                        <div class="row-label">Asistencia médica en caso de enfermedad no preexistente
+                        </div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
                         <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 350.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 500.000</div>
-                        <div class="row-cell">USD 300.000</div>
-                        <div class="row-cell">USD 300.000</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Asistencia Médica solo por emergencias en caso de enfermedades
+                            preexistentes
+                        </div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 3.500</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 20.000</div>
                     </div>
 
                     <div class="content-row">
@@ -1019,7 +1182,119 @@
                         <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
                         <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
                     </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Asistencia médica en caso de Accidente en Evento Múltiple
+                        </div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 45.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
+                        <div class="row-cell">USD 200.000</div>
+                        <div class="row-cell">USD 80.000</div>
+                        <div class="row-cell">USD 150.000</div>
+                        <div class="row-cell">USD 300.000</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Asistencia médica por embarazo (hasta semana 26)
+                        </div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Odontología de urgencia
+                        </div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.200</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.200</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Medicamentos ambulatorios
+
+                        </div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Medicamentos por hospitalización
+
+                        </div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Gastos de hotel por convalecencia
+
+                        </div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Invalidez total y permanente</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                        <div class="row-cell">Hasta el monto máximo global</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Dr.Online</div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
                 </div>
+
             </details>
 
             <!-- Legales -->
@@ -1036,42 +1311,57 @@
                 </summary>
                 <div class="section-content">
                     <div class="content-row">
-                        <div class="row-label">Asistencia legal telefónica</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-label">Asistencia legal por accidente de tránsito
+                        </div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.800</div>
+                        <div class="row-cell">USD 1.800</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.800</div>
+                        <div class="row-cell">USD 1.800</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Gastos de defensa legal</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
+                        <div class="row-label">Asistencia Legal por Usurpación de Domicilio
+                        </div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Fianza en el exterior</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
+                        <div class="row-label">Asistencia Legal para Defensa Penal
+                        </div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Responsabilidad civil</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
                     </div>
                 </div>
             </details>
@@ -1090,42 +1380,46 @@
                 </summary>
                 <div class="section-content">
                     <div class="content-row">
-                        <div class="row-label">Asistencia legal telefónica</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-label">Penalidades de TKT por cambios en viaje de regreso (anticipado o
+                            retrasado)
+                        </div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 500</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Gastos de defensa legal</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
+                        <div class="row-label">Reembolso de gastos por transporte demorado o cancelado
+                        </div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 270</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 270</div>
+                        <div class="row-cell">USD 350</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Fianza en el exterior</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
+                        <div class="row-label">Reembolso de entradas a espectáculos y/o eventos deportivos
+                        </div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 200</div>
                     </div>
                 </div>
             </details>
@@ -1144,42 +1438,83 @@
                 </summary>
                 <div class="section-content">
                     <div class="content-row">
-                        <div class="row-label">Asistencia legal telefónica</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-label">Envío de objetos olvidados durante el viaje
+                        </div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Gastos de defensa legal</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
+                        <div class="row-label">Reposición de pasaporte o documentos de viaje
+                        </div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 200</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Fianza en el exterior</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
+                        <div class="row-label">Localización de equipaje</div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Gastos por demora en entrega de equipaje
+                        </div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 350</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Compensación por pérdida de equipaje
+                        </div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 2.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 2.000</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Robo de equipaje en vía pública
+                        </div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 50</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 100</div>
+                        <div class="row-cell">USD 150</div>
                     </div>
                 </div>
             </details>
@@ -1198,42 +1533,140 @@
                 </summary>
                 <div class="section-content">
                     <div class="content-row">
-                        <div class="row-label">Asistencia legal telefónica</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-label">Traslado de familiar por hospitalización
+                        </div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Gastos de defensa legal</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
+                        <div class="row-label">Gastos de hotel de familiar
+                        </div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 150</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 550</div>
+                        <div class="row-cell">USD 700</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 700</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Fianza en el exterior</div>
+                        <div class="row-label">Gastos de hotel por convalecencia
+                        </div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Traslado de ejecutivo reemplazante
+                        </div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Acompañamiento de menores
+                        </div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 250</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 450</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Coordinación de traslados a aeropuerto
+                        </div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Traslados sanitarios
+                        </div>
                         <div class="row-cell">USD 15.000</div>
                         <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 50.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                        <div class="row-cell">USD 30.000</div>
+                        <div class="row-cell">USD 50.000</div>
+                        <div class="row-cell">USD 60.000</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Repatriación sanitaria
+                        </div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 40.000</div>
+                        <div class="row-cell">USD 50.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 40.000</div>
+                        <div class="row-cell">USD 50.000</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Repatriación funeraria
+                        </div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 30.000</div>
+                        <div class="row-cell">USD 40.000</div>
+                        <div class="row-cell">USD 35.000</div>
+                        <div class="row-cell">USD 30.000</div>
+                        <div class="row-cell">USD 40.000</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Repatriación por quiebra de aerolínea
+                        </div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 350</div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No incluido">×</span></div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 350</div>
+
+
                     </div>
                 </div>
             </details>
@@ -1252,42 +1685,107 @@
                 </summary>
                 <div class="section-content">
                     <div class="content-row">
-                        <div class="row-label">Asistencia legal telefónica</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
-                        <div class="row-cell">USD 3.000</div>
+                        <div class="row-label">Transferencia de fondos ante emergencias</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 10.000</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Gastos de defensa legal</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
-                        <div class="row-cell">USD 8.000</div>
+                        <div class="row-label">Transferencia de fondos para fianza por accidentes</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 5.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 7.500</div>
+                        <div class="row-cell">USD 10.000</div>
                     </div>
 
                     <div class="content-row">
-                        <div class="row-label">Fianza en el exterior</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
-                        <div class="row-cell">USD 15.000</div>
+                        <div class="row-label">Servicio de Concierge</div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Seguridad privada</div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Asistente personal</div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="row-label">Personal shopper</div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                        <div class="row-cell"><span class="checkmark" aria-label="Incluido">✓</span></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Práctica recreativa de deportes y en competencia para amateurs
+                        </div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 500</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 2.000</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 1.500</div>
+                        <div class="row-cell">USD 2.000</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="row-label">Pet Assistance
+                        </div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell"><span class="crossmark" aria-label="No Incluido">×</span></div>
+                        <div class="row-cell">USD 200</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 800</div>
+                        <div class="row-cell">USD 1.000</div>
+                        <div class="row-cell">USD 300</div>
+                        <div class="row-cell">USD 800</div>
+                        <div class="row-cell">USD 1.000</div>
                     </div>
                 </div>
             </details>
@@ -1313,10 +1811,14 @@
                     <div class="plan-logo-container">
                         <img src="images/logo-go-priority-color-horizontal.svg" alt="GO! Priority">
                     </div>
+                    <!-- Solo a los productos que tienen multitrip -->
+                    <div class="multitrip-table-comparative" aria-label="Plan multiviaje">🌎 MULTITRIP 60 DÍAS</div>
+                    <!--
                     <p class="plan-description">
                         El plan de asistencia y seguridad más completo y personalizado, con atención de primera clase.
                         La excelencia es nuestro estándar.
                     </p>
+                    -->
                 </div>
 
                 <button class="nav-button" aria-label="Siguiente plan">

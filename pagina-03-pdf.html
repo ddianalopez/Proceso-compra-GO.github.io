@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=794px">
+    <title>Voucher GO! Assistance - Pág 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #0258D3;
+            --dark-gray: #333333;
+            --mid-gray: #666666;
+            --blue-light: #D4E6FD;
+            --blue-border: #AAD2F8;
+            --light-blue-bg: #D4E6FD;
+            --blue-bg: #C8DCFF;
+            --white: #ffffff;
+            --font-primary: "Bricolage Grotesque", sans-serif;
+            --font-secondary: "Nunito Sans", sans-serif;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: #fff;
+            color: var(--dark-gray);
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                width: 794px;
+            }
+
+            .page {
+                padding: 20px 28px;
+            }
+        }
+
+        .page {
+            background: #fff;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 915px;
+            padding: 15px 28px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .header-tagline {
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 700;
+            color: #2A7AFF;
+            text-decoration: none;
+        }
+
+        .header-phone .phone-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-phone .phone-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* =========================================
+           ZONA AZUL
+           ========================================= */
+        .blue-zone {
+            background-color: var(--light-blue-bg);
+            padding: 30px 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* --- WRAPPER PARA EL VOUCHER ROTADO --- */
+        .rotated-voucher-wrapper {
+            width: 410px;
+            height: 680px;
+            position: relative;
+        }
+
+        /* --- EL VOUCHER HORIZONTAL --- */
+        .voucher-horizontal-source {
+            width: 680px;
+            height: 410px;
+            background: var(--white);
+            box-shadow: 0 10px 25px rgba(0, 60, 180, 0.15);
+            display: flex;
+            overflow: hidden;
+            padding: 0px 0px 0px 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0;
+            transform: rotate(-90deg) translateX(-680px);
+            border-radius: 0px 12px 12px 0px;
+        }
+
+        .v-main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .v-top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+
+        .v-id-box {
+            margin-right: auto;
+            font-family: var(--font-primary);
+        }
+
+        .v-label {
+            font-size: 16px;
+            color: #0258D3;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .v-value-lg {
+            font-size: 23px;
+            color: #0258D3;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .v-date-box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+        }
+
+        .v-field-label {
+            font-size: 15px;
+            color: var(--mid-gray);
+            display: block;
+            font-family: var(--font-primary);
+        }
+
+        .v-field-value {
+            font-size: 15px;
+            color: var(--dark-gray);
+            font-weight: 700;
+            font-family: var(--font-primary);
+        }
+
+        .v-logos {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .v-body {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION BLOCK --- */
+        .section-block {
+            overflow: hidden;
+            border: 1px solid var(--blue-border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            width: 640px;
+        }
+
+        .section-block-title {
+            background: var(--blue-light);
+            padding: 3px 14px;
+            font-family: var(--font-primary);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--blue-border);
+        }
+
+        .section-block-body {
+            background: #fff;
+            padding: 5px 14px;
+        }
+
+        /* --- DATOS DEL VIAJE --- */
+        .travel-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .travel-group {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 8px;
+            flex: 1;
+            padding-right: 14px;
+        }
+
+        .travel-group:not(:first-child) {
+            border-left: 1px solid #D1E1F5;
+            padding-left: 14px;
+        }
+
+        .travel-group > img {
+            width: 20px;
+            height: 24px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .data-travel {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .travel-label {
+            font-size: 10px;
+            color: var(--mid-gray);
+            display: block;
+            margin-bottom: 1px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .travel-value {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            display: block;
+            font-family: var(--font-primary);
+            white-space: nowrap;
+        }
+
+        /* --- BENEFICIARIOS --- */
+        .passenger-block {
+            padding: 10px 0;
+            border-bottom: 1px solid #EAF2FD;
+        }
+
+        .passenger-block:first-child {
+            padding-top: 0;
+        }
+
+        .passenger-block:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .passenger-name {
+            font-family: var(--font-primary);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 6px;
+        }
+
+        .beneficiary-row {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .beneficiary-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            padding-right: 12px;
+        }
+
+        .beneficiary-group:not(:first-child) {
+            border-left: 1px solid #D1E1F5;
+            padding-left: 12px;
+        }
+
+        .beneficiary-group img {
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .beneficiary-group > div {
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .b-label {
+            font-size: 9.5px;
+            color: var(--mid-gray);
+            display: block;
+            margin-bottom: 1px;
+            font-weight: 500;
+        }
+
+        .b-value {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            display: block;
+            font-family: var(--font-primary);
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        /* --- PERFORACIÓN --- */
+        .perforation {
+            width: 410px;
+            height: 20px;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hole {
+            width: 14px;
+            height: 14px;
+            background-color: var(--blue-bg);
+            border-radius: 50%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- TARJETA ID INFERIOR --- */
+        .id-card-bottom {
+            background: var(--white);
+            width: 410px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 60, 180, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 0px 12px 12px;
+        }
+
+        .id-main-logo {
+            height: 87px;
+            width: auto;
+            margin-bottom: 30px;
+        }
+
+        .id-qr-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .id-qr-img {
+            width: 60px;
+            height: 60px;
+            background: #333;
+            border-radius: 6px;
+        }
+
+        .id-qr-data {
+            font-family: var(--font-primary);
+            color: #0258D3;
+        }
+
+        .id-qr-data label {
+            display: block;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .id-qr-data span {
+            font-weight: 500;
+            font-size: 19px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-logo">
+            <img src="images/logo-go-assistance-color-vertical.svg" alt="">
+            <span class="header-tagline">Tu Asistencia al Viajero</span>
+        </div>
+        <a class="header-phone">
+            <span>0810-362-0054</span>
+            <span class="phone-icon">
+                <img src="images/icono-telefono-header.svg" alt="">
+            </span>
+        </a>
+    </div>
+
+    <div class="page">
+        <div class="blue-zone">
+
+            <div class="rotated-voucher-wrapper">
+                <div class="voucher-horizontal-source">
+                    <div class="v-main-content">
+                        <div class="v-top-bar">
+                            <div class="v-id-box">
+                                <span class="v-label">VOUCHER ID</span>
+                                <span class="v-value-lg"># 1330970</span>
+                            </div>
+                            <div class="v-date-box">
+                                <img src="images/icono-calendario.svg" alt="" width="40">
+                                <div>
+                                    <span class="v-field-label">Fecha de emisión</span>
+                                    <span class="v-field-value">17/11/25</span>
+                                </div>
+                            </div>
+                            <div class="v-logos">
+                                <img src="images/logo-go-365-color-horizontal.svg" alt="" width="120">
+                            </div>
+                        </div>
+
+                        <div class="v-body">
+
+                            <div class="section-block">
+                                <div class="section-block-title">Datos del viaje</div>
+                                <div class="section-block-body">
+                                    <div class="travel-row">
+
+                                        <div class="travel-group">
+                                            <img src="images/icono-destino.svg" alt="">
+                                            <div class="data-travel">
+                                                <span class="travel-label">Origen</span>
+                                                <span class="travel-value">Argentina</span>
+                                            </div>
+                                            <div style="width:1px;height:32px;background:#D1E1F5;margin:0 10px;flex-shrink:0;"></div>
+                                            <div class="data-travel">
+                                                <span class="travel-label">Destino</span>
+                                                <span class="travel-value">Resto del mundo</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="travel-group">
+                                            <img src="images/icono-calendario.svg" alt="">
+                                            <div class="data-travel">
+                                                <span class="travel-label">Salida</span>
+                                                <span class="travel-value">17/11/25</span>
+                                            </div>
+                                            <div style="width:1px;height:32px;background:#D1E1F5;margin:0 10px;flex-shrink:0;"></div>
+                                            <div class="data-travel">
+                                                <span class="travel-label">Regreso</span>
+                                                <span class="travel-value">30/12/25</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="travel-group">
+                                            <img src="images/icono-vigencia.svg" alt="">
+                                            <div>
+                                                <span class="travel-label">Vigencia de cobertura</span>
+                                                <span class="travel-value">365 días</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-block">
+                                <div class="section-block-title">Datos de beneficiarios</div>
+                                <div class="section-block-body">
+
+                                    <div class="passenger-block">
+                                        <div class="passenger-name">Responsable de la cobertura</div>
+                                        <div class="beneficiary-row">
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-pasajero.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">Nombre y Apellido</span>
+                                                    <span class="b-value">Pepita Gómez de los Palotes</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-telefono.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">Teléfono</span>
+                                                    <span class="b-value">1122334455</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-email.svg" alt="" style="width: 20px;">
+                                                <div>
+                                                    <span class="b-label">Email</span>
+                                                    <span class="b-value">contacto@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="passenger-block">
+                                        <div class="passenger-name">Pasajero 1</div>
+                                        <div class="beneficiary-row">
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-pasajero.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">Nombre y Apellido</span>
+                                                    <span class="b-value">Pepo Gómez de los Palotes</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-documento.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">DNI o Pasaporte</span>
+                                                    <span class="b-value">24.545.545</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-calendario.svg" alt="" style="width: 20px;">
+                                                <div>
+                                                    <span class="b-label">Fecha de nacimiento</span>
+                                                    <span class="b-value">17/11/94</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="passenger-block">
+                                        <div class="passenger-name">Contacto de emergencia</div>
+                                        <div class="beneficiary-row">
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-pasajero.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">Nombre y Apellido</span>
+                                                    <span class="b-value">Manuela Pepita Gómez</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-telefono.svg" alt="" width="20">
+                                                <div>
+                                                    <span class="b-label">Teléfono</span>
+                                                    <span class="b-value">+54 9 11 2323 4545</span>
+                                                </div>
+                                            </div>
+                                            <div class="beneficiary-group">
+                                                <img src="images/icono-email.svg" alt="" style="width: 20px;">
+                                                <div>
+                                                    <span class="b-label">Email</span>
+                                                    <span class="b-value">contactoemergenciae@correo.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perforation">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+
+            <div class="id-card-bottom">
+                <img src="images/logo-go-assistance-color-vertical.svg" class="id-main-logo" alt="">
+                <div class="id-qr-area">
+                    <div class="id-qr-img"></div>
+                    <div class="id-qr-data">
+                        <label>VOUCHER ID</label>
+                        <span># 1330970</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
