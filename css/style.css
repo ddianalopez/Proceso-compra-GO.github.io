@@ -885,7 +885,7 @@ body {
     background: #990099;
 }
 
-.section-header.cancellations, 
+.section-header.cancellations,
 .plan-section-header.cancellations {
     background: #6600CC;
 }
@@ -2826,6 +2826,33 @@ body {
     margin: 0;
 }
 
+.assistance-alert {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 5px 8px;
+    background-color: #FFD905;
+    border-radius: 10px;
+    margin: 20px 0 0;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.2;
+    font-family: var(--font-primary);
+}
+
+.assistance-alert svg{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    stroke: #333333;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
 .voucher-section {
     padding: 25px;
 }
@@ -2839,8 +2866,8 @@ body {
 .voucher-section-title {
     font-family: var(--font-primary);
     font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--primary);
+    font-weight: 600;
+    color: var(--dark-gray);
     padding: 15px;
     background: #D4E6FD;
     border-bottom: 1px solid #B8D4F8;
@@ -2925,15 +2952,16 @@ body {
 }
 
 .data-label {
-    font-size: 13px;
-    color: #4A4A4A;
+    font-size: 0.8125rem;
+    color: var(--dark-gray);
     margin-bottom: 2px;
+    font-weight: 700;
 }
 
 .data-value {
     font-size: 15px;
-    font-weight: 600;
-    color: #666;
+    font-weight: 400;
+    color: var(--dark-gray);
 }
 
 .data-column {
@@ -4633,7 +4661,7 @@ body {
     }
 
     .data-label {
-        font-size: 0.8125rem;
+        font-size: 0.938rem;
     }
 
     .data-value {
