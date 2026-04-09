@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --primary: #006AF4;
+  --blue-dark: #0258D3;
+  --accent: #FFE100;
+  --text-accent: #050A65;
+  --pink-2: #FF5EEF;
+  --white: #ffffff;
+  --dark-gray: #333333;
+  --blue-light: #D4E6FD;
+  --blue-border: #AAD2F8;
+  --blue-divider: #D1E1F5;
+  --font-primary: "Bricolage Grotesque", sans-serif;
+  --font-secundary: "Nunito Sans", sans-serif;
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--white);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 28px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.header-tagline {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 700;
+  color: #2A7AFF;
+  text-decoration: none;
+}
+
+.phone-icon {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+.page {
+  background: var(--white);
+}
+
+.page-container {
+  width: 100%;
+  padding: 10px 28px;
+}
+
+/* ============================================================
+   VOUCHER BAR
+   ============================================================ */
+.voucher-bar {
+  background-color: var(--blue-light);
+  border-radius: 9px 0 0 0;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 4px;
+  position: relative;
+  overflow: hidden;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.voucher-bar-logos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+
+.voucher-bar-logos img {
+  height: 55px;
+  width: auto;
+}
+
+.voucher-bar-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voucher-bar-field-label {
+  font-family: var(--font-secundary);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  display: block;
+  margin-bottom: 1px;
+}
+
+.voucher-bar-field-value {
+  font-family: var(--font-secundary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  display: block;
+}
+
+.voucher-bar-couple {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  height: 80px;
+  width: auto;
+}
+
+/* ============================================================
+   SECTION BLOCK
+   ============================================================ */
+.section-block {
+  border: 1px solid var(--blue-border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.section-block-body {
+  background: var(--white);
+  padding: 12px 14px;
+}
+
+/* ============================================================
+   INFO GRID (datos del viaje + contacto)
+   ============================================================ */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Separador horizontal entre filas — ocupa las 3 columnas */
+.info-row-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--blue-divider);
+  margin: 15px 0;
+}
+
+.info-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-left: 1px solid var(--blue-divider);
+}
+
+.info-col:first-child,
+.info-row-divider+.info-col {
+  border-left: none;
+}
+
+.info-group-texts {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 35%;
+}
+
+.info-label {
+  font-size: 13px;
+  color: var(--dark-gray);
+  display: block;
+  margin-bottom: 1px;
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: var(--font-primary);
+}
+
+.info-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  display: block;
+  white-space: nowrap;
+  font-family: var(--font-secundary);
+}
+
+/* Separador vertical dentro de una celda (Origen | Destino, Salida | Regreso) */
+.vdivider {
+  width: 1px;
+  height: 32px;
+  background: var(--blue-divider);
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   PASSENGER TITLE
+   ============================================================ */
+.passenger-title {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   PLAN TITLE
+   ============================================================ */
+.plan-title {
+  font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+/* ============================================================
+   COMPARISON TABLE
+   ============================================================ */
+.container-table {
+  border: 0.5px solid var(--primary);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
+.plans-header {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.empty-cell {
+  padding: 20px;
+}
+
+.empty-cell p {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.empty-cell span {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 27px;
+  color: var(--primary);
+}
+
+.plan-logo {
+  padding: 5px 0;
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-height: 118px;
+  flex-direction: column;
+  overflow: visible;
+  position: relative;
+}
+
+.plan-logo img {
+  max-width: 120px;
+  height: auto;
+  max-height: 44px;
+}
+
+/* ── Badges ── */
+.multitrip-table-comparative {
+  background-color: var(--pink-2);
+  color: var(--white);
+  padding: 1px 7px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-family: var(--font-secundary);
+  font-size: 8px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sorteo-banner {
+  position: absolute;
+  top: -31px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent);
+  color: var(--text-accent);
+  padding: 6px 54px;
+  border-radius: 12px 12px 0 0;
+  font-weight: 900;
+  font-family: var(--font-secundary);
+  font-size: 13px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Content rows ── */
+.content-row {
+  display: grid;
+  grid-template-columns: 60% repeat(1, 1fr);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.row-label {
+  padding: 15px;
+  font-size: 13px;
+  color: var(--dark-gray);
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.row-cell {
+  padding: 15px 10px;
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #3962CC;
+  font-weight: 700;
+}
+
+/* ── Collapsible sections ── */
+.collapsible-section {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.collapsible-section summary {
+  list-style: none;
+}
+
+.collapsible-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-header {
+  color: white;
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.section-header:active {
+  opacity: 0.9;
+}
+
+.section-header.coverage {
+  background: #FF0099;
+}
+
+.section-header.medicine {
+  background: #CC0099;
+}
+
+.section-header.legal {
+  background: #990099;
+}
+
+.section-header.cancellations {
+  background: #6600CC;
+}
+
+.section-header.baggage {
+  background: #511DED;
+}
+
+.section-header.other-services {
+  background: #3333FF;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.section-title img {
+  width: 24px;
+  height: 24px;
+}
+
+.chevron-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-section[open] .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  background: #fafafa;
+  font-family: var(--font-secundary);
+  font-size: 14px;
+}
+
+/* ── Checkmarks & crossmarks ── */
+.checkmark {
+  color: #10b981;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.crossmark {
+  color: #ef4444;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ============================================================
+   PRECIO Y BOTÓN COMPRAR
+   ============================================================ */
+.plan-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 4px 8px;
+}
+
+.plan-price-currencies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-primary);
+  line-height: 1;
+}
+
+.price-ars,
+.price-usd {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.currency-label {
+  font-size: 8px;
+  font-weight: 500;
+  color: #888888;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-right: 1px;
+}
+
+.price-divider {
+  font-size: 11px;
+  color: #cccccc;
+  font-weight: 300;
+}
+
+.btn-comprar {
+  width: calc(125px - 10px);
+  padding: 5px 4px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-comprar:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.btn-comprar:active {
+  transform: scale(0.97);
+}
+
+/* ============================================================
+   RESPONSIVE — 768px+
+   ============================================================ */
+@media (min-width: 768px) {
+  .multitrip-table-comparative {
+    width: 118px;
+    margin: 11px auto;
+    padding: 1px;
+    justify-content: center;
+    font-size: 0.6rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 992px+
+   ============================================================ */
+@media (min-width: 992px) {
+
+  .container-table.cols-1 .plans-header,
+  .container-table.cols-1 .content-row {
+    grid-template-columns: 350px repeat(1, 1fr);
+  }
+
+  .container-table.cols-2 .plans-header,
+  .container-table.cols-2 .content-row {
+    grid-template-columns: 350px repeat(2, 1fr);
+  }
+
+  .container-table.cols-3 .plans-header,
+  .container-table.cols-3 .content-row {
+    grid-template-columns: 350px repeat(3, 1fr);
+  }
+
+  .plans-header,
+  .content-row {
+    border-bottom: 2px solid #e0e0e0;
+    display: grid;
+  }
+
+  .content-row {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .content-row:hover {
+    background: #f9f9f9;
+  }
+}
+
+
+.section-title-datos {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark-gray);
+  margin: 10px 0 6px;
+}
