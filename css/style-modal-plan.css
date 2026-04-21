@@ -1,0 +1,250 @@
+/* Asegura que el contenedor principal del logo y botones se alinee horizontalmente */
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Contenedor de los botones */
+.header-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estructura base de los botones cuadrados */
+.btn-square {
+    width: 39px;
+    height: 34px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+}
+
+.btn-square:hover {
+    opacity: 0.85;
+}
+
+/* Tamaño de los iconos SVG dentro del botón */
+.btn-square svg {
+    width: 18px;
+    height: 22px;
+}
+
+.btn-download {
+    background-color: #0153BE;
+}
+
+.btn-share {
+    background-color: #01B51C;
+}
+
+/* Layout General del Header */
+.modal-plan-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+/* El grupo de precios ocupa el espacio restante y empuja todo a los lados */
+.header-pricing-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; /* Empuja el grupo hacia la derecha */
+    margin-right: 42px; /* Separación con la X de cerrar */
+}
+
+/* --- BLOQUE DE PRECIOS --- */
+.pricing-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* Cuotas */
+.installments-block {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.installments-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+.installments-value {
+    font-size: 38px;
+    font-weight: 800;
+    color: #333;
+    line-height: 1;
+}
+
+.installments-value .currency {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Separador Vertical Gris */
+.price-separator {
+    width: 2px;
+    height: 44px;
+    background-color: #e0e0e0;
+    margin: 0 4px;
+}
+
+/* Totales (ARS y USD) */
+.totals-block {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+}
+
+.totals-block > div {
+    padding: 2px 0;
+}
+
+.totals-block .currency {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-right: 4px;
+}
+
+.total-ars {
+    border-bottom: 2px solid #e0e0e0; /* Línea separadora horizontal */
+}
+
+/* --- BOTONES DE COMPRA Y ASESOR --- */
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 160px; /* Ancho fijo para mantener la estructura */
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.btn-comprar {
+    background-color: #0060DD; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-asesor {
+    background-color: #1FBA00; 
+    color: white;
+    border: none;
+    border-radius: 11px; /* Forma de píldora */
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-asesor:hover {
+    background-color: #128700;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Reestructuramos el header para que apile sus grupos en columnas */
+    .modal-plan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative; /* Para posicionar la cruz de cierre */
+        padding: 20px 16px;
+        gap: 24px;
+    }
+
+    /* 2. Fijamos la cruz de cerrar arriba a la derecha */
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 16px;
+    }
+
+    /* 3. Fila superior: Logo a la izquierda, íconos a la derecha */
+    .header-left-group {
+        width: calc(100% - 36px); /* Evitamos que pise la cruz de cerrar */
+        justify-content: space-between; /* Separa el logo de los íconos */
+    }
+
+    /* Los botones de descargar/compartir ahora van lado a lado */
+    .header-action-buttons {
+        flex-direction: row; 
+        gap: 8px;
+    }
+
+    /* 4. Grupo inferior: Precios y Botones CTA */
+    .header-pricing-group {
+        flex-direction: column; /* Apila el bloque de precio sobre los botones */
+        width: 100%;
+        margin: 0; /* Reseteamos el margin-left del desktop */
+        gap: 20px;
+    }
+
+    /* Centramos el bloque de precios en la pantalla */
+    .pricing-details {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Reducimos ligeramente el tamaño de la tipografía para evitar desbordes en celulares chicos */
+    .installments-value {
+        font-size: 32px;
+    }
+
+    .installments-label {
+        font-size: 13px;
+    }
+
+    /* 5. Los botones de acción principal (Comprar / Asesor) van lado a lado */
+    .cta-buttons {
+        flex-direction: row; 
+        width: 100%; /* Reseteamos el ancho fijo de 160px del desktop */
+        gap: 12px;
+    }
+
+    /* Usamos flex: 1 para que ambos botones se dividan el ancho en 50% y 50% */
+    .btn-comprar, .btn-asesor {
+        flex: 1;      
+        padding: 10px 8px;
+    }
+
+    .btn-comprar{
+        font-size: 18px; 
+    }
+
+    .btn-asesor{
+        font-size: 13px; 
+    }
+}

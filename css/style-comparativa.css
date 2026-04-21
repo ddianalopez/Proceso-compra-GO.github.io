@@ -88,11 +88,11 @@ body {
    ============================================================ */
 .page {
   background: var(--white);
+  padding: 10px 28px;
 }
 
 .page-container {
   width: 100%;
-  padding: 10px 28px;
 }
 
 /* ============================================================
@@ -291,22 +291,58 @@ body {
 }
 
 .plan-logo {
-  padding: 5px 0;
+
   text-align: center;
   border-left: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  max-height: 118px;
+  max-height: 420px;
   flex-direction: column;
   overflow: visible;
   position: relative;
+  height: max-content;
+}
+
+.plan-logo.recomendado {
+  border-left: 2px solid #006AF4;
+  border-right: 2px solid #006AF4;
+  /* borde amarillo como en la imagen */
+  position: relative;
+  box-shadow: 0px 0px 15px 0px #00000040;
+
+}
+
+.plan-recomendado-banner {
+  background-color: #006AF4;
+  color: #ffffff;
+  font-weight: 800;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 6px 12px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
 }
 
 .plan-logo img {
-  max-width: 120px;
+  width: 140px;
   height: auto;
-  max-height: 44px;
+  max-height: 73px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+}
+
+.espacio-vacio {
+  padding: 6px 12px;
+  width: 100%;
+  height: 31.33px;
 }
 
 /* ── Badges ── */
@@ -328,21 +364,53 @@ body {
 
 .sorteo-banner {
   position: absolute;
-  top: -31px;
+  top: -27px;
+  /* asoma por encima del borde del card */
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--accent);
   color: var(--text-accent);
-  padding: 6px 54px;
+  padding: 4px 43px;
   border-radius: 12px 12px 0 0;
   font-weight: 900;
   font-family: var(--font-secundary);
-  font-size: 13px;
+  font-size: 14px;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+/* Slot superior uniforme para todos los plan-logo */
+.plan-top-slot {
+  width: 100%;
+  height: 31px;
+  /* altura fija igual para todos */
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+/* Sorteo: se posiciona arriba del borde como antes */
+.sorteo-slot {
+  position: relative;
+  overflow: visible;
+}
+
+/* Multitrip: centrado dentro del slot */
+.multitrip-slot {
+  justify-content: center;
+}
+
+/* Slot superior uniforme para todos los plan-logo */
+.plan-top-slot {
+  width: 100%;
+  height: 31px;
+  /* altura fija igual para todos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* ── Content rows ── */
@@ -481,6 +549,28 @@ body {
   padding: 6px 4px 8px;
 }
 
+.plan-cuotas {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #333333;
+}
+
+.plan-cuotas-price {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  color: #333333;
+  padding: 0 20px 8px;
+}
+
+.price-moneda {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+}
+
 .plan-price-currencies {
   display: flex;
   align-items: center;
@@ -488,17 +578,19 @@ body {
   gap: 4px;
   font-family: var(--font-primary);
   line-height: 1;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 .price-ars,
 .price-usd {
-  font-size: 12px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--dark-gray);
 }
 
 .currency-label {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   color: #888888;
   text-transform: uppercase;
@@ -513,27 +605,43 @@ body {
 }
 
 .btn-comprar {
-  width: calc(125px - 10px);
+  width: calc(190px - 10px);
   padding: 5px 4px;
   background: var(--primary);
   color: var(--white);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: var(--font-primary);
-  font-size: 12px;
+  font-size: 21px;
   font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+
+.btn-asesor {
+  width: calc(164px - 10px);
+  padding: 5px 4px;
+  background: #1FBA00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.15s ease;
   white-space: nowrap;
 }
 
-.btn-comprar:hover {
-  background: var(--blue-dark);
-  transform: translateY(-1px);
-}
-
-.btn-comprar:active {
-  transform: scale(0.97);
+.btn-asesor .icono-wpp-asesor {
+  width: 15px;
+  margin: 0;
+  max-height: inherit;
+  height: inherit;
+  vertical-align: middle;
 }
 
 /* ============================================================
